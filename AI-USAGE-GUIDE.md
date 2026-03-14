@@ -2,7 +2,7 @@
 title: "AI Usage Guide"
 type: "meta"
 status: "curated"
-last_updated: "2026-03-13"
+last_updated: "2026-03-14"
 tags: ["ai", "context-loading", "rag", "prompting"]
 ai_context: "Read this file first. It defines how to use this repository in AI context windows and RAG pipelines."
 ---
@@ -65,6 +65,12 @@ For component-specific audits, add:
 domains/web/component-patterns/[component-name].md
 ```
 
+For mobile web or installable-app scope, also add:
+```
+domains/web/mobile-accessibility-patterns.md
+domains/web/pwa-accessibility.md
+```
+
 ### Pattern 2: Accessible Web Component Generation
 
 ```
@@ -80,18 +86,52 @@ domains/web/focus-management.md
 ### Pattern 3: Social Media Post Creation
 
 ```
+domains/social-media/social-media-overview.md
 domains/social-media/alt-text/alt-text-principles.md
-domains/social-media/platforms/[platform]/[platform]-guide.md
 domains/social-media/writing-for-accessibility/inclusive-language.md
+```
+
+Then choose one platform guide from this list:
+```
+domains/social-media/platforms/facebook/facebook-guide.md
+domains/social-media/platforms/instagram/instagram-guide.md
+domains/social-media/platforms/linkedin/linkedin-guide.md
+domains/social-media/platforms/mastodon/mastodon-guide.md
+domains/social-media/platforms/tiktok/tiktok-guide.md
+domains/social-media/platforms/twitter-x/twitter-guide.md
+domains/social-media/platforms/youtube/youtube-guide.md
+```
+
+Add these when the task is more specific than general post creation:
+```
+domains/social-media/alt-text/alt-text-by-image-type.md
+domains/social-media/captions-and-transcripts/webvtt-format.md
+domains/social-media/captions-and-transcripts/sign-language-video-guide.md
+domains/social-media/captions-and-transcripts/subtitles-vs-captions-by-region.md
+domains/social-media/writing-for-accessibility/emoji-guide.md
 ```
 
 ### Pattern 4: Document Accessibility (PDF/Word/PowerPoint)
 
 ```
-standards/pdf-ua/pdf-ua-overview.md        (for PDF)
+standards/pdf-ua/pdf-ua-overview.md
 standards/epub/epub-accessibility-1.1.md   (for ebooks)
-domains/documents/[format]-accessibility/[format]-checklist.md
+domains/documents/word-accessibility/word-guide.md
+domains/documents/word-accessibility/word-checklist.md
+domains/documents/word-accessibility/word-styles-guide.md
+domains/documents/powerpoint-accessibility/powerpoint-guide.md
+domains/documents/powerpoint-accessibility/ppt-checklist.md
+domains/documents/powerpoint-accessibility/slide-layout-guide.md
+domains/documents/pdf-creation/pdf-accessibility-guide.md
+domains/documents/pdf-creation/pdf-form-accessibility-examples.md
+domains/documents/pdf-creation/pdf-from-word.md
+domains/documents/pdf-creation/pdf-from-indesign.md
+domains/documents/pdf-creation/pdf-remediation.md
+domains/documents/excel-accessibility/excel-guide.md
+domains/documents/excel-accessibility/excel-checklist.md
+domains/documents/excel-accessibility/excel-data-visualization-guide.md
 domains/documents/plain-language/plain-language-guide.md
+domains/documents/plain-language/readability-guide.md
 ```
 
 ### Pattern 5: Legal Compliance Check
@@ -99,7 +139,12 @@ domains/documents/plain-language/plain-language-guide.md
 ```
 standards/wcag/wcag-2.2-quick-ref.md
 standards/section-508/section-508-overview.md
-legal-and-compliance/[jurisdiction]-compliance.md
+standards/section-508/section-508-technical-standards.md
+legal-and-compliance/us-ada-overview.md
+legal-and-compliance/eu-eaa-overview.md
+legal-and-compliance/uk-accessibility-regulations.md
+legal-and-compliance/canada-accessibility.md
+legal-and-compliance/australia-accessibility.md
 ```
 
 ### Pattern 6: Full Web Accessibility Context (maximum coverage)
@@ -115,6 +160,23 @@ domains/web/forms-accessibility.md
 domains/web/keyboard-navigation-patterns.md
 domains/web/focus-management.md
 domains/web/color-and-contrast.md
+```
+
+### Pattern 7: Voice UI and Speech Commands
+
+```
+standards/wcag/wcag-2.2-quick-ref.md
+standards/other-standards/iso-9241-171.md
+standards/en-301-549/en-301-549-requirements.md
+domains/voice/voice-ui-accessibility.md
+```
+
+### Pattern 8: Kiosk and Embedded / Closed Functionality
+
+```
+standards/other-standards/iso-9241-171.md
+standards/en-301-549/en-301-549-requirements.md
+domains/physical-ict/kiosk-and-embedded-playbook.md
 ```
 
 ---
@@ -139,7 +201,7 @@ Preserve these fields as chunk metadata for all ingested files:
 | `standard` | Frontmatter `standard` field | Filter by standard |
 | `sc_number` | Extracted from `## SC X.X.X` headings | Filter by SC |
 | `domain` | Frontmatter `domain` field | Filter by domain |
-| `platform` | Extracted from `platforms/[platform]/` path | Filter by platform |
+| `platform` | Extracted from the platform directory segment under `/domains/social-media/platforms/` | Filter by platform |
 | `status` | Frontmatter `status` field | Filter normative vs. curated |
 | `level` | Extracted from `Level A/AA/AAA` text | Filter by conformance level |
 
@@ -177,10 +239,10 @@ When providing guidance:
 
 ### Pre-built Templates
 
-See `/ai-prompts/` for ready-to-use prompt templates covering:
-- `ai-prompts/web-content/` — HTML generation, ARIA patterns, component auditing
-- `ai-prompts/documents/` — Word, PDF, PowerPoint creation
-- `ai-prompts/social-media/` — Platform-specific accessible content creation
+See `/ai-prompts/` for ready-to-use prompt templates:
+- `ai-prompts/web-content/audit-html-snippet.md` — HTML auditing and remediation
+- `ai-prompts/documents/accessible-document.md` — accessible document creation
+- `ai-prompts/social-media/accessible-social-post.md` — accessible social post creation
 
 ---
 
@@ -200,13 +262,15 @@ After loading context, test with:
 
 ```
 Audit this HTML snippet and list all WCAG 2.2 Level AA violations with specific SC numbers:
-<button onclick="submitForm()">Click here</button>
+<a href="/pricing" aria-label="View pricing plans">Click here</a>
 ```
 
 Expected output should cite:
-- SC 2.4.6 (Headings and Labels) — if applicable
-- SC 4.1.2 (Name, Role, Value) — if the button lacks accessible name
-- SC 2.5.3 (Label in Name) — if visible text differs from accessible name
+- SC 2.4.4 (Link Purpose (In Context)) — visible text is non-descriptive
+- SC 2.5.3 (Label in Name) — accessible name does not include the visible label text
+
+Expected output should **not** cite:
+- SC 4.1.2 (Name, Role, Value) — the link already has a programmatic name and role
 
 ---
 

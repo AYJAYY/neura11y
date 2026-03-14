@@ -2,61 +2,59 @@
 title: "Coverage Gaps"
 type: "meta"
 status: "curated"
-last_updated: "2026-03-13"
-ai_context: "Known gaps in repository coverage. Use to identify missing content before asserting completeness. Update after each content iteration."
+last_updated: "2026-03-14"
+ai_context: "Known open gaps in repository coverage. Use to identify missing content before asserting completeness. Update after each content iteration."
 ---
 
 # Coverage Gaps
 
-Tracks known gaps in repository coverage, prioritized by impact. Updated after each content iteration and after AI validation runs.
+Tracks **open gaps** in repository coverage, prioritized by impact. Resolved items from this pass are listed separately under "Closed in This Pass."
 
 ---
 
-## Priority 1 — Critical Gaps (Blocking for Core Use Cases)
+## Priority 1 — Critical Gaps (Open)
 
-These gaps mean AI outputs in the affected areas may be incomplete or hallucinated.
-
-| Gap | Domain | Impact | Action |
-|----|---------|--------|--------|
-| WCAG techniques not yet fetched | Web | AI cannot cite specific technique IDs (e.g., H37, ARIA10) | Run `fetch-wcag.py` |
-| WCAG understanding docs not yet fetched | Web | AI lacks normative intent for borderline SCs | Run `fetch-wcag.py` |
-| Section 508 technical standards detail missing | Web/Docs | AI cannot confirm specific 508 mapping beyond WCAG 2.0 | Run `fetch-us-gov.py` |
-| carousel.md component pattern not yet created | Web | AI lacks accessible carousel/slider pattern | ✅ Created |
-| combobox.md component pattern not yet created | Web | AI lacks accessible combobox/autocomplete pattern | ✅ Created |
-| tooltip.md component pattern not yet created | Web | AI lacks SC 1.4.13 content-on-hover pattern | ✅ Created |
-| manual-testing-checklist.md not yet created | Web | AI lacks structured manual test procedure | ✅ Created |
+No open critical gaps at this time.
 
 ---
 
-## Priority 2 — Important Gaps (Reduced Quality)
+## Priority 2 — Important Gaps (Open)
 
-| Gap | Domain | Impact | Action |
-|----|---------|--------|--------|
-| Screen reader HTML/ARIA support matrices missing | Web | AI cannot advise on SR-specific bugs or workarounds | ✅ Created (screen-reader-html-support.md + screen-reader-aria-support.md) |
-| JAWS guide not yet created | Web | Incomplete SR testing coverage | ✅ Created |
-| TalkBack guide not yet created | Web | Incomplete mobile SR testing coverage | ✅ Created |
-| WCAG understanding docs not yet fetched | Web | AI lacks normative intent for borderline SCs | Run `fetch-wcag.py` |
-| EN 301 549 non-web chapters missing | Non-web ICT | AI cannot address hardware/software accessibility outside web | Run `fetch-en-301-549.py` |
-| EU/UK/Canada/Australia legal files missing | Legal | AI cannot provide UK/Canada/Australia legal guidance | ✅ Created (eu-eaa, uk, canada, australia) |
-| EPUB metadata schema not yet created | EPUB | Incomplete EPUB accessibility coverage | ✅ Created |
-| apca-contrast.md and color-blindness.md missing | Color/Visual | AI lacks APCA model detail and color blindness specifics | ✅ Created |
+No open important gaps at this time.
 
 ---
 
-## Priority 3 — Nice-to-Have (Quality Improvements)
+## Priority 3 — Nice-to-Have Backlog
 
 | Gap | Domain | Impact | Action |
 |----|---------|--------|--------|
-| Mobile accessibility (iOS/Android) patterns | Mobile | No mobile-specific web accessibility guidance | Manual curation |
-| Touch target guidance (beyond SC 2.5.8) | Mobile | Incomplete touch interaction guidance | Manual curation |
-| PWA accessibility patterns | Web | No progressive web app specific guidance | Manual curation |
-| Video game accessibility | Gaming | Not covered | Out of scope for v1; add to backlog |
-| Kiosk/embedded systems | Physical ICT | Not covered | Out of scope for v1 |
-| Voice UI accessibility (Alexa, Siri) | Voice | Not covered | Backlog |
-| PDF form field accessibility | Documents | Covered at high level; needs examples | Manual curation |
-| Excel data visualization accessibility | Documents | Charts and graphs in Excel | Manual curation |
-| Sign language considerations | Social Media | BSL/ASL video accessibility | Backlog |
-| Subtitle vs. caption distinction by region | Social Media | Regional terminology varies | Manual curation |
+| Video game accessibility | Gaming | Not covered | Out of scope for v1 |
+
+---
+
+## Closed in This Pass
+
+| Item | Result |
+|------|--------|
+| `scripts/fetch-standards.py` WCAG group | Now includes raw techniques and understanding index sources so the fetch path matches repository expectations |
+| `standards/wcag/wcag-techniques/` | Created curated sufficient, advisory, and failure technique files |
+| `standards/wcag/wcag-understanding/` | Created principle-level understanding guides for Perceivable, Operable, Understandable, and Robust |
+| `standards/other-standards/iso-9241-171.md` | Created software accessibility overview for ISO 9241-171 |
+| `domains/web/mobile-accessibility-patterns.md` | Created mobile web accessibility guidance |
+| `domains/web/pwa-accessibility.md` | Created PWA accessibility guidance |
+| Document split files under `domains/documents/` | Added workflow-specific and checklist files for Word, PowerPoint, PDF, Excel, and readability |
+| Social/media split files under `domains/social-media/` | Added image-type alt text, WebVTT, and emoji guidance files |
+| `standards/section-508/section-508-technical-standards.md` | Created from locally available Access Board source material |
+| `standards/section-508/section-508-wcag-mapping.md` | Created to clarify where Section 508 uses WCAG and where it adds requirements |
+| `standards/other-standards/uaag-2.0-overview.md` | Created from locally available W3C source material |
+| `AI-USAGE-GUIDE.md`, `README.md`, and `INDEX.md` stale references | Reconciled to the current canonical file set |
+| Validation examples using the wrong expected WCAG criteria | Corrected to avoid false-positive citation guidance |
+| `domains/documents/pdf-creation/pdf-form-accessibility-examples.md` | Added example-heavy PDF form field guidance |
+| `domains/documents/excel-accessibility/excel-data-visualization-guide.md` | Added chart and dashboard accessibility examples for Excel |
+| `domains/social-media/captions-and-transcripts/sign-language-video-guide.md` | Added sign-language-first and interpreted social video guidance |
+| `domains/social-media/captions-and-transcripts/subtitles-vs-captions-by-region.md` | Added regional terminology note for captions vs subtitles |
+| `domains/voice/voice-ui-accessibility.md` | Added voice UI accessibility guidance |
+| `domains/physical-ict/kiosk-and-embedded-playbook.md` | Added kiosk and embedded systems implementation playbook |
 
 ---
 
@@ -64,36 +62,40 @@ These gaps mean AI outputs in the affected areas may be incomplete or hallucinat
 
 | Phase | Description | Status | Completion |
 |-------|-------------|--------|------------|
-| 1 | Root files + meta/ | **Complete** | 2026-03-13 |
-| 2 | Standards (/standards/) | **~85% complete** — WCAG 2.1/2.2, ARIA, 508, PDF/UA, EPUB, EN 301 549, ATAG created; techniques/understanding docs need fetching | 2026-03-13 |
-| 3 | Web domains (/domains/web/) | **~80% complete** — checklist, semantics, focus, keyboard, forms, images, color, SPA, modal, tabs, accordion, nav, data-table, testing created; carousel, combobox, tooltip still needed | 2026-03-13 |
-| 4 | Document domains (/domains/documents/) | **~70% complete** — Word, PowerPoint, PDF, Excel, plain language guides created; remediation-specific files and InDesign workflows not yet created | 2026-03-13 |
-| 5 | Social media (/domains/social-media/) | **Complete** — all 7 platforms (Twitter/X, Instagram, LinkedIn, YouTube, Mastodon, Facebook, TikTok) + overview + alt text + captions + hashtag/inclusive writing created | 2026-03-13 |
-| 6 | Cognitive, color, media, screen readers | **~85% complete** — COGA overview + design guide, contrast ratios, typography, color-blindness, APCA, screen reader overview + JAWS/NVDA/VoiceOver/TalkBack guides + HTML/ARIA support matrices, alt text decision tree, video captions guide, audio description created | 2026-03-13 |
-| 7 | AI prompts + legal compliance | **~90% complete** — web audit, social media, document templates created; US ADA, EU EAA, UK, Canada, Australia legal files created | 2026-03-13 |
-| 8 | Validation and gap filling | Not started | Requires Phases 2–7 completion |
+| 1 | Root files + `meta/` | **Complete** | 2026-03-13 |
+| 2 | Standards (`/standards/`) | **Complete for current planned scope** — WCAG core, techniques, understanding, ARIA, Section 508, PDF/UA, EPUB, EN 301 549, ATAG, UAAG, and ISO 9241-171 overview are now present | 2026-03-14 |
+| 3 | Web domains (`/domains/web/`) | **Complete for v1** — core web guides, component patterns, testing, screen reader support files, mobile patterns, and PWA guidance created | 2026-03-14 |
+| 4 | Document domains (`/domains/documents/`) | **Complete for current planned scope** — broad guides plus split workflow/checklist files for Word, PowerPoint, PDF, Excel, and readability created | 2026-03-14 |
+| 5 | Social media (`/domains/social-media/`) | **Complete for current planned scope** — platform guides, alt text, captions, inclusive writing, image-type alt text, WebVTT, and emoji guidance created | 2026-03-14 |
+| 6 | Cognitive, color, media, screen readers | **~90% complete** — core guidance and support matrices created; additional split files remain optional | 2026-03-13 |
+| 7 | AI prompts + legal compliance | **~90% complete** — key prompt templates and major legal files created | 2026-03-13 |
+| 8 | Validation and gap filling | **In progress** — root docs reconciled and validation prompts corrected; end-to-end validation run still pending | 2026-03-14 |
+| 9 | Voice + physical ICT (`/domains/voice/`, `/domains/physical-ict/`) | **Complete for current planned scope** — voice UI guide and kiosk/embedded systems playbook created | 2026-03-14 |
 
 ---
 
 ## AI Validation Results
 
-*Not yet run. After Phase 2 completion, run these validation tests:*
+*End-to-end validation has not been run yet. Use these corrected tests for the next validation pass.*
 
 ### Test 1: WCAG Audit
+
 ```
-Load: standards/wcag/wcag-2.2-quick-ref.md + domains/web/web-accessibility-checklist.md
-Prompt: Audit this HTML: <button onclick="submitForm()">Click here</button>
-Expected: Cites SC 2.4.4 (Link Purpose), SC 4.1.2, notes that "click here" is non-descriptive
+Load: standards/wcag/wcag-2.2-quick-ref.md + domains/web/html-semantics-guide.md
+Prompt: Audit this HTML: <a href="/pricing" aria-label="View pricing plans">Click here</a>
+Expected: Cites SC 2.4.4 and SC 2.5.3; does not falsely cite SC 4.1.2
 ```
 
 ### Test 2: Alt Text Generation
+
 ```
 Load: domains/social-media/alt-text/alt-text-principles.md + domains/social-media/platforms/instagram/instagram-guide.md
 Prompt: Write an accessible Instagram post for an image of a product launch event
-Expected: Alt text ≤ 125 chars, describes image meaningfully, notes platform character limit
+Expected: Produces platform-appropriate alt text, keeps caption copy separate from alt text, and notes that exact platform limits should be verified if they matter
 ```
 
 ### Test 3: Component Generation
+
 ```
 Load: standards/aria/wai-aria-1.2-roles.md + domains/web/component-patterns/modal-dialog.md
 Prompt: Generate accessible HTML for a modal dialog
@@ -104,9 +106,9 @@ Expected: Uses role="dialog", aria-modal="true", aria-labelledby, focus trap, Es
 
 ## Known Issues
 
-| Issue | File | Severity | Status |
-|-------|------|----------|--------|
-| WCAG 2.2 SC 2.4.13 (Focus Appearance Enhanced) is AAA but often confused with 2.4.11 (AA) | `standards/wcag/wcag-2.2-quick-ref.md` | Medium | Note added in file |
-| PDF/UA full spec requires ISO purchase; only free summary available | `standards/pdf-ua/pdf-ua-overview.md` | Low | Documented |
-| EN 301 549 Chapter 9 largely defers to WCAG 2.1; avoid duplication | `standards/en-301-549/` | Low | Documented |
-| Platform social media guides must be verified monthly; UI changes frequently | All platform files | High | Flagged in update-schedule.md |
+| Issue | File/Area | Severity | Status |
+|-------|-----------|----------|--------|
+| WCAG 2.2 SC `2.4.13` (AAA) is often confused with SC `2.4.11` (AA) | `standards/wcag/wcag-2.2-quick-ref.md` | Medium | Documented |
+| PDF/UA full specification still depends on ISO/PDF Association distribution and cannot be fully mirrored as free normative text here | `standards/pdf-ua/` | Low | Documented |
+| Platform social media guides need frequent verification because UI flows change | `domains/social-media/platforms/` | High | Flagged in `meta/update-schedule.md` |
+| Full validation suite has not been run end-to-end after the latest file expansion | Repository-wide | Medium | Pending |

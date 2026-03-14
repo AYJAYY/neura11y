@@ -2,13 +2,13 @@
 title: "AI-Ready Accessibility Knowledge Repository"
 type: "root"
 status: "active"
-last_updated: "2026-03-13"
+last_updated: "2026-03-14"
 ai_context: "Entry point for this repository. Read AI-USAGE-GUIDE.md before loading other files into AI context."
 ---
 
 # AI-Ready Accessibility Knowledge Repository
 
-A comprehensive, machine-readable knowledge base covering Web, Document, and Social Media Accessibility. Designed to be loaded into AI systems (direct context or RAG) to produce accessible content grounded in normative standards.
+A comprehensive, machine-readable knowledge base covering web, documents, social media, voice UI, and physical ICT accessibility. Designed to be loaded into AI systems (direct context or RAG) to produce accessible content grounded in normative standards.
 
 ## Purpose
 
@@ -27,6 +27,8 @@ This repository provides structured accessibility knowledge that enables AI syst
 **Quick navigation:** Use `INDEX.md` to find files by standard, domain, or tag without loading the full repository.
 
 **For AI pipelines:** Chunk at `##` heading level. Preserve `source_file`, `heading_path`, `standard`, `sc_number`, `domain`, and `platform` as chunk metadata.
+
+**Canonical files:** Prefer the curated files referenced by `INDEX.md` and `AI-USAGE-GUIDE.md`. Treat `*-fetched.md` files as raw source captures and provenance, not the default context payload.
 
 ## Repository Structure
 
@@ -55,7 +57,9 @@ claude-a11y-repo/
 ├── domains/                  — Applied guidance by content domain (Layer 2)
 │   ├── web/                  — HTML, ARIA, components, testing
 │   ├── documents/            — Word, PowerPoint, PDF, Excel, plain language
-│   └── social-media/         — Alt text, captions, 7 platform guides
+│   ├── social-media/         — Alt text, captions, 7 platform guides
+│   ├── voice/                — Voice UI and speech-command guidance
+│   └── physical-ict/         — Kiosk and embedded system playbooks
 │
 ├── cognitive/                — COGA, cognitive accessibility patterns
 ├── color-and-visual/         — Contrast ratios, APCA, typography
@@ -87,12 +91,20 @@ claude-a11y-repo/
 - **EPUB Accessibility 1.1** (W3C Recommendation, May 2023)
 - **EN 301 549** (European standard, v3.2.1)
 - **ATAG 2.0**, **UAAG 2.0**
+- **ISO 9241-171** (software accessibility overview)
 
 ## Domains Covered
 
-- **Web** — HTML semantics, ARIA, focus management, keyboard navigation, forms, components, SPAs, testing
-- **Documents** — Microsoft Word, PowerPoint, PDF, Excel; federal plain language guidelines
-- **Social Media** — Twitter/X, LinkedIn, Instagram, Facebook, TikTok, YouTube, Mastodon
+- **Web** — HTML semantics, ARIA, focus management, keyboard navigation, forms, components, SPAs, mobile patterns, PWAs, testing
+- **Documents** — Microsoft Word, PowerPoint, PDF, Excel; federal plain language guidelines; PDF form and Excel data-viz examples
+- **Social Media** — Twitter/X, LinkedIn, Instagram, Facebook, TikTok, YouTube, Mastodon; sign-language and terminology notes
+- **Voice** — Voice command and spoken UI accessibility patterns
+- **Physical ICT** — Kiosk and embedded system accessibility playbook
+
+## Current Coverage Notes
+
+- **Critical and important coverage gaps:** The previous critical and important gaps are now covered by canonical files in `standards/` and `domains/`.
+- **Remaining backlog:** The content backlog is now reduced to video game accessibility, which remains out of scope for v1. Validation work is still pending in `meta/coverage-gaps.md`.
 
 ## Maintenance
 

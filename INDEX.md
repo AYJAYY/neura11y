@@ -2,137 +2,148 @@
 title: "Repository Index"
 type: "index"
 status: "curated"
-last_updated: "2026-03-13"
-ai_context: "Machine-readable cross-reference map. Use this to navigate the repository without loading all files. Filter by standard, domain, tag, or conformance level."
+last_updated: "2026-03-14"
+ai_context: "Machine-readable cross-reference map. Lists current canonical files by standard, domain, and topic. Prefer these files over raw *-fetched.md source captures."
 ---
 
 # Repository Index
 
-Machine-readable cross-reference map. Organized by standard, domain, and tag.
+Machine-readable cross-reference map. This index lists the current canonical files that exist in the repository.
 
 ---
 
 ## By Standard
 
-### WCAG 2.1
+### WCAG
+
 | File | Description | Status |
 |------|-------------|--------|
 | `standards/wcag/wcag-2.1-full.md` | Complete WCAG 2.1 specification | normative |
-| `standards/wcag/wcag-2.1-quick-ref.md` | All 78 SCs with levels, intent, and techniques | normative |
-| `standards/wcag/wcag-understanding/perceivable.md` | Understanding docs — Principle 1 | normative |
-| `standards/wcag/wcag-understanding/operable.md` | Understanding docs — Principle 2 | normative |
-| `standards/wcag/wcag-understanding/understandable.md` | Understanding docs — Principle 3 | normative |
-| `standards/wcag/wcag-understanding/robust.md` | Understanding docs — Principle 4 | normative |
-| `standards/wcag/wcag-techniques/sufficient-techniques.md` | WCAG sufficient techniques (HTML, CSS, ARIA, Script) | normative |
-| `standards/wcag/wcag-techniques/advisory-techniques.md` | WCAG advisory techniques | normative |
-| `standards/wcag/wcag-techniques/failure-techniques.md` | Documented WCAG failures | normative |
-
-### WCAG 2.2
-| File | Description | Status |
-|------|-------------|--------|
+| `standards/wcag/wcag-2.1-quick-ref.md` | WCAG 2.1 success criteria quick reference | normative |
 | `standards/wcag/wcag-2.2-full.md` | Complete WCAG 2.2 specification | normative |
-| `standards/wcag/wcag-2.2-quick-ref.md` | All 87 SCs with levels, intent, and techniques | normative |
-| `standards/wcag/wcag-2.2-new-criteria.md` | The 9 new SCs added in WCAG 2.2 | normative |
+| `standards/wcag/wcag-2.2-quick-ref.md` | WCAG 2.2 success criteria quick reference | normative |
+| `standards/wcag/wcag-2.2-new-criteria.md` | The 9 new success criteria added in WCAG 2.2 | normative |
 | `standards/wcag/wcag-conformance-levels.md` | Level A, AA, AAA definitions and requirements | normative |
+| `standards/wcag/wcag-3.0-overview.md` | WCAG 3.0 working draft overview | normative |
+| `standards/wcag/wcag-techniques/sufficient-techniques.md` | High-value sufficient techniques with IDs | curated |
+| `standards/wcag/wcag-techniques/advisory-techniques.md` | Advisory and beyond-minimum technique guidance | curated |
+| `standards/wcag/wcag-techniques/failure-techniques.md` | Common documented WCAG failures | curated |
+| `standards/wcag/wcag-understanding/perceivable.md` | Principle 1 understanding guide | curated |
+| `standards/wcag/wcag-understanding/operable.md` | Principle 2 understanding guide | curated |
+| `standards/wcag/wcag-understanding/understandable.md` | Principle 3 understanding guide | curated |
+| `standards/wcag/wcag-understanding/robust.md` | Principle 4 understanding guide | curated |
 
-### WCAG 3.0
+### WAI-ARIA
+
 | File | Description | Status |
 |------|-------------|--------|
-| `standards/wcag/wcag-3.0-overview.md` | WCAG 3.0 working draft overview and key changes | normative |
-
-### WAI-ARIA 1.2
-| File | Description | Status |
-|------|-------------|--------|
-| `standards/aria/wai-aria-1.2-roles.md` | All ARIA roles with required/supported states and properties | normative |
-| `standards/aria/wai-aria-1.2-states-properties.md` | All ARIA states and properties with allowed values | normative |
+| `standards/aria/wai-aria-1.2-roles.md` | ARIA roles with required and supported states/properties | normative |
+| `standards/aria/wai-aria-1.2-states-properties.md` | ARIA states and properties with allowed values | normative |
 | `standards/aria/aria-authoring-practices.md` | APG patterns for common UI components | prescriptive |
-| `standards/aria/aria-in-html.md` | ARIA in HTML specification — native semantics and overrides | normative |
+| `standards/aria/aria-in-html.md` | ARIA in HTML rules for native semantics and overrides | normative |
 | `standards/aria/aria-common-mistakes.md` | Curated list of common ARIA implementation errors | curated |
 
 ### Section 508
+
 | File | Description | Status |
 |------|-------------|--------|
-| `standards/section-508/section-508-overview.md` | Section 508 overview, applicability, and legal context | normative |
-| `standards/section-508/section-508-technical-standards.md` | Technical standards from Access Board ICT refresh | normative |
-| `standards/section-508/section-508-wcag-mapping.md` | Mapping between Section 508 chapters and WCAG 2.0 SCs | curated |
+| `standards/section-508/section-508-overview.md` | Legal and applicability overview for Section 508 | normative |
+| `standards/section-508/section-508-technical-standards.md` | Chapter-level structure of the Revised 508 Standards | normative |
+| `standards/section-508/section-508-wcag-mapping.md` | Crosswalk between Section 508 and WCAG use cases | curated |
 
 ### PDF/UA
+
 | File | Description | Status |
 |------|-------------|--------|
-| `standards/pdf-ua/pdf-ua-overview.md` | PDF/UA (ISO 14289-1) overview and key requirements | normative |
-| `standards/pdf-ua/matterhorn-protocol.md` | Matterhorn Protocol 1.1 — 136 PDF/UA checkpoints | normative |
-| `standards/pdf-ua/pdf-ua-tagging-guide.md` | PDF tag structure and reading order requirements | prescriptive |
+| `standards/pdf-ua/pdf-ua-overview.md` | PDF/UA overview and conformance context | normative |
+| `standards/pdf-ua/matterhorn-protocol.md` | Matterhorn Protocol checkpoints for PDF/UA testing | normative |
 
 ### EPUB Accessibility
+
 | File | Description | Status |
 |------|-------------|--------|
 | `standards/epub/epub-accessibility-1.1.md` | EPUB Accessibility 1.1 specification | normative |
-| `standards/epub/epub-metadata-schema.md` | a11y discovery metadata vocabulary | normative |
+| `standards/epub/epub-metadata-schema.md` | Accessibility discovery metadata vocabulary | normative |
 
 ### EN 301 549
+
 | File | Description | Status |
 |------|-------------|--------|
 | `standards/en-301-549/en-301-549-overview.md` | EN 301 549 overview and relationship to WCAG 2.1 | normative |
 | `standards/en-301-549/en-301-549-requirements.md` | Non-web ICT requirements from EN 301 549 | normative |
 
 ### Other Standards
+
 | File | Description | Status |
 |------|-------------|--------|
-| `standards/other-standards/atag-2.0-overview.md` | ATAG 2.0 overview — requirements for authoring tools | normative |
-| `standards/other-standards/uaag-2.0-overview.md` | UAAG 2.0 overview — requirements for user agents | normative |
-| `standards/other-standards/iso-9241-171.md` | ISO 9241-171 — ergonomics of software accessibility | normative |
+| `standards/other-standards/atag-2.0-overview.md` | ATAG 2.0 overview for authoring tools | prescriptive |
+| `standards/other-standards/uaag-2.0-overview.md` | UAAG 2.0 overview for browsers and user agents | prescriptive |
+| `standards/other-standards/iso-9241-171.md` | ISO 9241-171 software accessibility overview | curated |
 
 ---
 
 ## By Domain
 
 ### Web
+
 | File | Description | Tags |
 |------|-------------|------|
-| `domains/web/web-accessibility-checklist.md` | Complete WCAG 2.2 AA checklist for web content | wcag, checklist, audit |
-| `domains/web/html-semantics-guide.md` | Semantic HTML elements and their accessibility roles | html, semantics, aria |
-| `domains/web/focus-management.md` | Focus management patterns for dynamic content | focus, keyboard, spa |
+| `domains/web/web-accessibility-checklist.md` | WCAG 2.2 AA checklist for web content | wcag, checklist, audit |
+| `domains/web/html-semantics-guide.md` | Semantic HTML guidance and native role mapping | html, semantics, aria |
+| `domains/web/focus-management.md` | Focus movement and restoration patterns | focus, keyboard, spa |
 | `domains/web/keyboard-navigation-patterns.md` | Keyboard interaction patterns by component type | keyboard, patterns |
-| `domains/web/forms-accessibility.md` | Forms: labels, errors, grouping, autocomplete | forms, labels, errors |
-| `domains/web/images-and-media.md` | Images, SVG, video, audio accessibility | images, alt-text, media |
-| `domains/web/color-and-contrast.md` | Contrast requirements, APCA, color independence | contrast, color |
-| `domains/web/spa-accessibility.md` | Single-page app patterns: routing, live regions, focus | spa, react, angular |
-| `domains/web/component-patterns/modal-dialog.md` | Accessible modal dialog pattern | modal, aria, focus-trap |
-| `domains/web/component-patterns/navigation-menu.md` | Accessible navigation menu and disclosure pattern | menu, nav, disclosure |
-| `domains/web/component-patterns/accordion.md` | Accessible accordion pattern | accordion, aria-expanded |
-| `domains/web/component-patterns/carousel.md` | Accessible carousel/slider pattern | carousel, live-region |
-| `domains/web/component-patterns/tabs.md` | Accessible tab panel pattern | tabs, tablist, tabpanel |
+| `domains/web/forms-accessibility.md` | Labels, errors, grouping, autocomplete | forms, labels, errors |
+| `domains/web/images-and-media.md` | Images, SVG, video, and audio accessibility | images, alt-text, media |
+| `domains/web/color-and-contrast.md` | WCAG contrast and color-use guidance | contrast, color |
+| `domains/web/spa-accessibility.md` | SPA routing, announcements, and focus handling | spa, react, live-region |
+| `domains/web/mobile-accessibility-patterns.md` | Mobile web accessibility guidance | mobile, touch, gestures |
+| `domains/web/pwa-accessibility.md` | Progressive web app accessibility guidance | pwa, offline, install |
+| `domains/web/component-patterns/accordion.md` | Accessible accordion pattern | accordion, disclosure |
+| `domains/web/component-patterns/carousel.md` | Accessible carousel pattern | carousel, rotation |
 | `domains/web/component-patterns/combobox.md` | Accessible combobox/autocomplete pattern | combobox, listbox |
-| `domains/web/component-patterns/data-table.md` | Accessible data table pattern | table, headers, scope |
-| `domains/web/component-patterns/tooltip.md` | Accessible tooltip pattern | tooltip, aria-describedby |
-| `domains/web/testing/automated-testing.md` | Automated accessibility testing tools and limitations | testing, axe, lighthouse |
-| `domains/web/testing/manual-testing-checklist.md` | Manual testing procedures and screen reader testing | testing, manual, sr |
-| `domains/web/testing/screen-reader-testing-matrix.md` | Browser/SR combinations for testing | testing, jaws, nvda, vo |
+| `domains/web/component-patterns/data-table.md` | Accessible data table pattern | table, headers |
+| `domains/web/component-patterns/modal-dialog.md` | Accessible modal dialog pattern | modal, focus-trap |
+| `domains/web/component-patterns/navigation-menu.md` | Accessible navigation/disclosure menu pattern | menu, nav |
+| `domains/web/component-patterns/tabs.md` | Accessible tabs pattern | tabs, tablist |
+| `domains/web/component-patterns/tooltip.md` | Accessible tooltip/content-on-hover pattern | tooltip, aria-describedby |
+| `domains/web/testing/automated-testing.md` | Automated accessibility testing tools and limits | testing, axe, lighthouse |
+| `domains/web/testing/manual-testing-checklist.md` | Manual web accessibility testing procedure | testing, manual |
+| `domains/web/testing/screen-reader-testing-matrix.md` | Browser and screen reader combinations to test | testing, sr |
 
 ### Documents
+
 | File | Description | Tags |
 |------|-------------|------|
-| `domains/documents/word-accessibility/word-checklist.md` | Microsoft Word accessibility checklist | word, documents |
-| `domains/documents/word-accessibility/word-styles-guide.md` | Using Word styles for accessible structure | word, styles, headings |
-| `domains/documents/powerpoint-accessibility/ppt-checklist.md` | PowerPoint accessibility checklist | powerpoint, slides |
-| `domains/documents/powerpoint-accessibility/slide-layout-guide.md` | Accessible slide layout and reading order | powerpoint, layout |
-| `domains/documents/pdf-creation/pdf-from-word.md` | Creating accessible PDF from Word | pdf, word, tags |
-| `domains/documents/pdf-creation/pdf-from-indesign.md` | Creating accessible PDF from InDesign | pdf, indesign, tags |
-| `domains/documents/pdf-creation/pdf-remediation.md` | Remediating existing PDFs for accessibility | pdf, remediation, acrobat |
-| `domains/documents/excel-accessibility/excel-checklist.md` | Excel accessibility checklist | excel, spreadsheets |
-| `domains/documents/plain-language/plain-language-guide.md` | Federal plain language guidelines | plain-language, writing |
-| `domains/documents/plain-language/readability-guide.md` | Readability levels, Flesch-Kincaid, and cognitive load | readability, cognitive |
+| `domains/documents/word-accessibility/word-guide.md` | Microsoft Word accessibility guide | word, headings, alt-text |
+| `domains/documents/word-accessibility/word-checklist.md` | Short Word accessibility checklist | word, checklist |
+| `domains/documents/word-accessibility/word-styles-guide.md` | Word styles and structure guidance | word, styles |
+| `domains/documents/powerpoint-accessibility/powerpoint-guide.md` | Microsoft PowerPoint accessibility guide | powerpoint, reading-order |
+| `domains/documents/powerpoint-accessibility/ppt-checklist.md` | Short PowerPoint accessibility checklist | powerpoint, checklist |
+| `domains/documents/powerpoint-accessibility/slide-layout-guide.md` | Slide layout and reading-order guidance | powerpoint, layout |
+| `domains/documents/pdf-creation/pdf-accessibility-guide.md` | PDF creation and remediation guide | pdf, tags, remediation |
+| `domains/documents/pdf-creation/pdf-form-accessibility-examples.md` | Example-heavy PDF form accessibility guide | pdf, forms, examples |
+| `domains/documents/pdf-creation/pdf-from-word.md` | Accessible PDF workflow from Word | pdf, word, export |
+| `domains/documents/pdf-creation/pdf-from-indesign.md` | Accessible PDF workflow from InDesign | pdf, indesign, export |
+| `domains/documents/pdf-creation/pdf-remediation.md` | Focused PDF remediation guide | pdf, remediation |
+| `domains/documents/excel-accessibility/excel-guide.md` | Microsoft Excel accessibility guide | excel, tables, charts |
+| `domains/documents/excel-accessibility/excel-checklist.md` | Short Excel accessibility checklist | excel, checklist |
+| `domains/documents/excel-accessibility/excel-data-visualization-guide.md` | Focused chart and dashboard accessibility guide | excel, charts, dashboards |
+| `domains/documents/plain-language/plain-language-guide.md` | Federal plain language guidance | plain-language, writing |
+| `domains/documents/plain-language/readability-guide.md` | Readability metrics and targets | readability, cognitive |
 
 ### Social Media
+
 | File | Description | Tags |
 |------|-------------|------|
 | `domains/social-media/social-media-overview.md` | Overview of social media accessibility requirements | social-media |
-| `domains/social-media/alt-text/alt-text-principles.md` | Alt text writing principles for all image types | alt-text, images |
-| `domains/social-media/alt-text/alt-text-by-image-type.md` | Alt text approaches by image category | alt-text, images |
-| `domains/social-media/alt-text/alt-text-examples.md` | Before/after alt text examples with annotations | alt-text, examples |
-| `domains/social-media/captions-and-transcripts/caption-guide.md` | Caption writing standards and quality requirements | captions, webvtt |
-| `domains/social-media/captions-and-transcripts/audio-description-guide.md` | Audio description for social media video | audio-description |
-| `domains/social-media/captions-and-transcripts/webvtt-format.md` | WebVTT format reference | webvtt, captions |
+| `domains/social-media/alt-text/alt-text-principles.md` | Cross-platform alt text principles | alt-text, images |
+| `domains/social-media/alt-text/alt-text-by-image-type.md` | Alt text strategies by image category | alt-text, image-types |
+| `domains/social-media/alt-text/alt-text-examples.md` | Before/after alt text examples | alt-text, examples |
+| `domains/social-media/captions-and-transcripts/caption-guide.md` | Caption writing and file-format guidance | captions, video, webvtt |
+| `domains/social-media/captions-and-transcripts/audio-description-guide.md` | Audio description guidance for social video | audio-description |
+| `domains/social-media/captions-and-transcripts/webvtt-format.md` | Focused WebVTT reference | webvtt, captions |
+| `domains/social-media/captions-and-transcripts/sign-language-video-guide.md` | Sign language guidance for social video | sign-language, video |
+| `domains/social-media/captions-and-transcripts/subtitles-vs-captions-by-region.md` | Terminology note for captions vs subtitles | captions, subtitles, terminology |
 | `domains/social-media/platforms/twitter-x/twitter-guide.md` | Twitter/X accessibility guide | twitter, platform |
 | `domains/social-media/platforms/linkedin/linkedin-guide.md` | LinkedIn accessibility guide | linkedin, platform |
 | `domains/social-media/platforms/instagram/instagram-guide.md` | Instagram accessibility guide | instagram, platform |
@@ -140,147 +151,177 @@ Machine-readable cross-reference map. Organized by standard, domain, and tag.
 | `domains/social-media/platforms/tiktok/tiktok-guide.md` | TikTok accessibility guide | tiktok, platform |
 | `domains/social-media/platforms/youtube/youtube-guide.md` | YouTube accessibility guide | youtube, platform |
 | `domains/social-media/platforms/mastodon/mastodon-guide.md` | Mastodon accessibility guide | mastodon, platform |
-| `domains/social-media/writing-for-accessibility/emoji-guide.md` | Accessible emoji usage | emoji, writing |
-| `domains/social-media/writing-for-accessibility/hashtag-guide.md` | CamelCase hashtags and accessibility | hashtags, writing |
-| `domains/social-media/writing-for-accessibility/inclusive-language.md` | Inclusive language guidelines | inclusive, language |
+| `domains/social-media/writing-for-accessibility/emoji-guide.md` | Accessible emoji guidance | emoji, writing |
+| `domains/social-media/writing-for-accessibility/hashtag-guide.md` | CamelCase hashtag guidance | hashtags, writing |
+| `domains/social-media/writing-for-accessibility/inclusive-language.md` | Inclusive language guidance | inclusive, language |
+
+### Voice
+
+| File | Description | Tags |
+|------|-------------|------|
+| `domains/voice/voice-ui-accessibility.md` | Voice command and spoken UI accessibility guide | voice, speech, multimodal |
+
+### Physical ICT
+
+| File | Description | Tags |
+|------|-------------|------|
+| `domains/physical-ict/kiosk-and-embedded-playbook.md` | Kiosk and embedded systems accessibility playbook | kiosk, embedded, closed-functionality |
+
+### Supporting Coverage
+
+| Area | File | Description |
+|------|------|-------------|
+| Cognitive | `cognitive/coga-overview.md` | COGA overview and scope |
+| Cognitive | `cognitive/coga-design-guide.md` | Cognitive accessibility design guidance |
+| Color and Visual | `color-and-visual/contrast-ratios.md` | WCAG contrast ratio reference |
+| Color and Visual | `color-and-visual/apca-contrast.md` | APCA overview and usage notes |
+| Color and Visual | `color-and-visual/color-blindness.md` | Color blindness considerations |
+| Color and Visual | `color-and-visual/typography.md` | Accessible typography guidance |
+| Media | `media/images/alt-text-decision-tree.md` | Alt text decision tree |
+| Media | `media/video/video-captions-guide.md` | Captions, transcripts, audio description, WebVTT, SRT |
+| Screen Readers | `screen-readers/screen-reader-overview.md` | Screen reader ecosystem overview |
+| Screen Readers | `screen-readers/jaws-guide.md` | JAWS guide |
+| Screen Readers | `screen-readers/nvda-guide.md` | NVDA guide |
+| Screen Readers | `screen-readers/voiceover-guide.md` | VoiceOver guide |
+| Screen Readers | `screen-readers/talkback-guide.md` | TalkBack guide |
+| Screen Readers | `screen-readers/screen-reader-html-support.md` | HTML support matrix |
+| Screen Readers | `screen-readers/screen-reader-aria-support.md` | ARIA support matrix |
+| Legal | `legal-and-compliance/us-ada-overview.md` | US ADA overview |
+| Legal | `legal-and-compliance/eu-eaa-overview.md` | EU EAA overview |
+| Legal | `legal-and-compliance/uk-accessibility-regulations.md` | UK accessibility regulations |
+| Legal | `legal-and-compliance/canada-accessibility.md` | Canada accessibility overview |
+| Legal | `legal-and-compliance/australia-accessibility.md` | Australia accessibility overview |
+| Prompts | `ai-prompts/web-content/audit-html-snippet.md` | Web audit prompt template |
+| Prompts | `ai-prompts/documents/accessible-document.md` | Document creation prompt template |
+| Prompts | `ai-prompts/social-media/accessible-social-post.md` | Social post prompt template |
+| Reference | `GLOSSARY.md` | Canonical terminology |
+| Reference | `reference/accessibility-tools.md` | Tools and testing resources |
+| Reference | `reference/statistics.md` | Accessibility statistics and reference data |
 
 ---
 
-## By Success Criterion
-
-### Perceivable (Principle 1)
-
-| SC | Title | Level | Key Files |
-|----|-------|-------|-----------|
-| 1.1.1 | Non-text Content | A | `standards/wcag/wcag-2.2-quick-ref.md`, `domains/web/images-and-media.md`, `domains/social-media/alt-text/alt-text-principles.md` |
-| 1.2.1 | Audio-only and Video-only | A | `domains/media/audio/transcripts.md`, `domains/media/video/video-accessibility.md` |
-| 1.2.2 | Captions (Prerecorded) | A | `domains/social-media/captions-and-transcripts/caption-guide.md` |
-| 1.2.3 | Audio Description or Media Alternative | A | `domains/media/video/audio-description.md` |
-| 1.2.4 | Captions (Live) | AA | `domains/social-media/captions-and-transcripts/caption-guide.md` |
-| 1.2.5 | Audio Description (Prerecorded) | AA | `domains/media/video/audio-description.md` |
-| 1.3.1 | Info and Relationships | A | `domains/web/html-semantics-guide.md`, `standards/aria/wai-aria-1.2-roles.md` |
-| 1.3.2 | Meaningful Sequence | A | `domains/web/html-semantics-guide.md` |
-| 1.3.3 | Sensory Characteristics | A | `domains/web/web-accessibility-checklist.md` |
-| 1.3.4 | Orientation | AA | `domains/web/web-accessibility-checklist.md` |
-| 1.3.5 | Identify Input Purpose | AA | `domains/web/forms-accessibility.md` |
-| 1.4.1 | Use of Color | A | `domains/web/color-and-contrast.md` |
-| 1.4.2 | Audio Control | A | `domains/media/audio/audio-control.md` |
-| 1.4.3 | Contrast (Minimum) | AA | `domains/web/color-and-contrast.md`, `color-and-visual/contrast-ratios.md` |
-| 1.4.4 | Resize Text | AA | `domains/web/web-accessibility-checklist.md` |
-| 1.4.5 | Images of Text | AA | `domains/web/images-and-media.md` |
-| 1.4.10 | Reflow | AA | `domains/web/web-accessibility-checklist.md` |
-| 1.4.11 | Non-text Contrast | AA | `domains/web/color-and-contrast.md` |
-| 1.4.12 | Text Spacing | AA | `domains/web/web-accessibility-checklist.md` |
-| 1.4.13 | Content on Hover or Focus | AA | `domains/web/component-patterns/tooltip.md` |
-
-### Operable (Principle 2)
-
-| SC | Title | Level | Key Files |
-|----|-------|-------|-----------|
-| 2.1.1 | Keyboard | A | `domains/web/keyboard-navigation-patterns.md` |
-| 2.1.2 | No Keyboard Trap | A | `domains/web/focus-management.md` |
-| 2.1.4 | Character Key Shortcuts | A | `domains/web/keyboard-navigation-patterns.md` |
-| 2.2.1 | Timing Adjustable | A | `domains/web/web-accessibility-checklist.md` |
-| 2.2.2 | Pause, Stop, Hide | A | `domains/web/component-patterns/carousel.md` |
-| 2.4.1 | Bypass Blocks | A | `domains/web/html-semantics-guide.md` |
-| 2.4.2 | Page Titled | A | `domains/web/web-accessibility-checklist.md` |
-| 2.4.3 | Focus Order | A | `domains/web/focus-management.md` |
-| 2.4.4 | Link Purpose (In Context) | A | `domains/web/html-semantics-guide.md` |
-| 2.4.5 | Multiple Ways | AA | `domains/web/web-accessibility-checklist.md` |
-| 2.4.6 | Headings and Labels | AA | `domains/web/html-semantics-guide.md` |
-| 2.4.7 | Focus Visible | AA | `domains/web/focus-management.md` |
-| 2.4.11 | Focus Appearance | AA | `domains/web/focus-management.md` (WCAG 2.2) |
-| 2.4.12 | Focus Not Obscured (Minimum) | AA | `domains/web/focus-management.md` (WCAG 2.2) |
-| 2.5.1 | Pointer Gestures | A | `domains/web/web-accessibility-checklist.md` |
-| 2.5.2 | Pointer Cancellation | A | `domains/web/web-accessibility-checklist.md` |
-| 2.5.3 | Label in Name | A | `domains/web/forms-accessibility.md` |
-| 2.5.4 | Motion Actuation | A | `domains/web/web-accessibility-checklist.md` |
-| 2.5.7 | Dragging Movements | AA | `domains/web/keyboard-navigation-patterns.md` (WCAG 2.2) |
-| 2.5.8 | Target Size (Minimum) | AA | `domains/web/web-accessibility-checklist.md` (WCAG 2.2) |
-
-### Understandable (Principle 3)
-
-| SC | Title | Level | Key Files |
-|----|-------|-------|-----------|
-| 3.1.1 | Language of Page | A | `domains/web/web-accessibility-checklist.md` |
-| 3.1.2 | Language of Parts | AA | `domains/web/web-accessibility-checklist.md` |
-| 3.2.1 | On Focus | A | `domains/web/web-accessibility-checklist.md` |
-| 3.2.2 | On Input | A | `domains/web/forms-accessibility.md` |
-| 3.2.3 | Consistent Navigation | AA | `domains/web/web-accessibility-checklist.md` |
-| 3.2.4 | Consistent Identification | AA | `domains/web/web-accessibility-checklist.md` |
-| 3.2.6 | Consistent Help | A | `standards/wcag/wcag-2.2-new-criteria.md` (WCAG 2.2) |
-| 3.3.1 | Error Identification | A | `domains/web/forms-accessibility.md` |
-| 3.3.2 | Labels or Instructions | A | `domains/web/forms-accessibility.md` |
-| 3.3.3 | Error Suggestion | AA | `domains/web/forms-accessibility.md` |
-| 3.3.4 | Error Prevention | AA | `domains/web/forms-accessibility.md` |
-| 3.3.7 | Redundant Entry | A | `standards/wcag/wcag-2.2-new-criteria.md` (WCAG 2.2) |
-| 3.3.8 | Accessible Authentication (Minimum) | AA | `standards/wcag/wcag-2.2-new-criteria.md` (WCAG 2.2) |
-
-### Robust (Principle 4)
-
-| SC | Title | Level | Key Files |
-|----|-------|-------|-----------|
-| 4.1.1 | Parsing | A | `domains/web/web-accessibility-checklist.md` |
-| 4.1.2 | Name, Role, Value | A | `standards/aria/wai-aria-1.2-roles.md`, `domains/web/html-semantics-guide.md` |
-| 4.1.3 | Status Messages | AA | `domains/web/spa-accessibility.md` |
-
----
-
-## By Tag
+## By Topic
 
 ### alt-text
+
 - `domains/social-media/alt-text/alt-text-principles.md`
 - `domains/social-media/alt-text/alt-text-by-image-type.md`
 - `domains/social-media/alt-text/alt-text-examples.md`
 - `domains/web/images-and-media.md`
 - `media/images/alt-text-decision-tree.md`
 
-### captions
-- `domains/social-media/captions-and-transcripts/caption-guide.md`
-- `domains/social-media/captions-and-transcripts/webvtt-format.md`
-- `standards/wcag/wcag-2.2-quick-ref.md` (SC 1.2.2, 1.2.4)
+### captions-and-audio-description
 
-### contrast
+- `domains/social-media/captions-and-transcripts/caption-guide.md`
+- `domains/social-media/captions-and-transcripts/audio-description-guide.md`
+- `domains/social-media/captions-and-transcripts/webvtt-format.md`
+- `domains/social-media/captions-and-transcripts/sign-language-video-guide.md`
+- `domains/social-media/captions-and-transcripts/subtitles-vs-captions-by-region.md`
+- `media/video/video-captions-guide.md`
+- `standards/wcag/wcag-2.2-quick-ref.md` (SC 1.2.x)
+
+### color-and-contrast
+
 - `domains/web/color-and-contrast.md`
 - `color-and-visual/contrast-ratios.md`
 - `color-and-visual/apca-contrast.md`
-- `standards/wcag/wcag-2.2-quick-ref.md` (SC 1.4.3, 1.4.6, 1.4.11)
+- `color-and-visual/color-blindness.md`
 
 ### forms
-- `domains/web/forms-accessibility.md`
-- `standards/wcag/wcag-2.2-quick-ref.md` (SC 1.3.5, 3.3.1–3.3.4)
 
-### keyboard
+- `domains/web/forms-accessibility.md`
+- `domains/web/html-semantics-guide.md`
+- `standards/wcag/wcag-2.2-quick-ref.md` (SC 1.3.5, 3.3.x, 4.1.2)
+
+### keyboard-and-focus
+
 - `domains/web/keyboard-navigation-patterns.md`
 - `domains/web/focus-management.md`
-- `standards/wcag/wcag-2.2-quick-ref.md` (SC 2.1.1, 2.1.2)
+- `domains/web/mobile-accessibility-patterns.md`
+- `domains/web/component-patterns/modal-dialog.md`
+- `standards/wcag/wcag-2.2-quick-ref.md` (SC 2.1.x, 2.4.x)
 
-### screen-reader
+### mobile-and-pwa
+
+- `domains/web/mobile-accessibility-patterns.md`
+- `domains/web/pwa-accessibility.md`
+- `domains/web/spa-accessibility.md`
+- `screen-readers/talkback-guide.md`
+- `screen-readers/voiceover-guide.md`
+
+### pdf-and-documents
+
+- `domains/documents/pdf-creation/pdf-accessibility-guide.md`
+- `domains/documents/pdf-creation/pdf-form-accessibility-examples.md`
+- `domains/documents/pdf-creation/pdf-from-word.md`
+- `domains/documents/pdf-creation/pdf-from-indesign.md`
+- `domains/documents/pdf-creation/pdf-remediation.md`
+- `standards/pdf-ua/pdf-ua-overview.md`
+- `standards/pdf-ua/matterhorn-protocol.md`
+- `domains/documents/word-accessibility/word-guide.md`
+- `domains/documents/word-accessibility/word-checklist.md`
+- `domains/documents/word-accessibility/word-styles-guide.md`
+- `domains/documents/powerpoint-accessibility/powerpoint-guide.md`
+- `domains/documents/powerpoint-accessibility/ppt-checklist.md`
+- `domains/documents/powerpoint-accessibility/slide-layout-guide.md`
+- `domains/documents/excel-accessibility/excel-guide.md`
+- `domains/documents/excel-accessibility/excel-checklist.md`
+- `domains/documents/excel-accessibility/excel-data-visualization-guide.md`
+
+### screen-reader-support
+
+- `screen-readers/screen-reader-overview.md`
+- `screen-readers/screen-reader-html-support.md`
+- `screen-readers/screen-reader-aria-support.md`
 - `screen-readers/jaws-guide.md`
 - `screen-readers/nvda-guide.md`
 - `screen-readers/voiceover-guide.md`
 - `screen-readers/talkback-guide.md`
-- `screen-readers/sr-html-support-matrix.md`
-- `screen-readers/sr-aria-support-matrix.md`
 
-### pdf
-- `standards/pdf-ua/pdf-ua-overview.md`
-- `standards/pdf-ua/matterhorn-protocol.md`
-- `domains/documents/pdf-creation/pdf-from-word.md`
-- `domains/documents/pdf-creation/pdf-remediation.md`
+### section-508-and-legal
 
-### social-media
-- All files under `domains/social-media/`
+- `standards/section-508/section-508-overview.md`
+- `standards/section-508/section-508-technical-standards.md`
+- `standards/section-508/section-508-wcag-mapping.md`
+- `legal-and-compliance/us-ada-overview.md`
+- `legal-and-compliance/eu-eaa-overview.md`
 
-### legal
-- All files under `legal-and-compliance/`
+### voice-ui
+
+- `domains/voice/voice-ui-accessibility.md`
+- `standards/other-standards/iso-9241-171.md`
+- `standards/en-301-549/en-301-549-requirements.md`
+
+### physical-ict
+
+- `domains/physical-ict/kiosk-and-embedded-playbook.md`
+- `standards/en-301-549/en-301-549-requirements.md`
+- `standards/other-standards/iso-9241-171.md`
+
+### wcag-techniques-and-understanding
+
+- `standards/wcag/wcag-techniques/sufficient-techniques.md`
+- `standards/wcag/wcag-techniques/advisory-techniques.md`
+- `standards/wcag/wcag-techniques/failure-techniques.md`
+- `standards/wcag/wcag-understanding/perceivable.md`
+- `standards/wcag/wcag-understanding/operable.md`
+- `standards/wcag/wcag-understanding/understandable.md`
+- `standards/wcag/wcag-understanding/robust.md`
 
 ---
 
-## Priority Files (Load First for Any Task)
+## Priority Files
 
-1. `standards/wcag/wcag-2.2-quick-ref.md` — Most comprehensive single-file reference
-2. `domains/social-media/alt-text/alt-text-principles.md` — Highest cross-domain utility
-3. `AI-USAGE-GUIDE.md` — Context-loading instructions
-4. `INDEX.md` — This file (navigation)
-5. `meta/standards-registry.md` — All sources with canonical URLs
+1. `AI-USAGE-GUIDE.md` — context-loading instructions
+2. `standards/wcag/wcag-2.2-quick-ref.md` — primary standards reference
+3. `INDEX.md` — navigation map
+4. `GLOSSARY.md` — terminology precision
+5. `meta/standards-registry.md` — canonical sources and fetch targets
+
+---
+
+## Coverage Notes
+
+- Critical and important gaps from the previous pass are now covered by canonical files in `standards/` and `domains/`.
+- Remaining open content backlog is limited to video game accessibility; validation work is still pending in `meta/coverage-gaps.md`.
+- Prefer canonical files listed here over raw `*-fetched.md` source captures.

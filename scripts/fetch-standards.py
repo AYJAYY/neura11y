@@ -99,6 +99,36 @@ SOURCES = {
         "selector": "main",
         "skip_selectors": ["nav", "#toc", "header", "footer"],
     },
+    "wcag-2.2-techniques": {
+        "url": "https://www.w3.org/WAI/WCAG22/Techniques/",
+        "output": "standards/wcag/wcag-techniques/all-techniques-fetched.md",
+        "frontmatter": {
+            "title": "WCAG 2.2 Techniques (Fetched)",
+            "standard": "WCAG 2.2",
+            "source_url": "https://www.w3.org/WAI/WCAG22/Techniques/",
+            "domain": ["web", "documents", "general"],
+            "status": "curated",
+            "tags": ["wcag", "wcag-2.2", "techniques"],
+            "ai_context": "Auto-fetched WCAG 2.2 techniques index. Use curated files in standards/wcag/wcag-techniques/ for repository loading.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "#toc", "header", "footer"],
+    },
+    "wcag-2.2-understanding": {
+        "url": "https://www.w3.org/WAI/WCAG22/Understanding/",
+        "output": "standards/wcag/wcag-understanding/all-understanding-docs-fetched.md",
+        "frontmatter": {
+            "title": "Understanding WCAG 2.2 (Fetched)",
+            "standard": "WCAG 2.2",
+            "source_url": "https://www.w3.org/WAI/WCAG22/Understanding/",
+            "domain": ["web", "documents", "general"],
+            "status": "curated",
+            "tags": ["wcag", "wcag-2.2", "understanding"],
+            "ai_context": "Auto-fetched WCAG 2.2 understanding index. Use curated files in standards/wcag/wcag-understanding/ for repository loading.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "#toc", "header", "footer"],
+    },
     "wai-aria-1.2": {
         "url": "https://www.w3.org/TR/wai-aria-1.2/",
         "output": "standards/aria/wai-aria-1.2-full-fetched.md",
@@ -238,7 +268,13 @@ SOURCES = {
 
 # Group sources by family
 SOURCE_GROUPS = {
-    "wcag": ["wcag-2.1", "wcag-2.2", "wcag-2.2-quickref"],
+    "wcag": [
+        "wcag-2.1",
+        "wcag-2.2",
+        "wcag-2.2-quickref",
+        "wcag-2.2-techniques",
+        "wcag-2.2-understanding",
+    ],
     "aria": ["wai-aria-1.2", "aria-in-html"],
     "w3c-other": ["atag-2.0", "uaag-2.0", "epub-a11y-1.1", "alt-text-tree", "coga-usable"],
     "us-gov": ["section-508-tech", "plain-language"],
