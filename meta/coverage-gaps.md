@@ -21,10 +21,10 @@ These gaps mean AI outputs in the affected areas may be incomplete or hallucinat
 | WCAG techniques not yet fetched | Web | AI cannot cite specific technique IDs (e.g., H37, ARIA10) | Run `fetch-wcag.py` |
 | WCAG understanding docs not yet fetched | Web | AI lacks normative intent for borderline SCs | Run `fetch-wcag.py` |
 | Section 508 technical standards detail missing | Web/Docs | AI cannot confirm specific 508 mapping beyond WCAG 2.0 | Run `fetch-us-gov.py` |
-| carousel.md component pattern not yet created | Web | AI lacks accessible carousel/slider pattern | Manual curation |
-| combobox.md component pattern not yet created | Web | AI lacks accessible combobox/autocomplete pattern | Manual curation |
-| tooltip.md component pattern not yet created | Web | AI lacks SC 1.4.13 content-on-hover pattern | Manual curation |
-| manual-testing-checklist.md not yet created | Web | AI lacks structured manual test procedure | Manual curation |
+| carousel.md component pattern not yet created | Web | AI lacks accessible carousel/slider pattern | ✅ Created |
+| combobox.md component pattern not yet created | Web | AI lacks accessible combobox/autocomplete pattern | ✅ Created |
+| tooltip.md component pattern not yet created | Web | AI lacks SC 1.4.13 content-on-hover pattern | ✅ Created |
+| manual-testing-checklist.md not yet created | Web | AI lacks structured manual test procedure | ✅ Created |
 
 ---
 
@@ -32,14 +32,14 @@ These gaps mean AI outputs in the affected areas may be incomplete or hallucinat
 
 | Gap | Domain | Impact | Action |
 |----|---------|--------|--------|
-| Screen reader HTML/ARIA support matrices missing | Web | AI cannot advise on SR-specific bugs or workarounds | Manual: synthesize from a11ysupport.io |
-| JAWS guide not yet created | Web | Incomplete SR testing coverage | Manual curation |
-| TalkBack guide not yet created | Web | Incomplete mobile SR testing coverage | Manual curation |
+| Screen reader HTML/ARIA support matrices missing | Web | AI cannot advise on SR-specific bugs or workarounds | ✅ Created (screen-reader-html-support.md + screen-reader-aria-support.md) |
+| JAWS guide not yet created | Web | Incomplete SR testing coverage | ✅ Created |
+| TalkBack guide not yet created | Web | Incomplete mobile SR testing coverage | ✅ Created |
 | WCAG understanding docs not yet fetched | Web | AI lacks normative intent for borderline SCs | Run `fetch-wcag.py` |
 | EN 301 549 non-web chapters missing | Non-web ICT | AI cannot address hardware/software accessibility outside web | Run `fetch-en-301-549.py` |
-| EU/UK/Canada/Australia legal files missing | Legal | AI cannot provide UK/Canada/Australia legal guidance | Manual curation |
-| EPUB metadata schema not yet created | EPUB | Incomplete EPUB accessibility coverage | Manual curation |
-| apca-contrast.md and color-blindness.md missing | Color/Visual | AI lacks APCA model detail and color blindness specifics | Manual curation |
+| EU/UK/Canada/Australia legal files missing | Legal | AI cannot provide UK/Canada/Australia legal guidance | ✅ Created (eu-eaa, uk, canada, australia) |
+| EPUB metadata schema not yet created | EPUB | Incomplete EPUB accessibility coverage | ✅ Created |
+| apca-contrast.md and color-blindness.md missing | Color/Visual | AI lacks APCA model detail and color blindness specifics | ✅ Created |
 
 ---
 
@@ -69,8 +69,8 @@ These gaps mean AI outputs in the affected areas may be incomplete or hallucinat
 | 3 | Web domains (/domains/web/) | **~80% complete** — checklist, semantics, focus, keyboard, forms, images, color, SPA, modal, tabs, accordion, nav, data-table, testing created; carousel, combobox, tooltip still needed | 2026-03-13 |
 | 4 | Document domains (/domains/documents/) | **~70% complete** — Word, PowerPoint, PDF, Excel, plain language guides created; remediation-specific files and InDesign workflows not yet created | 2026-03-13 |
 | 5 | Social media (/domains/social-media/) | **Complete** — all 7 platforms (Twitter/X, Instagram, LinkedIn, YouTube, Mastodon, Facebook, TikTok) + overview + alt text + captions + hashtag/inclusive writing created | 2026-03-13 |
-| 6 | Cognitive, color, media, screen readers | **~60% complete** — COGA overview + design guide, contrast ratios, typography, screen reader overview + NVDA/VoiceOver guides, alt text decision tree, video captions guide, audio description created | 2026-03-13 |
-| 7 | AI prompts + legal compliance | **~60% complete** — web audit, social media, document templates created; US ADA + EU EAA legal files created; UK, Canada, Australia legal files missing | 2026-03-13 |
+| 6 | Cognitive, color, media, screen readers | **~85% complete** — COGA overview + design guide, contrast ratios, typography, color-blindness, APCA, screen reader overview + JAWS/NVDA/VoiceOver/TalkBack guides + HTML/ARIA support matrices, alt text decision tree, video captions guide, audio description created | 2026-03-13 |
+| 7 | AI prompts + legal compliance | **~90% complete** — web audit, social media, document templates created; US ADA, EU EAA, UK, Canada, Australia legal files created | 2026-03-13 |
 | 8 | Validation and gap filling | Not started | Requires Phases 2–7 completion |
 
 ---
