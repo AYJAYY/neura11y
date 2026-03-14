@@ -1,180 +1,105 @@
 ---
-title: "PDF/UA Overview"
-standard: "PDF/UA (ISO 14289-1)"
-source_url: "https://pdfa.org/resource/pdf-ua/"
-domain: ["documents"]
-last_fetched: "2026-03-13"
-status: "normative"
-tags: ["pdf", "pdf-ua", "iso-14289", "documents", "accessibility"]
-ai_context: "PDF/UA (Universal Accessibility) standard overview. Load when creating or auditing accessible PDF documents."
+ai_context: 'PDF/UA (ISO 14289-1:2014) overview from the PDF Association. Defines
+  requirements for universally accessible PDF documents. Note: Full ISO standard requires
+  purchase; this is the free summary. Use alongside matterhorn-protocol.md for PDF
+  accessibility conformance checking.'
+domain:
+- documents
+last_fetched: '2026-03-13'
+source_url: https://pdfa.org/resource/iso-14289-pdfua/
+standard: PDF/UA (ISO 14289-1:2014)
+status: normative
+tags:
+- pdf-ua
+- pdf
+- iso-14289
+- documents
+title: PDF/UA (ISO 14289-1) Overview
 ---
 
-# PDF/UA (ISO 14289-1) Overview
-
-PDF/UA is the ISO standard for accessible PDF documents. "UA" stands for Universal Accessibility. The standard defines requirements for PDF files that enable use with assistive technology.
-
-**Full standard:** ISO 14289-1:2014 (requires purchase)
-**Free summary:** https://pdfa.org/resource/pdf-ua/
-**Matterhorn Protocol:** https://pdfa.org/resource/matterhorn-protocol/ (136 testable checkpoints)
-
----
-
-## What PDF/UA Requires
-
-PDF/UA is organized around the PDF format's accessibility features:
-
-### 1. Document Tagging
-
-All real content must be tagged. Tags define the logical structure and reading order.
-
-Required tag types:
-- `<Document>` — Root tag
-- `<Part>` / `<Sect>` — Document divisions
-- `<H1>`–`<H6>` — Headings
-- `<P>` — Paragraphs
-- `<L>` — Lists; `<LI>` — List items; `<LBody>` — List body
-- `<Table>`, `<TR>`, `<TH>`, `<TD>` — Tables
-- `<Figure>` — Images, charts
-- `<Caption>` — Figure and table captions
-- `<TOC>`, `<TOCI>` — Table of contents entries
-- `<Link>` — Hyperlinks
-- `<Note>` — Footnotes/endnotes
-- `<Artifact>` — Decorative content (excluded from reading order)
-
-### 2. Reading Order
-
-The logical reading order (as conveyed to AT by tag order) must match the visual presentation order. Column-based layouts must be tagged in column order, not visual left-to-right order that crosses columns.
-
-### 3. Alternative Text
-
-All non-decorative images, charts, and figures must have `Alt` text in their tag attributes. Decorative elements must be tagged as `Artifact`.
-
-### 4. Language
-
-The document must specify a natural language (`/Lang` entry in the catalog dictionary). Passages in different languages must specify their language.
-
-### 5. Security
-
-Security settings must not prevent AT from accessing document content. DRM that blocks screen readers is not permitted.
-
-### 6. Fonts
-
-All fonts must be embedded. Character encoding must allow text extraction (Unicode mapping required).
-
-### 7. Color and Contrast
-
-No information conveyed by color alone. (Aligns with WCAG 1.4.1.)
-
-### 8. Bookmarks/Navigation
-
-Documents with 21 or more pages must include bookmarks (navigation pane). Bookmarks must match heading structure.
-
-### 9. Document Title
-
-The document's title must be set in the document properties, and the title must be the displayed window title (not the filename).
-
-### 10. Headings Must Be Nested
-
-Heading tags must not skip levels (e.g., `<H1>` directly to `<H3>`). Must be nested correctly.
-
-### 11. Tables
-
-Header cells must be `<TH>` with scope. Tables used for layout must be tagged as Artifact or use `<Table>` without header designations.
-
-### 12. Links
-
-All hyperlinks must be tagged as `<Link>` with associated text and an `Alt` attribute if the link text is insufficient. Links must have an active rectangle that overlaps with the visible text.
-
-### 13. Annotations
-
-All annotations (comments, form fields, media clips) must have alt text. Form fields must have a `TU` (tooltip/alternate description) entry.
-
-### 14. Form Fields
-
-Interactive form fields must:
-- Have meaningful names (TU entry)
-- Have a `Tab` order following logical reading order
-- Be keyboard operable
+RESOURCE
 
 ---
 
-## Matterhorn Protocol Checkpoints
+# ISO 14289-1
 
-The Matterhorn Protocol 1.1 (PDF Association, 2014) defines 136 testable checkpoints for PDF/UA conformance. Organized in 31 problem categories.
+## Electronic document file format enhancement for accessibility – Part 1: Use of ISO 32000-1 (PDF/UA-1)
 
-Key checkpoint categories:
+PDF files may be created natively, converted from other electronic formats, or digitized from paper. Businesses, governments, libraries, archives, and other institutions and individuals around the world use PDF to represent considerable bodies of important information. These PDF files should be accessible to users with disabilities.
 
-| Category | Description | Checkpoints |
-|----------|-------------|-------------|
-| 01 | Document — General | 01-001 to 01-007 |
-| 06 | Graphics | 06-001 to 06-003 |
-| 07 | Headings | 07-001 to 07-003 |
-| 09 | Natural language | 09-001 to 09-003 |
-| 13 | Graphics (Alt text) | 13-001 to 13-004 |
-| 14 | Headers in tables | 14-001 to 14-002 |
-| 15 | Lists | 15-001 to 15-004 |
-| 16 | Mathematical formulas | 16-001 |
-| 17 | Metadata | 17-001 to 17-002 |
-| 22 | Objects/figures | 22-001 to 22-002 |
-| 25 | Page header/footer | 25-001 to 25-002 |
-| 26 | Reading order | 26-001 |
-| 27 | Security | 27-001 |
-| 28 | Standard tag types | 28-001 to 28-019 |
-| 29 | Structure types | 29-001 to 29-009 |
-| 30 | Tables | 30-001 to 30-019 |
-| 31 | XObjects | 31-001 to 31-002 |
+Beyond alternative descriptions for images the accessibility of an electronic document depends on a variety of semantic information describing the logical structure and organization of the page content into sections, paragraphs, lists, tables and so on.
 
----
+The PDF feature that represents the semantic information necessary for accessibility is known as “Tagged PDF”.
 
-## Creating PDF/UA-Compliant Documents
+The ISO 14289 (PDF/UA) family of standards consists of:
 
-### From Microsoft Word (recommended approach)
+- ISO 14289-2:2024: This standard is published.
+- ISO 14289-1:2014: This “dated revision” includes a variety of corrections. It is available from both ISO and the PDF Association.
+- ISO 14289-1:2012: The original PDF/UA specification published in 2012 is no longer available.
 
-1. Use Word's built-in accessibility features (Styles for headings, proper alt text)
-2. Run Word's Accessibility Checker before export
-3. Export via File → Save As → PDF with these settings:
-   - Check "Document structure tags for accessibility"
-   - Check "Document properties"
-   - Check "Bookmarks" (for docs with headings)
-4. Verify in Acrobat Pro: Tools → Accessibility → Full Check
+## Context and limitations
 
-### From Adobe InDesign
+PDF/UA operates as a companion standard to be used in conjunction with ISO 32000-2 (PDF 2.0). A common source of accessibility requirements are the W3C’s [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) (WCAG). PDF/UA provides a means of making PDF files that conform to WCAG, and may be used in conjunction with WCAG 2.x. If WCAG 2.2 compliance is used, a [PDF Declaration](https://pdfa.org/declarations/) may be included in the XMP Metadata to indicate the relevant WCAG Level.
 
-1. Apply paragraph styles for all headings and body text
-2. Set reading order in Articles panel
-3. Add alt text to all placed images
-4. Set language for text frames
-5. Export as PDF/UA: File → Export → PDF → Advanced → PDF/UA-1
+By itself, conformity to PDF/UA does not necessarily ensure the accessibility of a document’s content.  Cases not covered by PDF/UA include, and are not limited to:
 
-### Remediation with Adobe Acrobat Pro
+- Authors may have used color or contrast in an inaccessible manner
+- ECMAScript present in the file may generate inaccessible results
+- Text content may not be accessible to those with certain cognitive impairments.
 
-1. Open Tags panel (View → Show/Hide → Navigation Panes → Tags)
-2. Run Accessibility Full Check (Tools → Accessibility → Full Check)
-3. Fix issues: add missing tags, set reading order, add alt text
-4. Verify with PAC 2024 (free PDF/UA checker)
+PDF/UA does not cover conversion, or how to achieve conformance; the standard simply states the technical features of accessible PDF documents.
+
+The PDF Association maintains extensive [technical resources](https://pdfa.org/resources/), including a [best practice guide](https://pdfa.org/resource/tagged-pdf-best-practice-guide-syntax/) and other educational materials to guide developers and users of PDF/UA.
+
+### Additional conformance with PDF/A
+
+PDF/UA-1 documents may also conform to [PDF/A-2 (ISO 19005-2)](https://pdfa.org/resource/iso-19005-2-pdf-a-2/) or [PDF/A-3 (ISO 19005-3)](https://pdfa.org/resource/iso-19005-3-pdf-a-3/). In such cases, these PDF/A standards require the inclusion of XMP Extension Schema for custom XMP metadata not defined in the relevant ISO 19005 part. The PDF Association provides [free XMP Extension Schema templates](https://pdfa.org/resource/xmp-extension-schema-templates/) for PDF/UA-1, other ISO PDF subset standards, and [PDF Declarations](https://pdfa.org/declarations/).
+
+It is ***not*** recommended that PDF/UA-1 documents conform with [PDF/A-1 (ISO 19005-1)](https://pdfa.org/resource/iso-19005-1-pdf-a-1/), as PDF/A-1 is based on Adobe’s PDF 1.4, whereas PDF/UA-1 is based on ISO 32000-1:2008 (PDF 1.7) and often requires the inclusion of newer features.
+
+### This document is available at no cost exclusively from the PDF Association
+
+As part of the PDF Association’s exclusive [PDF/UA bundle](https://www.pdfa-inc.org/product/pdf-ua-bundle/), this ISO Standard is made available from the PDF Association at no cost, thanks to generous sponsorship support provided by [Allyant](https://pdfa.org/member/allyant/), [Axes4](https://pdfa.org/member/axes4/), [GrackleDocs](https://pdfa.org/member/grackledocs-inc/), and [Targetstream Technologies](https://pdfa.org/member/targetstream-technologies-inc/).
+
+Read the [announcement](https://pdfa.org/making-iso-standards-for-pdf-available-at-no-cost/), or learn more about [sponsored standards](/sponsored-standards/) from the PDF Association.
+
+![Cover images for ISO 14289-1, ISO 14289-2 and ISO TS 32005](https://pdfa.org/wp-content/uploads/2014/10/ISO-14k-cover-2024-PROMO-300x300.png)
+
+## Comments?
+
+Technical questions about ISO 14289 are most effectively addressed in the PDF Association’s official [pdf-issues GitHub repo](https://github.com/pdf-association/pdf-issues).
+
+RESOURCE INFO
 
 ---
 
-## PDF/UA Testing Tools
+![](https://pdfa.org/wp-content/uploads/2014/10/ISO-14289-1-2014-sponsored_cover-wpv_300x.png)
 
-| Tool | Type | Cost | URL |
-|------|------|------|-----|
-| PAC 2024 | PDF/UA checker | Free | https://pac.pdf-accessible.com/ |
-| Adobe Acrobat Pro | Authoring + checking | Paid | adobe.com |
-| axesPDF | Remediation | Paid | axespdf.com |
-| CommonLook PDF | Remediation | Paid | commonlook.com |
-| NVDA + Adobe Reader | Manual AT testing | Free | — |
-| Adobe Accessibility Checker | Basic check | Free (in Acrobat) | — |
+  
 
----
+[Download ISO 14289-1](https://www.pdfa-inc.org/cart/?add-to-cart=11541) at no cost.
 
-## PDF/UA vs WCAG
+[Buy](https://www.iso.org/standard/64599.html) the same document from ISO.
 
-PDF/UA and WCAG are complementary:
-- WCAG 1.1.1 (Non-text content) → PDF/UA: Alt text on `<Figure>` tags
-- WCAG 1.3.1 (Info and Relationships) → PDF/UA: Tag structure, table headers
-- WCAG 1.3.2 (Meaningful Sequence) → PDF/UA: Reading order
-- WCAG 2.4.2 (Page Titled) → PDF/UA: Document title in properties
-- WCAG 4.1.2 (Name, Role, Value) → PDF/UA: Form field TU entries
+ISO 14289-1:2014 (PDF/UA-1) defines the use of tagged PDF in files conforming to ISO 32000-1:2008 (PDF 1.7) to ensure accessible content.
 
-For document accessibility, aim for both WCAG 2.1 AA and PDF/UA-1 compliance.
+[Subscribe here](https://pdfa.org/sign-up-for-updates-about-pdf-specifications-standards/) for the PDF Association’s periodic updates regarding new, updated, or corrected industry and ISO specifications for PDF technology.
+
+![PDF/UA icon](https://pdfa.org/wp-content/uploads/2021/07/iconPDFUA_50.png)
+
+PDF Association author(s): [PDF/UA TWG](https://pdfa.org/community/pdf-ua-technical-working-group/)
+
+ISO Working Group: [ISO TC171 SC2 WG9](https://www.iso.org/committee/53674.html)
+
+ISO Status: [status of all PDF-related ISO work](https://pdfa.org/iso-status/)
+
+Related PDF Association publications:
+
+- [Matterhorn Protocol](https://pdfa.org/resource/the-matterhorn-protocol/)
+- [Tagged PDF Best Practice Guide: Syntax](https://pdfa.org/resource/tagged-pdf-best-practice-guide-syntax/),
+- [PDF/UA in a Nutshell](https://pdfa.org/resource/pdfua-in-a-nutshell/)
+- [PDF/UA Flyer](https://pdfa.org/resource/pdfua-flyer/)
+
+  
+
+[PDF/UA-1](/resource/?wpv-pdf-type=pdf-ua-1)

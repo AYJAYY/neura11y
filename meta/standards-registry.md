@@ -65,7 +65,7 @@ Master source-of-truth for all standards tracked in this repository. All fetch s
 
 | Standard | Version | Status | Source URL | Target File | Last Fetched |
 |----------|---------|--------|-----------|-------------|--------------|
-| EN 301 549 | v3.2.1 (2021) | ETSI/CEN/CENELEC Standard | https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.02.01_60/en_301549v030201p.pdf | `standards/en-301-549/en-301-549-requirements.md` | — |
+| EN 301 549 | v3.2.1 (2021) | ETSI/CEN/CENELEC Standard | https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf | `standards/en-301-549/en-301-549-requirements.md` | — |
 
 Note: EN 301 549 is a PDF. Fetch with `pdfplumber`. The standard incorporates WCAG 2.1 Level AA by reference (Chapter 9) and adds requirements for non-web ICT (Chapters 5–8, 10–13).
 
@@ -75,8 +75,8 @@ Note: EN 301 549 is a PDF. Fetch with `pdfplumber`. The standard incorporates WC
 
 | Standard | Version | Status | Source URL | Target File | Notes |
 |----------|---------|--------|-----------|-------------|-------|
-| PDF/UA (ISO 14289-1) | 2014 | ISO Standard | https://pdfa.org/resource/pdf-ua/ | `standards/pdf-ua/pdf-ua-overview.md` | Summary free; full ISO requires purchase |
-| Matterhorn Protocol 1.1 | 1.1 | PDF Association | https://pdfa.org/resource/matterhorn-protocol/ | `standards/pdf-ua/matterhorn-protocol.md` | Free PDF |
+| PDF/UA (ISO 14289-1) | 2014 | ISO Standard | https://pdfa.org/resource/iso-14289-pdfua/ | `standards/pdf-ua/pdf-ua-overview.md` | Summary free; full ISO requires purchase |
+| Matterhorn Protocol 1.1 | 1.1 | PDF Association | https://pdfa.org/resource/the-matterhorn-protocol/ | `standards/pdf-ua/matterhorn-protocol.md` | Free PDF |
 | ISO 9241-171 | 2008 | ISO Standard | (ISO store — requires purchase) | `standards/other-standards/iso-9241-171.md` | Ergonomics of software accessibility |
 
 ---

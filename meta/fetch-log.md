@@ -99,3 +99,26 @@ See `meta/update-schedule.md` for maintenance cadence.
 | `fetch-us-gov.py` | Quarterly |
 | `fetch-en-301-549.py` | On ETSI publication |
 | `fetch-iso.py` | Annually |
+
+### fetch-all run — 2026-03-13T23:23:04
+
+| wcag            | fetch-wcag.py             | failed | — |
+| aria            | fetch-aria.py             | failed | — |
+| w3c-other       | fetch-w3c-other.py        | failed | — |
+| us-gov          | fetch-us-gov.py           | failed | — |
+| en-301-549      | fetch-en-301-549.py       | failed | — |
+| iso             | fetch-iso.py              | failed | — |
+
+### fetch-all run — 2026-03-13T23:24:01
+
+| wcag            | fetch-wcag.py             | success | — |
+| aria            | fetch-aria.py             | success | — |
+| w3c-other       | fetch-w3c-other.py        | success | — |
+| us-gov          | fetch-us-gov.py           | success | — |
+| en-301-549      | fetch-en-301-549.py       | failed | — |
+| iso             | fetch-iso.py              | success | — |
+
+### fetch-all run — 2026-03-13T23:28:26
+
+| en-301-549      | fetch-en-301-549.py       | success | — |
+| iso             | fetch-iso.py              | success | — |

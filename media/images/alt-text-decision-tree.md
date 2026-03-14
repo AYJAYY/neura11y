@@ -1,242 +1,60 @@
 ---
-title: "Alt Text Decision Tree and Image Types"
-standard: "WCAG 2.2"
-source_url: "https://www.w3.org/WAI/tutorials/images/decision-tree/"
-domain: ["web", "documents", "social-media", "general"]
-last_fetched: "2026-03-13"
-status: "prescriptive"
-tags: ["alt-text", "images", "decision-tree", "1.1.1", "decorative", "complex-images"]
-ai_context: "Decision tree and examples for writing alt text by image type. Load when writing or evaluating alt text for any context."
+ai_context: W3C alt text decision tree for determining the correct alt text approach.
+domain:
+- web
+- documents
+- social-media
+last_fetched: '2026-03-13'
+source_url: https://www.w3.org/WAI/tutorials/images/decision-tree/
+standard: WCAG 2.2
+status: prescriptive
+tags:
+- alt-text
+- images
+- decision-tree
+title: Alt Text Decision Tree (Fetched)
 ---
 
-# Alt Text Decision Tree and Image Types
+This decision tree describes how to use the `alt` attribute of the `<img>` element in various situations. For some types of images, there are alternative approaches, such as using CSS background images for decorative images or web fonts instead of images of text.
 
----
+- **Does the image contain text?**
+  - **Yes:**
+    - **… and the text is also present as *real* text nearby.**
+      *Use an empty `alt` attribute. See [Decorative Images](/WAI/tutorials/images/decorative/).*
+    - **… and the text is only shown for visual effects.**
+      *Use an empty `alt` attribute. See [Decorative Images](/WAI/tutorials/images/decorative/).*
+    - **… and the text has a specific function, for example is an icon.**
+      *Use the `alt` attribute to communicate the function of the image. See [Functional Images](/WAI/tutorials/images/functional/).*
+    - **… and the text in the image is not present otherwise.** *Use the `alt` attribute to include the text of the image. See [Images of Text](/WAI/tutorials/images/textual/#styled-text-decorative-effect).*
+  - **No:**
+    - Continue.
+- **Is the image used in a link or a button, and would it be hard or impossible to understand what the link or the button does, if the image wasn’t there?**
+  - **Yes:**
+    - *Use the `alt` attribute to communicate the destination of the link or action taken. See [Functional Images](/WAI/tutorials/images/functional/).*
+  - **No:**
+    - Continue.
+- **Does the image contribute meaning to the current page or context?**
+  - **Yes:**
+    - **… and it’s a simple graphic or photograph.**
+      *Use a brief description of the image in a way that conveys that meaning in the `alt` attribute. See [Informative Images](/WAI/tutorials/images/informative/).*
+    - **… and it’s a graph or complex piece of information.**
+      *Include the information contained in the image elsewhere on the page. See [Complex Images](/WAI/tutorials/images/complex/).*
+    - **… and it shows content that is redundant to *real* text nearby.**
+      *Use an empty `alt` attribute. See (redundant) [Functional Images](/WAI/tutorials/images/functional/#logo-image-within-link-text).*
+  - **No:**
+    - Continue.
+- **Is the image purely decorative or not intended for users?**
+  - **Yes:**
+    - *Use an empty `alt` attribute. See [Decorative Images](/WAI/tutorials/images/decorative/).*
+  - **No:**
+    - Continue.
+- **Is the image’s use not listed above or it’s unclear what `alt` text to provide?**
+  - This decision tree **does not** cover all cases. For detailed information on the provision of text alternatives refer to the [Images Tutorial](/WAI/tutorials/images/).
 
-## Decision Tree
+Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list [wai@w3.org](mailto:wai@w3.org?body=%5Binclude%20a%20relevant%20email%20Subject%5D%0A%0A%5Bput%20comment%20here...%5D%0A%0AI%20give%20permission%20to%20share%20this%20to%20a%20publicly-archived%20e-mail%20list.) or via GitHub.
 
-```
-1. Does the image contain text?
-   YES → alt = the text in the image (verbatim or as close as possible)
-   NO → go to 2
+[E-mail](mailto:wai@w3.org?body=%5Binclude%20a%20relevant%20email%20Subject%5D%0A%0A%5Bput%20comment%20here...%5D%0A%0AI%20give%20permission%20to%20share%20this%20to%20a%20publicly-archived%20e-mail%20list.)[Fork & Edit on GitHub](
+https://github.com/w3c/wai-website/edit/main/pages/design-develop/tutorials/images/decision-tree.md
+)[New GitHub Issue](https://github.com/w3c/wai-website/issues/new?template=content-issue.yml&wai-resource-id=wai-tutorials&wai-url=https://www.w3.org/WAI/tutorials/images/decision-tree/)
 
-2. Is the image used as a link or button (functional image)?
-   YES → alt = the destination or action of the link/button
-         NOT a description of the image
-   NO → go to 3
-
-3. Does the image contribute meaningful information to the content?
-   NO → decorative → alt=""
-   YES → go to 4
-
-4. Is the image a chart, graph, or complex infographic?
-   YES → short alt (topic + key data point) + long description
-   NO → go to 5
-
-5. Is the image a photograph or illustration?
-   → alt = relevant content + context (not a catalog description)
-   Limit: 150 characters for simple images
-```
-
----
-
-## By Image Type
-
-### 1. Informative Images (Photographs, Illustrations)
-
-Describe the content relevant to the surrounding context. The same image may need different alt text depending on use.
-
-**Context 1: Article about a product**
-```html
-<img src="red-running-shoe.jpg"
-     alt="Nike Air Zoom Pegasus 40 in red and white, side view">
-```
-
-**Context 2: Article about color trends in footwear**
-```html
-<img src="red-running-shoe.jpg"
-     alt="Running shoe in bright red with white accents — an example of the bold color trend">
-```
-
-**Context 3: Decorative header image**
-```html
-<img src="red-running-shoe.jpg" alt="">
-```
-
----
-
-### 2. Decorative Images
-
-Images that are purely visual, repeat information already in text, or are used for layout/design.
-
-```html
-<!-- Empty alt required — do NOT omit the alt attribute -->
-<img src="divider-line.png" alt="">
-<img src="background-pattern.png" alt="">
-
-<!-- Icon that's adjacent to text labeling it -->
-<img src="calendar-icon.png" alt=""> Appointments
-
-<!-- CSS background images: no alt attribute needed -->
-<style>.hero { background-image: url('hero.jpg'); }</style>
-```
-
-**NEVER** use `alt="decorative"` or `alt="image"` — these get read by screen readers. Use `alt=""` only.
-
----
-
-### 3. Functional Images (Links and Buttons)
-
-Alt text = the action or destination, NOT a description of the image.
-
-```html
-<!-- Link to homepage -->
-<a href="/"><img src="company-logo.png" alt="Acme Corp — go to homepage"></a>
-
-<!-- Search button -->
-<button><img src="magnifying-glass.svg" alt="Search"></button>
-
-<!-- Social share button -->
-<a href="https://twitter.com/share?..."><img src="twitter-icon.svg" alt="Share on Twitter"></a>
-
-<!-- Icon inside button with visible label — decorative -->
-<button>
-  <img src="print-icon.png" alt="">
-  Print this page
-</button>
-```
-
----
-
-### 4. Text Images
-
-Alt = verbatim text in the image.
-
-```html
-<img src="sale-banner.png" alt="50% Off — Sale ends March 31">
-<img src="warning-label.png" alt="WARNING: Keep out of reach of children">
-<img src="signature.png" alt="John Smith (signature)">
-```
-
-For **logos with text**:
-
-```html
-<!-- Logo used as image: alt = company name -->
-<img src="acme-logo.png" alt="Acme Corp">
-
-<!-- Logo used as link: alt = company name + destination -->
-<a href="/"><img src="acme-logo.png" alt="Acme Corp homepage"></a>
-```
-
----
-
-### 5. Complex Images (Charts, Graphs, Diagrams, Infographics)
-
-Need both a short alt and a long description.
-
-```html
-<!-- Method 1: Long description in adjacent figure caption -->
-<figure>
-  <img src="bar-chart.png"
-       alt="Bar chart: Q4 2025 revenue by region — see caption for data"
-       aria-describedby="chart-desc">
-  <figcaption id="chart-desc">
-    Q4 2025 revenue: North America $4.2M (leading), Europe $2.9M (up 28% year-over-year),
-    APAC $0.8M (flat). Total: $7.9M.
-  </figcaption>
-</figure>
-
-<!-- Method 2: Linked text version -->
-<img src="complex-infographic.png"
-     alt="2025 global accessibility legislation map">
-<p><a href="/accessibility-legislation-text">Text version of the legislation map</a></p>
-
-<!-- Method 3: Expandable description -->
-<img src="network-diagram.png"
-     alt="Three-tier network architecture diagram"
-     aria-describedby="net-desc">
-<details>
-  <summary>Expand diagram description</summary>
-  <p id="net-desc">
-    The diagram shows three tiers arranged vertically. Tier 1 (top):
-    two web servers load-balanced behind a CDN. Tier 2 (middle): four
-    application servers with a message queue. Tier 3 (bottom): primary
-    database with read replica.
-  </p>
-</details>
-```
-
----
-
-### 6. Images of People (Photographs)
-
-Include context-relevant details. Do not focus on physical appearance unless relevant to content.
-
-**Wrong:** `alt="Man with brown hair sitting at a desk"`
-**Correct (general):** `alt="Software developer reviewing code on dual monitors"`
-**Correct (named person in article about them):** `alt="Tim Berners-Lee, inventor of the World Wide Web, at a conference"`
-
-For group photos: describe the group context, not individuals unless relevant.
-```html
-<img src="team-photo.jpg" alt="Acme Corp engineering team at the 2025 annual company retreat">
-```
-
----
-
-### 7. Graphs and Data Visualizations
-
-Alt text must convey the conclusion or key insight, not just what the chart looks like.
-
-**Wrong:** `alt="Bar chart with blue and red bars"`
-**Correct:** `alt="Revenue chart showing 34% year-over-year growth in Q4 2025, the highest quarter on record"`
-
-For accessible data visualization, also consider:
-- Providing the underlying data as an HTML table
-- Including a brief textual summary of the chart's key finding
-- Using color + patterns to distinguish data series (not color alone)
-
----
-
-### 8. Maps
-
-```html
-<img src="us-map-with-offices.png"
-     alt="US map showing Acme Corp office locations"
-     aria-describedby="office-locations">
-<div id="office-locations">
-  <h3>Office locations:</h3>
-  <ul>
-    <li>San Francisco, CA (headquarters)</li>
-    <li>New York, NY</li>
-    <li>Austin, TX</li>
-    <li>Chicago, IL</li>
-  </ul>
-</div>
-```
-
----
-
-### 9. Social Media Images
-
-Platform-specific character limits apply. See platform guides for constraints.
-
-**General rules for social media alt text:**
-- Platform limits: 1000 chars (Twitter/X), 420 chars (Facebook), 500 chars (Instagram), 1500 chars (Mastodon)
-- Describe what a sighted user would see and why it's relevant to the post
-- Include any text visible in the image
-- Describe the emotion/tone when it contributes to meaning
-- Don't start with "Image of" or "Photo of"
-
----
-
-## Common Alt Text Mistakes
-
-| Mistake | Example | Fix |
-|---------|---------|-----|
-| Missing alt attribute | `<img src="photo.jpg">` | Always include `alt` attribute |
-| "Image of" / "Photo of" | `alt="Image of sunset"` | `alt="Golden sunset over the Pacific Ocean"` |
-| Filename as alt text | `alt="IMG_2045.jpg"` | Describe the content |
-| Alt text for decorative image | `alt="decorative border"` | `alt=""` |
-| Redundant with surrounding text | Image with `alt="Company logo"` beside "Acme Corp" heading | `alt=""` (let the heading describe it) |
-| Too literal for charts | `alt="Bar chart"` | Include the key insight |
-| Truncated URL | `alt="https://example.com/products/widget-x-pro-blue-large"` | `alt="Widget X Pro"` |
+ [Back to Top](#top)
