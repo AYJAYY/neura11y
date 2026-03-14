@@ -6,7 +6,7 @@
     <title>neura11y — AI-Ready Accessibility Knowledge Repository</title>
     <meta
       name="description"
-      content="neura11y is a structured accessibility knowledge base designed for AI context loading and RAG pipelines. 88+ markdown files covering WCAG 2.2, ARIA, social media, documents, legal compliance, and more."
+      content="neura11y is a structured accessibility knowledge base designed for AI context loading and RAG pipelines. 131 markdown files covering WCAG 2.2, ARIA, social media, documents, voice UI, physical ICT, legal compliance, and more."
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -901,8 +901,8 @@
               </h1>
               <p class="hero-lede">
                 neura11y is a structured accessibility knowledge base built for AI context loading and RAG pipelines.
-                88 markdown files covering WCAG 2.2, WAI-ARIA, seven social platforms, document formats,
-                legal compliance, component patterns, and more — all with YAML frontmatter for clean ingestion.
+                131 markdown files covering WCAG 2.2, WAI-ARIA, seven social platforms, document workflows,
+                voice UI, kiosk guidance, legal compliance, component patterns, and more — all with YAML frontmatter for clean ingestion.
               </p>
               <div class="btn-row">
                 <a class="btn btn-primary" href="#how">
@@ -955,7 +955,7 @@
 
           <ul class="stats-strip" aria-label="Repository statistics">
             <li class="stat-item">
-              <span class="stat-num">88</span>
+              <span class="stat-num">131</span>
               <span class="stat-label">markdown files</span>
             </li>
             <li class="stat-item">
@@ -967,8 +967,8 @@
               <span class="stat-label">social platforms</span>
             </li>
             <li class="stat-item">
-              <span class="stat-num">8</span>
-              <span class="stat-label">component patterns</span>
+              <span class="stat-num">5</span>
+              <span class="stat-label">applied domains</span>
             </li>
           </ul>
         </div>
@@ -1040,19 +1040,31 @@
             <li class="card usecase-card">
               <span class="tag tag-purple" style="margin-bottom:1rem;">Documents</span>
               <h3>Create accessible documents</h3>
-              <p>Get step-by-step guidance for Word, PowerPoint, Excel, and PDF. Covers heading structure, alt text, reading order, and plain language.</p>
+              <p>Get step-by-step guidance for Word, PowerPoint, Excel, and PDF. Covers heading structure, alt text, reading order, PDF forms, charts, and plain language.</p>
             </li>
 
             <li class="card usecase-card">
               <span class="tag tag-teal" style="margin-bottom:1rem;">Social media</span>
               <h3>Write accessible social posts</h3>
-              <p>Generate alt text, captions, and accessible copy for Twitter/X, Instagram, LinkedIn, YouTube, TikTok, Facebook, and Mastodon.</p>
+              <p>Generate alt text, captions, sign-language-aware video guidance, and accessible copy for Twitter/X, Instagram, LinkedIn, YouTube, TikTok, Facebook, and Mastodon.</p>
             </li>
 
             <li class="card usecase-card">
               <span class="tag tag-amber" style="margin-bottom:1rem;">Compliance</span>
               <h3>Navigate legal requirements</h3>
-              <p>Understand WCAG conformance levels, Section 508, and regional law — US ADA, EU EAA, UK PSBAR, Canada ACA, and Australia DDA.</p>
+              <p>Understand WCAG conformance levels, Section 508, EN 301 549, ISO 9241-171, and regional law — US ADA, EU EAA, UK regulations, Canada, and Australia.</p>
+            </li>
+
+            <li class="card usecase-card">
+              <span class="tag tag-blue" style="margin-bottom:1rem;">Voice</span>
+              <h3>Design accessible voice flows</h3>
+              <p>Spec voice commands, spoken confirmations, label-in-name support, multimodal fallback, and recovery patterns for speech-driven interfaces.</p>
+            </li>
+
+            <li class="card usecase-card">
+              <span class="tag tag-amber" style="margin-bottom:1rem;">Physical ICT</span>
+              <h3>Review kiosk and embedded UX</h3>
+              <p>Use the kiosk playbook for closed functionality, timed sessions, non-visual access, hardware controls, and self-service transaction flows.</p>
             </li>
           </ul>
         </div>
@@ -1069,7 +1081,7 @@
               <span class="kicker-label">Coverage</span>
             </div>
             <h2 id="coverage-heading">What is in the repository</h2>
-            <p>The repo spans standards, applied guidance, prompt templates, and supporting reference material across every major accessibility domain.</p>
+            <p>The repo spans standards, applied guidance, prompt templates, and supporting reference material across major accessibility domains, including voice UI and physical ICT.</p>
           </div>
 
           <ul class="coverage-grid">
@@ -1077,7 +1089,7 @@
               <div class="cov-icon" aria-hidden="true">📋</div>
               <div class="cov-body">
                 <h3>WCAG Standards</h3>
-                <p>All 87 WCAG 2.2 SCs with levels, techniques, and common failures. WCAG 2.1, 3.0 overview, and conformance levels.</p>
+                <p>All 87 WCAG 2.2 SCs with levels, sufficient techniques, advisory techniques, failure techniques, and understanding guides. WCAG 2.1 full text, 3.0 overview, and conformance levels.</p>
               </div>
             </li>
 
@@ -1085,7 +1097,7 @@
               <div class="cov-icon" aria-hidden="true">⚙️</div>
               <div class="cov-body">
                 <h3>WAI-ARIA</h3>
-                <p>Complete roles, states, and properties reference. APG keyboard patterns for 15+ components. Common ARIA mistakes guide.</p>
+                <p>Roles, states, and properties reference plus ARIA in HTML, APG patterns, and a curated common mistakes guide.</p>
               </div>
             </li>
 
@@ -1093,7 +1105,7 @@
               <div class="cov-icon" aria-hidden="true">🌐</div>
               <div class="cov-body">
                 <h3>Web Domain</h3>
-                <p>HTML semantics, focus management, forms, images, SPA patterns, color/contrast, keyboard navigation, and 8 component patterns.</p>
+                <p>HTML semantics, focus management, forms, images, SPA patterns, mobile web, PWAs, color/contrast, keyboard navigation, 8 component patterns, and a testing suite covering automated tools, manual checklist, and screen-reader testing matrix.</p>
               </div>
             </li>
 
@@ -1101,7 +1113,7 @@
               <div class="cov-icon" aria-hidden="true">📱</div>
               <div class="cov-body">
                 <h3>Social Media</h3>
-                <p>Platform guides for all 7 major platforms. Alt text principles and examples, caption standards, audio description, hashtag and inclusive language guides.</p>
+                <p>Platform guides for all 7 major platforms. Alt text principles and examples, caption standards, audio description, sign language video notes, subtitle terminology, and inclusive writing guides.</p>
               </div>
             </li>
 
@@ -1109,7 +1121,39 @@
               <div class="cov-icon" aria-hidden="true">📄</div>
               <div class="cov-body">
                 <h3>Documents</h3>
-                <p>Word, PowerPoint, Excel, and PDF accessibility guides. Plain language standards. Federal Plain Language Guidelines adapted for accessibility use.</p>
+                <p>Word, PowerPoint, Excel, and PDF accessibility guides with focused files for PDF forms, remediation, export workflows, readability, and Excel data visualization.</p>
+              </div>
+            </li>
+
+            <li class="cov-card">
+              <div class="cov-icon" aria-hidden="true">🎙️</div>
+              <div class="cov-body">
+                <h3>Voice UI</h3>
+                <p>Guidance for speech commands, label-in-name alignment, spoken confirmations, multimodal fallback, privacy, and recovery for voice-driven interfaces.</p>
+              </div>
+            </li>
+
+            <li class="cov-card">
+              <div class="cov-icon" aria-hidden="true">🖥️</div>
+              <div class="cov-body">
+                <h3>Physical ICT</h3>
+                <p>Kiosk and embedded system playbook covering closed functionality, non-visual access, timed sessions, hardware controls, and transaction review patterns.</p>
+              </div>
+            </li>
+
+            <li class="cov-card">
+              <div class="cov-icon" aria-hidden="true">🔊</div>
+              <div class="cov-body">
+                <h3>Screen Readers</h3>
+                <p>Support guides and testing matrices for JAWS, NVDA, VoiceOver, and TalkBack. Covers HTML and ARIA support levels, AT-specific patterns, and cross-platform screen reader behavior.</p>
+              </div>
+            </li>
+
+            <li class="cov-card">
+              <div class="cov-icon" aria-hidden="true">📖</div>
+              <div class="cov-body">
+                <h3>EPUB &amp; PDF/UA</h3>
+                <p>EPUB Accessibility 1.1 with metadata schema, PDF/UA overview, and the Matterhorn Protocol checklist for verifying PDF conformance. Covers ATAG 2.0 and UAAG 2.0 overviews.</p>
               </div>
             </li>
 
@@ -1133,7 +1177,7 @@
               <div class="cov-icon" aria-hidden="true">⚖️</div>
               <div class="cov-body">
                 <h3>Legal</h3>
-                <p>US ADA / DOJ 2024 rule. EU European Accessibility Act (2019/882). UK PSBAR 2018 and Equality Act. Canada ACA and AODA.</p>
+                <p>US ADA and Section 508, EU European Accessibility Act, UK accessibility regulations, Canada accessibility coverage, Australia guidance, plus EN 301 549 alignment.</p>
               </div>
             </li>
           </ul>
