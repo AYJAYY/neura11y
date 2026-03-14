@@ -21,7 +21,7 @@ ai_context: "Entry point for neura11y. Read AI-USAGE-GUIDE.md before loading oth
 </p>
 
 <p align="center">
-  <code>v0.2.0</code> • standards • workflow guides • prompt packs • validation tooling
+  <code>v0.2.1</code> • standards • workflow guides • prompt packs • validation tooling
 </p>
 
 neura11y packages normative standards, applied workflow guidance, prompt templates, and validation tooling into a single repository so AI systems can produce accessibility guidance and accessible outputs with stronger traceability and less hallucination.
@@ -106,7 +106,7 @@ claude-a11y-repo/
 ## Standards Covered
 
 - **WCAG 2.1** (W3C Recommendation, June 2018) — 78 success criteria
-- **WCAG 2.2** (W3C Recommendation, October 2023) — 87 success criteria (9 new)
+- **WCAG** (current stable W3C Recommendation: 2.2, October 2023) — 86 active success criteria in the current version (9 new; SC 4.1.1 obsolete)
 - **WCAG 3.0** (Working Draft) — Overview and emerging guidance
 - **WAI-ARIA 1.2** (W3C Recommendation, June 2023)
 - **ARIA Authoring Practices Guide (APG)**
@@ -130,14 +130,14 @@ claude-a11y-repo/
 
 ## Current Coverage Notes
 
-- **Release 0.2.0:** Adds AI ingestion/export tooling, schema and reference validation, freshness sync, and pattern-level validation artifacts under `meta/`.
-- **AI operations:** The repository now includes schema validation, reference auditing, chunk export, freshness sync, and pattern-level AI validation scripts under `scripts/`.
+- **Release 0.2.1:** Refreshes standards accuracy, corrects WCAG 2.2 focus-criterion mapping, and tightens AI-usage and glossary guidance.
+- **AI operations:** The repository now includes schema validation, reference auditing, chunk export, freshness sync, and fixture-based AI validation scripts under `scripts/`.
 - **Prompt coverage:** Prompt packs now exist for all documented AI usage patterns in `AI-USAGE-GUIDE.md`.
 - **Remaining backlog:** The primary optional backlog item remains video game accessibility, which is still out of scope for v1.
 
 ## Maintenance
 
-Auto-fetchable standards are refreshed via scripts in `/scripts/`. Use `scripts/fetch-all.py` for managed runs, `scripts/export-ai-context.py` to regenerate AI-ingestion artifacts, `scripts/sync-freshness.py` to update registry freshness signals, and `scripts/validate-ai-suite.py` before claiming AI readiness. See `meta/update-schedule.md` for cadence.
+Auto-fetchable standards are refreshed via scripts in `/scripts/`. Use `scripts/fetch-all.py` for managed runs, `scripts/export-ai-context.py` to regenerate AI-ingestion artifacts, `scripts/sync-freshness.py` to update registry freshness signals, and `scripts/validate-ai-suite.py` for structural plus fixture validation (or response validation with `--responses-dir`). See `meta/update-schedule.md` for cadence.
 
 ## Contributing
 

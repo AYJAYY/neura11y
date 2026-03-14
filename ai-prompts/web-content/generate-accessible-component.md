@@ -1,6 +1,6 @@
 ---
 title: "Prompt Template: Generate Accessible Web Component"
-standard: "WCAG 2.2 + WAI-ARIA 1.2"
+standard: "WCAG + WAI-ARIA 1.2"
 source_url: ""
 domain: ["web"]
 last_fetched: "2026-03-14"
@@ -30,7 +30,7 @@ Generate an accessible [component-name] for the web.
 
 Requirements:
 1. Use native HTML first; use ARIA only where native semantics are insufficient
-2. Match WCAG 2.2 Level AA requirements
+2. Match WCAG Level AA requirements
 3. Include keyboard interaction details
 4. Include focus management behavior
 5. Include accessible name/role/state handling

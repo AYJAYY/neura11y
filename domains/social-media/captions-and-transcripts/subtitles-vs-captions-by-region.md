@@ -1,6 +1,6 @@
 ---
 title: "Subtitles vs. Captions by Region"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["social-media", "media", "web"]
 last_fetched: "2026-03-14"

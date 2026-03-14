@@ -1,6 +1,6 @@
 ---
 title: "Prompt Template: Accessibility Compliance Review"
-standard: "WCAG 2.2 + Section 508 + ADA + EAA"
+standard: "WCAG + Section 508 + ADA + EAA"
 source_url: ""
 domain: ["legal-and-compliance", "general"]
 last_fetched: "2026-03-14"

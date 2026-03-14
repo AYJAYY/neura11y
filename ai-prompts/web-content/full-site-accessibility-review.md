@@ -1,6 +1,6 @@
 ---
 title: "Prompt Template: Full Web Accessibility Review"
-standard: "WCAG 2.2 + WAI-ARIA 1.2"
+standard: "WCAG + WAI-ARIA 1.2"
 source_url: ""
 domain: ["web"]
 last_fetched: "2026-03-14"
@@ -29,7 +29,7 @@ domains/web/color-and-contrast.md
 ## Prompt
 
 ```
-Review this website or page set for WCAG 2.2 Level AA conformance.
+Review this website or page set for WCAG Level AA conformance.
 
 Scope:
 - URLs or templates under review: [list]

@@ -1,6 +1,6 @@
 ---
 title: "WebVTT Format Reference"
-standard: "WCAG 2.2 + WebVTT"
+standard: "WCAG + WebVTT"
 source_url: "https://www.w3.org/TR/webvtt1/"
 domain: ["social-media", "web", "media"]
 last_fetched: "2026-03-14"

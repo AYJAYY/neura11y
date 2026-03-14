@@ -1,6 +1,6 @@
 ---
 title: "PDF Remediation Guide"
-standard: "PDF/UA + WCAG 2.2 + Section 508"
+standard: "PDF/UA + WCAG + Section 508"
 source_url: "https://pdfa.org/resource/the-matterhorn-protocol/"
 domain: ["documents"]
 last_fetched: "2026-03-14"

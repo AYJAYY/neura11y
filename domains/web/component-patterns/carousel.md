@@ -1,6 +1,6 @@
 ---
 title: "Accessible Carousel (Slider) Component Pattern"
-standard: "WAI-ARIA APG + WCAG 2.2 SC 2.2.2"
+standard: "WAI-ARIA APG + WCAG SC 2.2.2"
 source_url: "https://www.w3.org/WAI/ARIA/apg/patterns/carousel/"
 domain: ["web"]
 last_fetched: "2026-03-13"

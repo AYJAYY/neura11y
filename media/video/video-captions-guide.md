@@ -1,6 +1,6 @@
 ---
 title: "Video Captions and Audio Description Guide"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html"
 domain: ["web", "media", "social-media"]
 last_fetched: "2026-03-13"
@@ -27,7 +27,7 @@ ai_context: "Complete guide to video captions and audio description including We
 | 1.2.8 | Media alternative (text) | AAA | Pre-recorded |
 | 1.2.9 | Audio-only (live) | AAA | Live |
 
-**For most organizations targeting WCAG 2.2 Level AA:**
+**For most organizations targeting current WCAG Level AA:**
 - Pre-recorded video with audio: captions (1.2.2) + audio description (1.2.5)
 - Live video: captions (1.2.4)
 

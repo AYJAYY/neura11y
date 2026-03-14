@@ -105,7 +105,7 @@ For organizations subject to US law:
 | Healthcare (HIPAA covered) | ADA + HIPAA | WCAG 2.1 AA |
 | Financial services | ADA + CFPB guidance | WCAG 2.1 AA |
 
-**Best practice:** Target WCAG 2.1 Level AA or WCAG 2.2 Level AA for all US organizations.
+**Best practice:** Target current WCAG Level AA for all US organizations.
 
 ---
 

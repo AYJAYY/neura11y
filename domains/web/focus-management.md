@@ -1,12 +1,12 @@
 ---
 title: "Focus Management"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["web"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "prescriptive"
-tags: ["focus", "keyboard", "tabindex", "focus-trap", "focus-visible", "skip-nav"]
-ai_context: "Focus management patterns for web applications. Covers focus order, visible focus indicators (WCAG 2.2 SC 2.4.11), focus trapping in modals, and programmatic focus. Critical for modal dialogs and SPAs."
+tags: ["focus", "keyboard", "tabindex", "focus-trap", "focus-visible", "skip-nav", "1.4.11", "2.4.11", "2.4.13"]
+ai_context: "Focus management patterns for web applications. Covers focus order, visible focus indicators, focus obscuration, focus trapping in modals, and programmatic focus. Critical for modal dialogs and SPAs."
 ---
 
 # Focus Management
@@ -22,8 +22,10 @@ Keyboard focus is the browser state indicating which interactive element will re
 - SC 2.1.2 — No keyboard traps
 - SC 2.4.3 — Logical focus order
 - SC 2.4.7 — Focus visible (some indicator required)
-- SC 2.4.11 — Focus Appearance (minimum size and contrast) [WCAG 2.2]
-- SC 2.4.12 — Focus not obscured [WCAG 2.2]
+- SC 1.4.11 — Non-text contrast for focus indicators [WCAG]
+- SC 2.4.11 — Focus not obscured (minimum) [WCAG 2.2]
+- SC 2.4.12 — Focus not obscured (enhanced) [WCAG 2.2]
+- SC 2.4.13 — Focus appearance [WCAG 2.2 AAA]
 
 ---
 
@@ -82,17 +84,21 @@ document.getElementById('modal').focus();
 
 ## Visible Focus Indicators
 
-WCAG 2.2 SC 2.4.11 defines minimum requirements for focus indicators.
+WCAG focus-indicator requirements span multiple criteria.
 
 ### SC 2.4.7 (AA — WCAG 2.1+)
 
 Some focus indicator must be visible. Browser default outlines satisfy this.
 
-### SC 2.4.11 (AA — WCAG 2.2)
+### SC 1.4.11 (AA — WCAG)
+
+Focus indicators, as visual UI-state indicators, need at least 3:1 contrast against adjacent colors.
+
+### SC 2.4.13 (AAA — WCAG 2.2)
 
 The focus indicator must meet ALL of:
 1. **Area:** ≥ perimeter of unfocused component × 2 CSS pixels
-2. **Contrast:** ≥ 3:1 against adjacent colors in the focused vs. unfocused state comparison
+2. **Contrast:** ≥ 3:1 between the same pixels in the focused and unfocused states
 
 ### Never Do This
 
@@ -102,7 +108,7 @@ The focus indicator must meet ALL of:
 *:focus { outline: 0; }
 ```
 
-This fails SC 2.4.7 and 2.4.11.
+This fails SC 2.4.7, SC 1.4.11, and, if you are targeting AAA, SC 2.4.13.
 
 ### Accessible Focus Style Pattern
 
@@ -172,7 +178,7 @@ Users Tab through content in DOM order, but visually see a different order. Fix:
 
 ## Focus Trapping (Modals)
 
-When a modal dialog is open, keyboard focus must be confined to the modal. This is an intentional "focus trap" — the only place SC 2.1.2 (No Keyboard Trap) does not apply because the user can escape via the Escape key.
+When a modal dialog is open, keyboard focus must be confined to the modal. This is an intentional focus trap for the duration of the dialog and is not a failure of SC 2.1.2 when users can dismiss the dialog and return to the rest of the page with keyboard alone.
 
 ### Modal Focus Requirements
 
@@ -323,9 +329,9 @@ function deleteItem(itemElement) {
 
 ---
 
-## Focus Not Obscured (SC 2.4.12)
+## Focus Not Obscured (SC 2.4.11 / SC 2.4.12)
 
-Focused elements must not be entirely hidden by sticky/fixed-position content.
+At WCAG AA, focused elements must not be entirely hidden by sticky/fixed-position content. At WCAG AAA, no part of the focused component may be hidden.
 
 Common culprits:
 - Sticky headers (`position: sticky; top: 0`)

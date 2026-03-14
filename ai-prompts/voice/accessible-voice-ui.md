@@ -1,6 +1,6 @@
 ---
 title: "Prompt Template: Accessible Voice UI"
-standard: "WCAG 2.2 + ISO 9241-171 + EN 301 549"
+standard: "WCAG + ISO 9241-171 + EN 301 549"
 source_url: ""
 domain: ["voice"]
 last_fetched: "2026-03-14"

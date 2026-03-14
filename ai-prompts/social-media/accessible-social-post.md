@@ -1,6 +1,6 @@
 ---
 title: "Prompt Template: Create Accessible Social Media Post"
-standard: "WCAG 2.2 SC 1.1.1"
+standard: "WCAG SC 1.1.1"
 source_url: ""
 domain: ["social-media"]
 last_fetched: "2026-03-13"

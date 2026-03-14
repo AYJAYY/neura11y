@@ -1,6 +1,6 @@
 ---
 title: "Voice UI Accessibility"
-standard: "WCAG 2.2 + EN 301 549 + ISO 9241-171"
+standard: "WCAG + EN 301 549 + ISO 9241-171"
 source_url: "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html"
 domain: ["general", "web"]
 last_fetched: "2026-03-14"

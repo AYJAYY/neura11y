@@ -1,6 +1,6 @@
 ---
 title: "Plain Language Guide"
-standard: "WCAG 2.2 + Federal Plain Language Guidelines"
+standard: "WCAG + Federal Plain Language Guidelines"
 source_url: "https://www.plainlanguage.gov/guidelines/"
 domain: ["documents", "web", "general"]
 last_fetched: "2026-03-13"

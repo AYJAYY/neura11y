@@ -49,8 +49,9 @@ Users cannot operate content if:
 | `2.4.1` | Repeated blocks need bypass | no skip link or landmarks |
 | `2.4.3` | Focus order must make sense | DOM order mismatches visual order |
 | `2.4.7` | Focus must be visible | `outline: none` with no replacement |
-| `2.4.11` | Focus indicator must be large and visible enough | thin or low-contrast focus style |
-| `2.4.12` | Focused element must not be hidden | sticky header covers the active control |
+| `2.4.11` | Focused element must remain at least partly visible | sticky header completely covers the active control |
+| `2.4.12` | No part of the focused element may be hidden | floating UI clips the active control |
+| `2.4.13` | Focus indicator must be large and distinct enough | thin or low-contrast focus style |
 | `2.5.3` | Visible label must be reflected in the accessible name | icon button or mismatched `aria-label` |
 | `2.5.7` | Dragging needs a non-drag alternative | sortable list only supports drag-and-drop |
 | `2.5.8` | Targets need minimum size or spacing | tiny close buttons or icon-only controls |

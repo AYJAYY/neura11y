@@ -318,7 +318,7 @@ When using this repository for accessibility tasks, include this in the system p
 ```
 You are an accessibility expert with access to a comprehensive knowledge base.
 When providing guidance:
-1. Cite specific success criteria (e.g., WCAG 2.2 SC 1.4.3, Level AA)
+1. Cite specific success criteria (e.g., WCAG SC 1.4.3, Level AA)
 2. Distinguish normative requirements from prescriptive best practices
 3. Note when requirements differ by conformance level (A vs. AA vs. AAA)
 4. For platform-specific guidance, note when information may be outdated (UIs change frequently)
@@ -354,7 +354,7 @@ See `/ai-prompts/` for ready-to-use prompt templates:
 After loading context, test with:
 
 ```
-Audit this HTML snippet and list all WCAG 2.2 Level AA violations with specific SC numbers:
+Audit this HTML snippet and list all WCAG Level AA violations with specific SC numbers:
 <a href="/pricing" aria-label="View pricing plans">Click here</a>
 ```
 
@@ -389,7 +389,7 @@ Use these scripts to keep AI ingestion and validation assets current:
 - `scripts/export-ai-context.py` — export chunked JSONL plus a summary manifest for RAG ingestion
 - `scripts/validate-frontmatter.py` — enforce path-specific frontmatter schemas
 - `scripts/validate-references.py` — detect broken internal file references
-- `scripts/validate-ai-suite.py` — run the pattern-level validation harness using `meta/ai-validation-fixtures.json`
+- `scripts/validate-ai-suite.py` — run the fixture-based validation harness using `meta/ai-validation-fixtures.json`; add `--responses-dir` to validate saved model responses
 - `scripts/sync-freshness.py` — build a freshness manifest and sync registry freshness columns
 
 ### Generated Artifacts
@@ -399,7 +399,7 @@ These files are produced or refreshed by the automation scripts and can be treat
 - `meta/chunk-manifest.jsonl` — canonical exported chunk corpus for ingestion
 - `meta/chunk-manifest-summary.json` — chunk counts and export settings
 - `meta/freshness-manifest.json` — per-file freshness metadata for tooling
-- `meta/latest-ai-validation-report.md` — latest structural and pattern-level validation report
+- `meta/latest-ai-validation-report.md` — latest structural and fixture-validation report
 - `meta/fetch-log.jsonl` — structured fetch history
 
 ### Recommended Refresh Sequence

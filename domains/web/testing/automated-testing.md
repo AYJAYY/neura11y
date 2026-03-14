@@ -1,6 +1,6 @@
 ---
 title: "Automated Accessibility Testing"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/test-evaluate/tools/"
 domain: ["web"]
 last_fetched: "2026-03-13"
@@ -11,7 +11,7 @@ ai_context: "Automated accessibility testing tools and integration patterns. Loa
 
 # Automated Accessibility Testing
 
-Automated tools detect approximately 30–40% of WCAG 2.2 Level AA failures. They are a filter, not a certification. Always supplement with manual and screen reader testing.
+Automated tools detect approximately 30–40% of WCAG Level AA failures. They are a filter, not a certification. Always supplement with manual and screen reader testing.
 
 ---
 
@@ -101,7 +101,7 @@ npm install --save-dev @axe-core/playwright
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-test('Homepage has no WCAG 2.2 AA violations', async ({ page }) => {
+test('Homepage has no WCAG AA violations', async ({ page }) => {
   await page.goto('http://localhost:3000');
 
   const results = await new AxeBuilder({ page })
@@ -255,7 +255,7 @@ When calling axe, specify which standards to test against:
 | `wcag2a` | WCAG 2.x Level A |
 | `wcag2aa` | WCAG 2.x Level AA |
 | `wcag2aaa` | WCAG 2.x Level AAA |
-| `wcag22aa` | WCAG 2.2 new Level AA criteria |
+| `wcag22aa` | Current WCAG new Level AA criteria |
 | `best-practice` | Highly recommended non-WCAG rules |
 | `section508` | Section 508 requirements |
 
@@ -272,7 +272,7 @@ When calling axe, specify which standards to test against:
 
 ### Stage 2: Integration (Playwright / Cypress)
 - Run in PR check on critical paths: home, product pages, checkout, forms
-- Use axe WCAG 2.2 AA tags
+- Use axe WCAG AA tags
 - Fail on new violations; track existing ones
 
 ### Stage 3: Scheduled full site scan (Pa11y-CI)

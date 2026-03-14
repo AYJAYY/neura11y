@@ -1,6 +1,6 @@
 ---
 title: "Accessible Tooltip Pattern"
-standard: "WAI-ARIA APG + WCAG 2.2 SC 1.4.13"
+standard: "WAI-ARIA APG + WCAG SC 1.4.13"
 source_url: "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/"
 domain: ["web"]
 last_fetched: "2026-03-13"

@@ -1,17 +1,17 @@
 ---
-title: "Web Accessibility Checklist — WCAG 2.2 Level AA"
-standard: "WCAG 2.2"
+title: "Web Accessibility Checklist — WCAG Level AA"
+standard: "WCAG"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["web"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "prescriptive"
 tags: ["wcag", "checklist", "audit", "aa", "web", "wcag-2.2"]
-ai_context: "Complete WCAG 2.2 Level AA checklist for web content. Use for auditing web pages or confirming accessible content generation. Organized by POUR principles."
+ai_context: "Complete WCAG Level AA checklist for web content. Use for auditing web pages or confirming accessible content generation. Organized by POUR principles."
 ---
 
-# Web Accessibility Checklist — WCAG 2.2 Level AA
+# Web Accessibility Checklist — WCAG Level AA
 
-All Level A (30) and Level AA (20 additional) success criteria. Check all items for WCAG 2.2 AA conformance.
+All Level A (30 active) and Level AA (24 additional; 54 total) success criteria. Check all items for WCAG AA conformance.
 
 ---
 
@@ -88,9 +88,7 @@ All Level A (30) and Level AA (20 additional) success criteria. Check all items 
 - [ ] **SC 2.4.5** — Multiple ways to find pages exist (search, sitemap, navigation, etc.)
 - [ ] **SC 2.4.6** — Headings and labels are descriptive of their content/purpose
 - [ ] **SC 2.4.7** — Keyboard focus is always visible
-- [ ] **SC 2.4.11** — Focus indicator area ≥ perimeter of component × 2 CSS pixels
-- [ ] **SC 2.4.11** — Focus indicator has ≥ 3:1 contrast against adjacent colors
-- [ ] **SC 2.4.12** — Focused components are not entirely hidden behind sticky headers or other overlays
+- [ ] **SC 2.4.11** — Focused components are not entirely hidden behind sticky headers, banners, or other author-created overlays
 
 ### 2.5 Input Modalities
 
@@ -133,7 +131,7 @@ All Level A (30) and Level AA (20 additional) success criteria. Check all items 
 
 ### 4.1 Compatible
 
-- [ ] **SC 4.1.1** — (Obsolete in WCAG 2.2 — always passes; HTML validation still recommended)
+- [ ] **SC 4.1.1** — (Obsolete in current WCAG — always passes; HTML validation still recommended)
 - [ ] **SC 4.1.2** — Every interactive element has an accessible name, role, and programmatically determinable state
 - [ ] **SC 4.1.3** — Status messages (success, error, loading) are exposed via live regions without receiving focus
 

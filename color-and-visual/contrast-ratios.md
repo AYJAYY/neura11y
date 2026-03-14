@@ -1,12 +1,12 @@
 ---
 title: "Contrast Ratios and Color Accessibility"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
 domain: ["web", "documents", "general"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "prescriptive"
-tags: ["contrast", "color", "1.4.3", "1.4.6", "1.4.11", "wcag", "luminance"]
-ai_context: "Complete contrast ratio thresholds for WCAG 2.2. Load when evaluating color choices or generating UI with text or interactive elements."
+tags: ["contrast", "color", "1.4.3", "1.4.6", "1.4.11", "2.4.13", "wcag", "luminance"]
+ai_context: "Complete contrast ratio thresholds for WCAG. Load when evaluating color choices or generating UI with text or interactive elements."
 ---
 
 # Contrast Ratios and Color Accessibility
@@ -93,12 +93,15 @@ SC 1.4.11 requires 3:1 contrast for:
 - Disabled state components — exempt (conveys "unavailable")
 - Inactive/decorative elements
 
-### Focus Indicator Contrast (SC 2.4.11 — WCAG 2.2)
+### Focus Indicator Contrast (SC 1.4.11 — WCAG AA)
 
-WCAG 2.2 added a minimum focus indicator size requirement. The focus area must:
-- Have at least 3:1 contrast against adjacent colors
-- Have a perimeter equal to the element perimeter × 2px (minimum enclosing perimeter)
-- Not be fully obscured by other content
+At WCAG AA, focus indicators must have at least 3:1 contrast against adjacent colors because they communicate component state.
+
+If you are targeting WCAG 2.2 AAA, SC 2.4.13 also adds minimum focus-indicator area requirements:
+- Have a focus-indicator area at least as large as a 2 CSS pixel perimeter of the unfocused component
+- Preserve 3:1 contrast between the focused and unfocused states
+
+Focus obscuration is covered separately by SC 2.4.11 and SC 2.4.12.
 
 See `domains/web/focus-management.md` for implementation details.
 
@@ -169,7 +172,7 @@ APCA is the contrast model being considered for WCAG 3.0. It differs from WCAG 2
 - APCA: different thresholds based on font size AND font weight (lighter fonts need more contrast)
 - APCA uses Lc (Lightness Contrast) scale rather than a simple ratio
 
-**Important:** APCA is NOT currently normative. WCAG 2.2 still uses the 4.5:1 / 3:1 model. Do not use APCA for compliance claims against WCAG 2.x.
+**Important:** APCA is NOT currently normative. Current WCAG still uses the 4.5:1 / 3:1 model. Do not use APCA for compliance claims against WCAG 2.x.
 
 See `standards/wcag/wcag-3.0-overview.md` for more on WCAG 3.0 and APCA.
 

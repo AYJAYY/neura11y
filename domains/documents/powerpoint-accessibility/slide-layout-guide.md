@@ -1,6 +1,6 @@
 ---
 title: "Accessible Slide Layout and Reading Order Guide"
-standard: "WCAG 2.2 + Section 508"
+standard: "WCAG + Section 508"
 source_url: "https://support.microsoft.com/en-us/office/make-your-powerpoint-presentations-accessible-6f7772b2-2f33-4bd2-8ca7-dae3b2b3ef25"
 domain: ["documents"]
 last_fetched: "2026-03-14"

@@ -1,9 +1,9 @@
 ---
 title: "HTML Semantics for Accessibility"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["web"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "prescriptive"
 tags: ["html", "semantics", "headings", "landmarks", "links", "tables", "lists"]
 ai_context: "Guide to semantic HTML for accessibility. Covers document structure, headings, landmarks, links, tables, and lists. Load with forms-accessibility.md for complete HTML semantics guidance."
@@ -17,7 +17,7 @@ Semantic HTML is the foundation of web accessibility. Correct element choice pro
 
 ## Document Structure
 
-### Required Structure
+### Recommended Baseline Structure
 
 ```html
 <!DOCTYPE html>
@@ -39,6 +39,8 @@ Semantic HTML is the foundation of web accessibility. Correct element choice pro
 </body>
 </html>
 ```
+
+Not every page needs every landmark shown above, but pages do need a valid document, a page title, a declared language, and a clear main content region.
 
 ### `<html lang>`
 
@@ -139,8 +141,8 @@ Headings provide document structure and enable navigation by screen reader users
 
 ### Rules
 
-1. **One `<h1>` per page** — Usually the page title or main topic
-2. **Do not skip levels** — `<h1>` → `<h2>` → `<h3>` is correct; `<h1>` → `<h3>` is a failure
+1. **Use a clear page-level heading** — A single main `<h1>` is usually the clearest pattern
+2. **Keep levels consistent with the content outline** — Avoid confusing jumps when an intermediate heading level is missing
 3. **Nest logically** — Headings define an outline; sub-sections go under their parent
 4. **Don't use for visual style** — Use CSS classes if you want a smaller heading style; don't use `<h4>` just because it's visually smaller
 5. **Heading text must be descriptive** — "Section 3" is not descriptive; "Contact Information" is
@@ -162,8 +164,8 @@ h1: Product Documentation
 ### Common Failures
 
 - Using `<div class="heading">` instead of `<h2>` (fails SC 1.3.1)
-- Multiple `<h1>` elements (confusing, not technically a WCAG failure but poor practice)
-- Skipping from `<h1>` to `<h3>` (AT may warn users of "missing" level)
+- Using heading levels only for visual size instead of document structure
+- Jumping from `<h1>` to `<h3>` without a structural reason (not automatically a WCAG failure, but often a confusing outline)
 - `<h1>` inside `<nav>` (nav labels should use `aria-label`, not `<h1>`)
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Typography Accessibility"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html"
 domain: ["web", "documents", "general"]
 last_fetched: "2026-03-13"

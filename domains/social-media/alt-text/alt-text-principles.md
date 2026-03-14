@@ -1,6 +1,6 @@
 ---
 title: "Alt Text Principles for Social Media"
-standard: "WCAG 2.2 SC 1.1.1"
+standard: "WCAG SC 1.1.1"
 source_url: "https://www.w3.org/TR/WCAG22/#non-text-content"
 domain: ["social-media", "web"]
 last_fetched: "2026-03-13"
@@ -131,7 +131,7 @@ Describe the action, context, and appearance details relevant to the post.
 
 ### Text Screenshots
 Transcribe the text exactly. If too long, summarize and note "[full text in comments]".
-> "Tweet from @accessibility_news: 'WCAG 2.2 officially published today with 9 new success criteria. Details at w3.org'"
+> "Tweet from @accessibility_news: 'Latest WCAG update officially published today with 9 new success criteria. Details at w3.org'"
 
 ### Charts and Graphs
 State the type of chart, what it measures, and the key finding. Don't describe every data point.

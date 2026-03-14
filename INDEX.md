@@ -20,9 +20,9 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 |------|-------------|--------|
 | `standards/wcag/wcag-2.1-full.md` | Complete WCAG 2.1 specification | normative |
 | `standards/wcag/wcag-2.1-quick-ref.md` | WCAG 2.1 success criteria quick reference | normative |
-| `standards/wcag/wcag-2.2-full.md` | Complete WCAG 2.2 specification | normative |
-| `standards/wcag/wcag-2.2-quick-ref.md` | WCAG 2.2 success criteria quick reference | normative |
-| `standards/wcag/wcag-2.2-new-criteria.md` | The 9 new success criteria added in WCAG 2.2 | normative |
+| `standards/wcag/wcag-2.2-full.md` | Complete current WCAG specification | normative |
+| `standards/wcag/wcag-2.2-quick-ref.md` | Current WCAG success criteria quick reference | normative |
+| `standards/wcag/wcag-2.2-new-criteria.md` | The 9 new success criteria in the current WCAG release | normative |
 | `standards/wcag/wcag-conformance-levels.md` | Level A, AA, AAA definitions and requirements | normative |
 | `standards/wcag/wcag-3.0-overview.md` | WCAG 3.0 working draft overview | normative |
 | `standards/wcag/wcag-techniques/sufficient-techniques.md` | High-value sufficient techniques with IDs | curated |
@@ -89,7 +89,7 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 
 | File | Description | Tags |
 |------|-------------|------|
-| `domains/web/web-accessibility-checklist.md` | WCAG 2.2 AA checklist for web content | wcag, checklist, audit |
+| `domains/web/web-accessibility-checklist.md` | WCAG AA checklist for web content | wcag, checklist, audit |
 | `domains/web/html-semantics-guide.md` | Semantic HTML guidance and native role mapping | html, semantics, aria |
 | `domains/web/focus-management.md` | Focus movement and restoration patterns | focus, keyboard, spa |
 | `domains/web/keyboard-navigation-patterns.md` | Keyboard interaction patterns by component type | keyboard, patterns |
@@ -358,6 +358,6 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 ## Coverage Notes
 
 - Canonical prompt templates now exist for every context-loading pattern documented in `AI-USAGE-GUIDE.md`.
-- AI operations now include schema validation, reference auditing, chunk export, freshness sync, and pattern-level validation scripts.
+- AI operations now include schema validation, reference auditing, chunk export, freshness sync, and fixture-based validation scripts.
 - Remaining optional content backlog is limited to video game accessibility.
 - Prefer canonical files listed here over raw `*-fetched.md` source captures.

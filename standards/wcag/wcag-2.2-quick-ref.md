@@ -3,15 +3,15 @@ title: "WCAG 2.2 Quick Reference — All Success Criteria"
 standard: "WCAG 2.2"
 source_url: "https://www.w3.org/WAI/WCAG22/quickref/"
 domain: ["web", "documents", "general"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "normative"
 tags: ["wcag", "wcag-2.2", "quick-ref", "success-criteria", "all-sc", "pour"]
-ai_context: "Complete reference for all 87 WCAG 2.2 success criteria with levels, intent, and key techniques. The most important single file in this repository. Always load this for accessibility auditing or content generation tasks."
+ai_context: "Complete reference for all 86 active WCAG 2.2 success criteria with levels, intent, and key techniques, plus note on obsolete SC 4.1.1. The most important single file in this repository. Always load this for accessibility auditing or content generation tasks."
 ---
 
 # WCAG 2.2 Quick Reference
 
-All 87 success criteria from WCAG 2.2 (W3C Recommendation, October 5, 2023). Organized by the four POUR principles and 13 guidelines. [NEW 2.2] indicates criteria added in WCAG 2.2.
+All 86 active success criteria from WCAG 2.2 (W3C Recommendation, October 5, 2023). SC 4.1.1 Parsing is retained here as obsolete context but is not counted in the active total. Organized by the four POUR principles and 13 guidelines. [NEW 2.2] indicates criteria added in WCAG 2.2.
 
 ---
 
@@ -454,7 +454,7 @@ Provide ways to help users navigate, find content, and determine where they are.
 
 **Intent:** Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.
 
-**Note:** WCAG 2.2 adds SC 2.4.11 with specific minimum appearance requirements. SC 2.4.7 requires only that some focus indicator is visible.
+**Note:** WCAG 2.2 adds SC 2.4.11 and SC 2.4.12 for focus obscuration, and SC 2.4.13 for specific focus appearance requirements. SC 2.4.7 still requires only that some focus indicator is visible.
 
 #### SC 2.4.8 — Location — Level AAA
 
@@ -468,7 +468,15 @@ Provide ways to help users navigate, find content, and determine where they are.
 
 **Intent:** Section headings organize content.
 
-#### SC 2.4.11 — Focus Appearance (Minimum) — Level AA [NEW in WCAG 2.2]
+#### SC 2.4.11 — Focus Not Obscured (Minimum) — Level AA [NEW in WCAG 2.2]
+
+**Intent:** Focused component is not entirely hidden by author-created content (sticky headers, banners, overlays).
+
+#### SC 2.4.12 — Focus Not Obscured (Enhanced) — Level AAA [NEW in WCAG 2.2]
+
+**Intent:** No part of the focused component is hidden by author-created content.
+
+#### SC 2.4.13 — Focus Appearance — Level AAA [NEW in WCAG 2.2]
 
 **Intent:** Keyboard focus indicator meets minimum area and contrast requirements.
 
@@ -477,14 +485,6 @@ Provide ways to help users navigate, find content, and determine where they are.
 - Contrast ratio ≥ 3:1 between focused and unfocused state color
 
 See `wcag-2.2-new-criteria.md` for full specification.
-
-#### SC 2.4.12 — Focus Not Obscured (Minimum) — Level AA [NEW in WCAG 2.2]
-
-**Intent:** Focused component is not entirely hidden by author-created content (sticky headers, banners, overlays).
-
-#### SC 2.4.13 — Focus Appearance (Enhanced) — Level AAA [NEW in WCAG 2.2]
-
-**Intent:** Focus indicator fully encloses focused component; contrast ≥ 3:1 (focused/unfocused) and ≥ 4.5:1 against adjacent colors.
 
 ---
 
@@ -728,10 +728,10 @@ Maximize compatibility with current and future user agents, including assistive 
 
 | Level | Meaning | Count in WCAG 2.2 |
 |-------|---------|-------------------|
-| A | Minimum — must satisfy for any conformance claim | 30 criteria |
-| AA | Standard — required by Section 508, EN 301 549, most legal frameworks | 20 additional criteria (50 total) |
-| AAA | Enhanced — aspirational; not required for conformance | 28 additional criteria (78 total) |
+| A | Minimum — must satisfy for any conformance claim | 30 active criteria |
+| AA | Standard — required by Section 508, EN 301 549, most legal frameworks | 24 additional criteria (54 total) |
+| AAA | Enhanced — aspirational; not required for conformance | 32 additional criteria (86 total) |
 
-**Note:** Conformance is all-or-nothing per level. Satisfying 49 of 50 AA criteria does NOT constitute AA conformance. All criteria at the claimed level must be satisfied on the entire page.
+**Note:** Conformance is all-or-nothing per level. Satisfying 53 of 54 A+AA criteria does NOT constitute AA conformance. All criteria at the claimed level must be satisfied on the entire page.
 
-**WCAG 2.2 vs 2.1:** WCAG 2.2 adds 9 new criteria (+6 AA, +1 A, +2 AAA) and makes SC 4.1.1 always passing. All WCAG 2.1 criteria remain in WCAG 2.2. Organizations conforming to WCAG 2.1 AA must add 6 new AA criteria to conform to WCAG 2.2 AA.
+**WCAG 2.2 vs 2.1:** WCAG 2.2 adds 9 new criteria (+2 A, +4 AA, +3 AAA) and removes SC 4.1.1 Parsing as an active criterion. Organizations conforming to WCAG 2.1 AA must add 4 new AA criteria to conform to WCAG 2.2 AA.

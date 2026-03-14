@@ -144,7 +144,7 @@ Share your support and help spread understanding.
 
 **Tech post:**
 ```
-WCAG 2.2 introduced 9 new success criteria for web accessibility.
+The current WCAG release introduced 9 new success criteria for web accessibility.
 Here's what changed and what you need to know.
 
 #WebAccessibility #WCAG22 #A11y #WebDevelopment

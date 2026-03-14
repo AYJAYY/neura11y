@@ -6,7 +6,7 @@ domain:
 - social-media
 last_fetched: '2026-03-13'
 source_url: https://www.w3.org/WAI/tutorials/images/decision-tree/
-standard: WCAG 2.2
+standard: WCAG
 status: prescriptive
 tags:
 - alt-text

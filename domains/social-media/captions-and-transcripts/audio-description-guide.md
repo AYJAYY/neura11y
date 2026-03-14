@@ -1,6 +1,6 @@
 ---
 title: "Audio Description Guide for Social Media and Web Video"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html"
 domain: ["social-media", "media", "web"]
 last_fetched: "2026-03-13"

@@ -3,7 +3,7 @@ title: "WCAG 2.2 New Success Criteria"
 standard: "WCAG 2.2"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["web", "general"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "normative"
 tags: ["wcag", "wcag-2.2", "new-criteria", "2.4.11", "2.4.12", "2.4.13", "2.5.7", "2.5.8", "3.2.6", "3.3.7", "3.3.8", "3.3.9"]
 ai_context: "The 9 new success criteria added in WCAG 2.2 (October 2023) beyond WCAG 2.1. Also notes SC 4.1.1 obsolescence. Load when determining what changed between WCAG 2.1 and 2.2."
@@ -19,9 +19,9 @@ WCAG 2.2 was published as a W3C Recommendation on October 5, 2023. It adds 9 new
 
 | SC | Title | Level | Primary Beneficiary |
 |----|-------|-------|---------------------|
-| 2.4.11 | Focus Appearance (Minimum) | AA | Keyboard, low vision |
-| 2.4.12 | Focus Not Obscured (Minimum) | AA | Keyboard |
-| 2.4.13 | Focus Appearance (Enhanced) | AAA | Keyboard, low vision |
+| 2.4.11 | Focus Not Obscured (Minimum) | AA | Keyboard |
+| 2.4.12 | Focus Not Obscured (Enhanced) | AAA | Keyboard |
+| 2.4.13 | Focus Appearance | AAA | Keyboard, low vision |
 | 2.5.7 | Dragging Movements | AA | Motor disabilities |
 | 2.5.8 | Target Size (Minimum) | AA | Motor disabilities |
 | 3.2.6 | Consistent Help | A | Cognitive |
@@ -31,20 +31,64 @@ WCAG 2.2 was published as a W3C Recommendation on October 5, 2023. It adds 9 new
 
 ---
 
-## SC 2.4.11 — Focus Appearance (Minimum)
+## SC 2.4.11 — Focus Not Obscured (Minimum)
 
 **Level:** AA
+**Source:** https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum
+
+### Normative Requirement
+
+When a user interface component receives keyboard focus, it is not entirely hidden due to author-created content.
+
+### Key Points
+- "Not entirely hidden" means at least part of the focused component must be visible
+- A component that is partially obscured still passes this criterion
+- Sticky headers, cookie banners, and chat widgets are common causes of obscuring focused elements
+- The obstruction must be created by the author — content scrolled off-screen by the user does not fail
+
+### Common Failures
+- Sticky/fixed-position headers that cover the focused element
+- Modal overlays that do not properly manage focus
+- Cookie consent banners that appear over interactive content
+- `overflow: hidden` clipping focused elements
+
+---
+
+## SC 2.4.12 — Focus Not Obscured (Enhanced)
+
+**Level:** AAA
+**Source:** https://www.w3.org/TR/WCAG22/#focus-not-obscured-enhanced
+
+### Normative Requirement
+
+When a user interface component receives keyboard focus, no part of the component is hidden by author-created content.
+
+### Key Points
+- This is stricter than SC 2.4.11: partial obscuration is a failure here
+- Sticky headers, bottom bars, cookie banners, and overlays commonly fail this criterion
+- User-opened content does not fail this criterion if the user can reveal the focused component without moving focus
+
+### Common Failures
+- Sticky/fixed-position headers that cover even part of the focused element
+- Bottom action bars that overlap focused form fields on mobile
+- Floating widgets that clip the visible edge of the active control
+
+---
+
+## SC 2.4.13 — Focus Appearance
+
+**Level:** AAA
 **Source:** https://www.w3.org/TR/WCAG22/#focus-appearance
 
 ### Normative Requirement
 
-The keyboard focus indicator must meet ALL of these conditions:
+When the keyboard focus indicator is visible, an area of the focus indicator meets ALL of these conditions:
 1. **Area:** The focus indicator area is at least as large as the area of a 2 CSS pixel thick perimeter of the unfocused component.
-2. **Contrast:** The focus indicator has a contrast ratio of at least 3:1 between the pixels of the focus indicator in focused and unfocused states. If the color of the focus indicator is the same in both states, contrast is measured against adjacent colors.
+2. **Contrast:** The focus indicator has a contrast ratio of at least 3:1 between the pixels of the focus indicator in focused and unfocused states.
 
 ### Exceptions
 - The focus indicator is determined by the user agent (browser) and not modified by the author.
-- The focus indicator is not modified by the author.
+- The focus indicator and its background are not modified by the author.
 
 ### Exact Formula
 - Minimum area = perimeter of the unfocused component (in CSS pixels) × 2 CSS pixels
@@ -57,49 +101,13 @@ The keyboard focus indicator must meet ALL of these conditions:
 
 ### Common Failures
 - Removing the browser default focus outline with `outline: none` or `outline: 0` without a replacement that meets the requirements
-- Using a focus indicator whose contrast ratio against adjacent colors is less than 3:1
+- Using a focus indicator whose contrast ratio against the changed state is less than 3:1
 - A focus indicator that covers fewer pixels than the perimeter × 2 formula
 
----
-
-## SC 2.4.12 — Focus Not Obscured (Minimum)
-
-**Level:** AA
-**Source:** https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum
-
-### Normative Requirement
-
-When a user interface component receives keyboard focus, it is not entirely hidden due to author-created content.
-
-### Key Points
-- "Not entirely hidden" means at least part of the focused component must be visible
-- A component that is partially obscured still passes this criterion (see 2.4.13 for full visibility)
-- Sticky headers, cookie banners, and chat widgets are common causes of obscuring focused elements
-- The obstruction must be created by the author — content scrolled off-screen by the user does not fail
-
-### Common Failures
-- Sticky/fixed-position headers that cover the focused element
-- Modal overlays that do not properly manage focus
-- Cookie consent banners that appear over interactive content
-- `overflow: hidden` clipping focused elements
-
----
-
-## SC 2.4.13 — Focus Appearance (Enhanced)
-
-**Level:** AAA
-**Source:** https://www.w3.org/TR/WCAG22/#focus-appearance-enhanced
-
-### Normative Requirement
-
-When the keyboard focus indicator is visible, both of the following are true:
-1. **Enclosed:** The focus indicator completely encloses the component or sub-component that is focused.
-2. **Contrast:** The focus indicator has a contrast ratio of at least 3:1 between pixels in focused and unfocused states, AND a contrast ratio of at least 4.5:1 against every adjacent color in the unfocused state.
-3. **Not hidden:** The focused component is not entirely hidden by author-created content.
-
-### Comparison with 2.4.11 (AA)
-- 2.4.11: Area ≥ perimeter × 2; contrast ≥ 3:1 (focused vs. unfocused)
-- 2.4.13: Full enclosure; contrast ≥ 3:1 (focused vs. unfocused) AND ≥ 4.5:1 against adjacent colors
+### Comparison of the New Focus Criteria
+- 2.4.11: focused component must not be entirely hidden
+- 2.4.12: no part of the focused component may be hidden
+- 2.4.13: the focus indicator itself must be large and distinct enough
 
 ---
 

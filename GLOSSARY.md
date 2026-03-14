@@ -2,7 +2,7 @@
 title: "Accessibility Glossary"
 type: "reference"
 status: "curated"
-last_updated: "2026-03-13"
+last_updated: "2026-03-14"
 tags: ["glossary", "definitions", "terminology"]
 ai_context: "Canonical definitions for accessibility terms used throughout this repository. Load this file when precision of terminology is required."
 ---
@@ -41,7 +41,7 @@ Canonical definitions for terms used throughout this repository. Sources are cit
 
 ## B
 
-**Baseline** — In WCAG, a set of web technologies that authors can rely on users having support for. Affects which techniques are sufficient.
+**Baseline** — A term used in older WCAG 2.0 drafts and related guidance for the technologies authors could rely on users supporting. In current WCAG 2.x work, this idea is handled through accessibility support rather than a formal "baseline" concept.
 
 **Braille Display** — Hardware device that converts digital text to braille characters via a row of refreshable pins. Used by people who are deafblind or prefer tactile reading.
 
@@ -87,13 +87,13 @@ Canonical definitions for terms used throughout this repository. Sources are cit
 
 **Failure Technique** — A documented way of failing a WCAG success criterion. Listed in WCAG understanding documents. Presence of a failure technique means the page does not conform.
 
-**Focus** — The keyboard focus indicator showing which interactive element is currently active. Visible focus is required under WCAG SC 2.4.7 (Level AA) and SC 2.4.11 (Level AA, WCAG 2.2).
+**Focus** — The interaction state that determines which element will receive keyboard input. A visible focus indicator is required under WCAG SC 2.4.7; focus indicators also need sufficient contrast under SC 1.4.11, and WCAG 2.2 adds obscuration and appearance requirements in SC 2.4.11-2.4.13.
 
-**Focus Indicator** — The visual outline or other styling that shows which element has keyboard focus. WCAG 2.2 SC 2.4.11 requires minimum focus appearance: area ≥ perimeter × CSS pixel offset of 2 × 2 pixels; contrast ratio ≥ 3:1 against adjacent color.
+**Focus Indicator** — The visual outline or other styling that shows which element has keyboard focus. Under WCAG, focus indicators must be visible (SC 2.4.7), have sufficient non-text contrast against adjacent colors (SC 1.4.11), and, at AAA in WCAG 2.2, meet minimum appearance requirements in SC 2.4.13.
 
 **Focus Management** — The practice of programmatically controlling where keyboard focus moves, particularly important in single-page apps, modals, and dynamic content updates.
 
-**Focus Trap** — A pattern (usually intentional in modals) that confines keyboard focus within a component until the user dismisses it. Required for modal dialogs; incorrect implementation is a common accessibility bug.
+**Focus Trap** — A pattern, commonly used in modal dialogs, that confines keyboard focus within a component until the user dismisses it. It is acceptable only when users can still dismiss the component and return to the rest of the interface with keyboard alone.
 
 ---
 
@@ -105,7 +105,7 @@ Canonical definitions for terms used throughout this repository. Sources are cit
 
 ## H
 
-**Heading Hierarchy** — The ordered structure of `<h1>` through `<h6>` elements providing document outline. Must not skip levels (e.g., `<h1>` directly to `<h3>`). Supports WCAG SC 1.3.1.
+**Heading Hierarchy** — The ordered structure of `<h1>` through `<h6>` elements providing document outline. A clear, consistent heading outline supports WCAG SC 1.3.1 and SC 2.4.6. Skipped levels are not automatically WCAG failures, but they often make structure harder to understand.
 
 ---
 
@@ -139,7 +139,7 @@ Canonical definitions for terms used throughout this repository. Sources are cit
 
 **Matterhorn Protocol** — A framework for testing PDF/UA conformance, published by PDF Association. Defines 136 checkpoints for PDF accessibility testing.
 
-**Minimum Bounding Box** — The smallest rectangle that encloses a UI component or focus indicator. Relevant to WCAG 2.2 SC 2.4.11 focus appearance requirements.
+**Minimum Bounding Box** — The smallest rectangle that encloses a shape or UI component. Relevant to WCAG target-size calculations (SC 2.5.8) and to perimeter calculations used in WCAG 2.2 focus appearance guidance (SC 2.4.13).
 
 **MSAA** — Microsoft Active Accessibility. Legacy accessibility API for Windows. Largely superseded by UI Automation (UIA).
 
@@ -229,7 +229,7 @@ Canonical definitions for terms used throughout this repository. Sources are cit
 
 **WAI** — Web Accessibility Initiative. The W3C program that develops accessibility guidelines including WCAG, ARIA, ATAG, and UAAG. Source: https://www.w3.org/WAI/
 
-**WCAG** — Web Content Accessibility Guidelines. W3C standard defining requirements for web content accessibility. Current stable version: WCAG 2.2 (October 2023). Source: https://www.w3.org/TR/WCAG22/
+**WCAG** — Web Content Accessibility Guidelines. W3C standard defining requirements for web content accessibility. The current stable W3C Recommendation is version 2.2 (October 2023). Source: https://www.w3.org/TR/WCAG22/
 
 **WebVTT** — Web Video Text Tracks Format. W3C specification for timed text tracks (captions, subtitles, descriptions) for use with HTML `<track>` element. Source: https://www.w3.org/TR/webvtt1/
 

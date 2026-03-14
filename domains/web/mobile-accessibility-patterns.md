@@ -1,6 +1,6 @@
 ---
 title: "Mobile Web Accessibility Patterns"
-standard: "WCAG 2.2 + EN 301 549"
+standard: "WCAG + EN 301 549"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["web"]
 last_fetched: "2026-03-14"
@@ -24,7 +24,7 @@ Mobile accessibility is not a separate WCAG mode. The same success criteria appl
 | Gestures | drag, pinch, or path gestures required | `2.5.1`, `2.5.7` |
 | Orientation lock | landscape or portrait blocked without need | `1.3.4` |
 | Zoom disabled | user cannot magnify content | `1.4.4`, `1.4.10` |
-| Sticky UI | fixed headers or bottom bars obscure focus | `2.4.12` |
+| Sticky UI | fixed headers or bottom bars obscure focus | `2.4.11`, `2.4.12` |
 | Virtual keyboard | focus and layout break when keyboard opens | `1.4.10`, `2.4.3` |
 
 ---
@@ -44,7 +44,7 @@ Mobile accessibility is not a separate WCAG mode. The same success criteria appl
 
 ### Use Generous Targets
 
-- Prefer at least 44px tap areas even though WCAG 2.2 AA minimum is 24px with spacing exceptions.
+- Prefer at least 44px tap areas even though WCAG AA minimum is 24px with spacing exceptions.
 - Add padding around icon-only controls.
 - Ensure adjacent targets do not create accidental activation.
 

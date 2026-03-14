@@ -1,6 +1,6 @@
 ---
 title: "PDF Accessibility Guide"
-standard: "PDF/UA (ISO 14289-1) + WCAG 2.2 + Section 508"
+standard: "PDF/UA (ISO 14289-1) + WCAG + Section 508"
 source_url: "https://pdfa.org/resource/pdf-ua/"
 domain: ["documents"]
 last_fetched: "2026-03-13"

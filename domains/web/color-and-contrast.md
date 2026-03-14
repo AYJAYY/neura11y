@@ -1,12 +1,12 @@
 ---
 title: "Color and Contrast Requirements"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["web"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "prescriptive"
-tags: ["contrast", "color", "1.4.3", "1.4.6", "1.4.11", "2.4.11", "apca", "color-blindness"]
-ai_context: "Exact color contrast ratios, thresholds, and requirements for WCAG 2.2. Load when specifying colors, reviewing visual design, or generating content with color specifications."
+tags: ["contrast", "color", "1.4.3", "1.4.6", "1.4.11", "2.4.13", "apca", "color-blindness"]
+ai_context: "Exact color contrast ratios, thresholds, and requirements for WCAG. Load when specifying colors, reviewing visual design, or generating content with color specifications, including focus indicators."
 ---
 
 # Color and Contrast Requirements
@@ -22,7 +22,7 @@ ai_context: "Exact color contrast ratios, thresholds, and requirements for WCAG 
 | SC 1.4.6 | AAA | Normal text | **7:1** |
 | SC 1.4.6 | AAA | Large text | **4.5:1** |
 | SC 1.4.11 | AA | UI components and graphical objects | **3:1** |
-| SC 2.4.11 | AA | Focus indicator vs. adjacent colors | **3:1** |
+| SC 2.4.13 | AAA | Focus indicator area and focused/unfocused-state contrast | **3:1** |
 
 ---
 
@@ -88,7 +88,7 @@ Tools perform this automatically — use WebAIM Contrast Checker or browser DevT
 - **Form control boundaries** — The outline/border of `<input>`, `<textarea>`, `<select>` (against background)
 - **Icons that convey information** — Not decorative icons
 - **Graphical objects** — Parts of charts, graphs, maps that convey information
-- **Focus indicators** — The focus outline (see also SC 2.4.11)
+- **Focus indicators** — The focus outline (contrast at AA under SC 1.4.11; appearance at AAA under SC 2.4.13)
 - **UI component state indicators** — Checkbox border, radio button border
 
 ### What It Does NOT Apply To
@@ -132,13 +132,11 @@ Color cannot be the only visual means of conveying information, indicating an ac
 
 ---
 
-## SC 2.4.11 — Focus Appearance (Minimum) — Level AA (WCAG 2.2)
+## Focus Indicators — SC 1.4.11 and SC 2.4.13
 
-Focus indicator contrast is measured differently from text contrast:
+At WCAG AA, focus indicators need at least 3:1 contrast against adjacent colors under SC 1.4.11 because they communicate component state.
 
-**Requirement:** The focus indicator must have a contrast ratio of ≥ 3:1 between:
-- The focused state color of the indicator, AND
-- The adjacent colors in the unfocused state
+At WCAG AAA, SC 2.4.13 also requires the focus indicator to cover at least the area of a 2 CSS pixel perimeter of the unfocused component and preserve 3:1 contrast between the focused and unfocused states.
 
 Example: Blue outline (`#005fcc`) on white (`#ffffff`) background:
 - `#005fcc` vs `#ffffff` = approximately 8.6:1 ✓
@@ -225,7 +223,7 @@ Proposed APCA targets (subject to change):
 - Large display text: Lc 45+
 - Placeholder/non-body text: Lc 30+
 
-**Important:** Use WCAG 2.2 contrast ratios (4.5:1, 3:1, 7:1) for all current compliance work. APCA is for research and future-proofing awareness only.
+**Important:** Use current WCAG contrast ratios (4.5:1, 3:1, 7:1) for all current compliance work. APCA is for research and future-proofing awareness only.
 
 APCA tools: https://www.myndex.com/APCA/
 

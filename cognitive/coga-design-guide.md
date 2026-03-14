@@ -1,6 +1,6 @@
 ---
 title: "COGA Design Guide — Patterns and Examples"
-standard: "WCAG 2.2 + W3C COGA"
+standard: "WCAG + W3C COGA"
 source_url: "https://www.w3.org/TR/coga-usable/"
 domain: ["web", "documents", "general"]
 last_fetched: "2026-03-13"
@@ -15,7 +15,7 @@ Source: W3C COGA Usability Guidance (https://www.w3.org/TR/coga-usable/)
 
 ---
 
-## SC 3.3.8 — Accessible Authentication (Minimum) — Level AA (WCAG 2.2)
+## SC 3.3.8 — Accessible Authentication (Minimum) — Level AA (WCAG)
 
 Cognitive function tests must not be required for authentication unless an alternative is provided.
 
@@ -55,7 +55,7 @@ Cognitive function tests must not be required for authentication unless an alter
 
 ---
 
-## SC 3.3.7 — Redundant Entry — Level A (WCAG 2.2)
+## SC 3.3.7 — Redundant Entry — Level A (WCAG)
 
 Information previously entered that is required again in the same process must be:
 - Auto-populated, OR
@@ -303,7 +303,7 @@ Navigation must appear in the same location on every page.
 </header>
 ```
 
-### Consistent Help (SC 3.2.6 — WCAG 2.2, Level A)
+### Consistent Help (SC 3.2.6 — WCAG, Level A)
 
 Help mechanisms must appear in the same location across pages.
 

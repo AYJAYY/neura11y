@@ -1,6 +1,6 @@
 ---
 title: "Images and Media Accessibility"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/tutorials/images/"
 domain: ["web"]
 last_fetched: "2026-03-13"

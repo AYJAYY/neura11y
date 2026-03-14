@@ -1,6 +1,6 @@
 ---
 title: "AI Prompt Templates — Document Accessibility"
-standard: "WCAG 2.2 + PDF/UA + Section 508"
+standard: "WCAG + PDF/UA + Section 508"
 source_url: ""
 domain: ["documents"]
 last_fetched: "2026-03-13"

@@ -1,6 +1,6 @@
 ---
 title: "Single-Page Application (SPA) Accessibility"
-standard: "WCAG 2.2 + WAI-ARIA"
+standard: "WCAG + WAI-ARIA"
 source_url: "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"
 domain: ["web"]
 last_fetched: "2026-03-13"

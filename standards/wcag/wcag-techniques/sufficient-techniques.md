@@ -76,13 +76,13 @@ Techniques are **informative**, not normative. Conformance is determined by the 
 | `G115` | Use semantic elements to mark up structure | `1.3.1` |
 | `G141` | Organize a page using headings | `1.3.1`, `2.4.6` |
 | `G145` | Ensure 3:1 contrast for large text | `1.4.3` |
-| `G149` | Use user-agent focus indicators or clearly visible custom focus styles | `2.4.7`, `2.4.11` |
+| `G149` | Use user-agent focus indicators or clearly visible custom focus styles | `2.4.7`, `2.4.13` |
 | `G157` | Use live captioning for live media | `1.2.4` |
 | `G208` | Include visible label text in the accessible name | `2.5.3` |
 | `G211` | Match the accessible name to the visible label | `2.5.3` |
 | `G215` | Provide alternatives to path-based or multipoint gestures | `2.5.1` |
 | `G216` | Provide single-point alternatives to dragging | `2.5.7` |
-| `C15` | Change component presentation on focus with CSS | `2.4.7`, `2.4.11` |
+| `C15` | Change component presentation on focus with CSS | `2.4.7`, `2.4.13` |
 | `C17` | Scale form controls containing text | `1.4.4` |
 | `C18` | Use CSS margin/padding instead of spacer images | `1.1.1` |
 | `C22` | Use CSS for visual presentation of text | `1.3.1`, `1.4.x` |
@@ -122,7 +122,7 @@ Techniques are **informative**, not normative. Conformance is determined by the 
 | `1.4.3` | `G18`, `G145`, `C22` |
 | `2.4.1` | `G1`, `ARIA11`, `H101` |
 | `2.4.4` | `H30`, `PDF11` |
-| `2.4.7` / `2.4.11` | `C15`, `G149` |
+| `2.4.7` / `2.4.13` | `C15`, `G149` |
 | `2.5.3` | `G208`, `G211` |
 | `4.1.2` | `H44`, `ARIA6`, `ARIA16`, `PDF12` |
 | `4.1.3` | `ARIA19`, `ARIA22`, `SCR26`, `SCR32` |

@@ -1,6 +1,6 @@
 ---
 title: "Creating Accessible PDF from InDesign"
-standard: "PDF/UA + WCAG 2.2"
+standard: "PDF/UA + WCAG"
 source_url: "https://pdfa.org/resource/iso-14289-pdfua/"
 domain: ["documents"]
 last_fetched: "2026-03-14"

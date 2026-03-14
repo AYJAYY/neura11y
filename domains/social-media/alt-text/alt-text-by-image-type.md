@@ -1,6 +1,6 @@
 ---
 title: "Alt Text by Image Type"
-standard: "WCAG 2.2 SC 1.1.1"
+standard: "WCAG SC 1.1.1"
 source_url: "https://www.w3.org/TR/WCAG22/#non-text-content"
 domain: ["social-media", "web"]
 last_fetched: "2026-03-14"
@@ -35,7 +35,7 @@ The best alt text depends on what kind of image it is and what job the image is 
 
 ### Text Screenshot
 
-`Tweet from @accessibility_news: "WCAG 2.2 officially published with 9 new success criteria."`
+`Tweet from @accessibility_news: "Latest WCAG update officially published with 9 new success criteria."`
 
 ### Chart
 

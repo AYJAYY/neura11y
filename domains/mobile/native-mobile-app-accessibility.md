@@ -1,6 +1,6 @@
 ---
 title: "Native Mobile App Accessibility Guide"
-standard: "WCAG 2.2 + Platform Accessibility APIs"
+standard: "WCAG + Platform Accessibility APIs"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["mobile"]
 last_fetched: "2026-03-14"

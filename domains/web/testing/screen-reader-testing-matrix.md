@@ -1,6 +1,6 @@
 ---
 title: "Screen Reader Testing Matrix"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/test-evaluate/preliminary/"
 domain: ["web"]
 last_fetched: "2026-03-13"

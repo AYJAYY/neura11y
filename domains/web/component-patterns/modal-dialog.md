@@ -1,6 +1,6 @@
 ---
 title: "Accessible Modal Dialog Pattern"
-standard: "WAI-ARIA APG + WCAG 2.2"
+standard: "WAI-ARIA APG + WCAG"
 source_url: "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
 domain: ["web"]
 last_fetched: "2026-03-13"

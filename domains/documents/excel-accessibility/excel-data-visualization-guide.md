@@ -1,6 +1,6 @@
 ---
 title: "Excel Chart and Data Visualization Accessibility"
-standard: "WCAG 2.2 + Section 508"
+standard: "WCAG + Section 508"
 source_url: "https://support.microsoft.com/en-us/office/make-your-excel-documents-accessible-6cc05fc5-1314-48b5-8eb3-683e49b3e593"
 domain: ["documents"]
 last_fetched: "2026-03-14"

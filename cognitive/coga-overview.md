@@ -1,6 +1,6 @@
 ---
 title: "Cognitive Accessibility Overview"
-standard: "WCAG 2.2 + COGA"
+standard: "WCAG + COGA"
 source_url: "https://www.w3.org/WAI/cognitive/"
 domain: ["web", "documents", "general"]
 last_fetched: "2026-03-13"
@@ -33,7 +33,7 @@ Cognitive accessibility addresses the needs of people with cognitive disabilitie
 
 ## WCAG Success Criteria for Cognitive Accessibility
 
-WCAG 2.2 criteria most relevant to cognitive access:
+WCAG criteria most relevant to cognitive access:
 
 | SC | Title | Level | Benefit |
 |----|-------|-------|---------|

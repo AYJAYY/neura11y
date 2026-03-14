@@ -1,9 +1,9 @@
 ---
 title: "Microsoft Word Accessibility Guide"
-standard: "WCAG 2.2 + PDF/UA + Section 508"
+standard: "WCAG + PDF/UA + Section 508"
 source_url: "https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-d9bf3683-87ac-47ea-b91a-78dcacb3c66d"
 domain: ["documents"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "prescriptive"
 tags: ["word", "microsoft", "documents", "headings", "alt-text", "accessibility-checker"]
 ai_context: "How to create accessible Microsoft Word documents. Load when advising on Word document accessibility or document remediation."
@@ -31,10 +31,10 @@ The most critical Word accessibility requirement: use built-in heading styles to
 
 ### Heading Hierarchy Rules
 
-- Document title → Heading 1 (only one per document)
+- Document title → Heading 1 (usually)
 - Major sections → Heading 2
 - Subsections → Heading 3
-- Do not skip levels (H1 → H3 without H2)
+- Keep heading levels consistent with the document outline; avoid unnecessary jumps
 
 ---
 
@@ -126,7 +126,7 @@ Links must have descriptive text. Avoid "click here" or "read more."
 |-------|---------|
 | Click here | Download the 2025 Annual Report (PDF, 2.4 MB) |
 | More information | More information about our return policy |
-| Read more | Read more about WCAG 2.2 |
+| Read more | Read more about WCAG |
 
 ---
 

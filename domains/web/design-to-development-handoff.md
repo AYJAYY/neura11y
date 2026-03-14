@@ -1,6 +1,6 @@
 ---
 title: "Accessible Design-to-Development Handoff"
-standard: "WCAG 2.2 + WAI-ARIA 1.2"
+standard: "WCAG + WAI-ARIA 1.2"
 source_url: "https://www.w3.org/TR/WCAG22/"
 domain: ["web"]
 last_fetched: "2026-03-14"

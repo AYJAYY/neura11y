@@ -1,12 +1,12 @@
 ---
 title: "Keyboard Navigation Patterns"
-standard: "WCAG 2.2 + WAI-ARIA APG"
+standard: "WCAG + WAI-ARIA APG"
 source_url: "https://www.w3.org/WAI/ARIA/apg/patterns/"
 domain: ["web"]
 last_fetched: "2026-03-13"
 status: "prescriptive"
 tags: ["keyboard", "navigation", "patterns", "tab", "arrow-keys", "focus"]
-ai_context: "Keyboard interaction patterns for web content. Covers Tab navigation, arrow key widgets, Enter vs Space activation, and WCAG 2.2 new keyboard criteria. Load when generating interactive components."
+ai_context: "Keyboard interaction patterns for web content. Covers Tab navigation, arrow key widgets, Enter vs Space activation, and WCAG new keyboard criteria. Load when generating interactive components."
 ---
 
 # Keyboard Navigation Patterns
@@ -112,7 +112,7 @@ Use `tabindex="-1"` to remove from tab order but keep programmatically focusable
 
 ## SC 2.1.4 — Character Key Shortcuts
 
-WCAG 2.2 SC 2.1.4 (Level A) requires that single-character keyboard shortcuts can be:
+WCAG SC 2.1.4 (Level A) requires that single-character keyboard shortcuts can be:
 1. **Turned off** — User can disable the shortcut
 2. **Remapped** — User can change the key combination
 3. **Active only on focus** — Shortcut only works when the relevant component has focus
@@ -145,7 +145,7 @@ document.getElementById('email-list').addEventListener('keydown', (e) => {
 
 ---
 
-## SC 2.5.7 — Dragging Movements (WCAG 2.2)
+## SC 2.5.7 — Dragging Movements (WCAG)
 
 All drag-and-drop functionality must have a single-pointer (non-drag) alternative.
 
@@ -178,7 +178,7 @@ All drag-and-drop functionality must have a single-pointer (non-drag) alternativ
 
 ---
 
-## SC 2.5.8 — Target Size (Minimum) (WCAG 2.2)
+## SC 2.5.8 — Target Size (Minimum) (WCAG)
 
 All interactive targets must be at least **24×24 CSS pixels**, unless:
 - Spacing: A 24px circle centered on the target doesn't intersect another target

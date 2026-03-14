@@ -3,7 +3,7 @@ title: "WCAG Conformance Levels"
 standard: "WCAG 2.2"
 source_url: "https://www.w3.org/TR/WCAG22/#conformance"
 domain: ["web", "documents", "general"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "normative"
 tags: ["wcag", "conformance", "levels", "a", "aa", "aaa"]
 ai_context: "Defines WCAG conformance levels A, AA, AAA with requirements for claiming conformance. Load when determining compliance level requirements."
@@ -21,7 +21,7 @@ Conformance levels apply to entire pages (or entire processes, where applicable)
 
 ## Level A — Minimum Conformance
 
-- **Criteria count:** 30 success criteria (WCAG 2.2)
+- **Criteria count:** 30 active success criteria (WCAG 2.2)
 - **Meaning:** The most critical barriers are removed. Without Level A, some users cannot access the content at all.
 - **Typical failures at this level:** images with no alt text, keyboard inaccessibility, no captions on prerecorded video, pages that change language without notification.
 - **Legal baseline:** Level A alone is rarely sufficient for legal compliance frameworks. Most laws and standards require at least AA.
@@ -32,21 +32,21 @@ Level A criteria span all four POUR principles (Perceivable, Operable, Understan
 
 ## Level AA — Standard Conformance
 
-- **Criteria count:** 50 success criteria total — all 30 Level A criteria PLUS all 20 Level AA criteria (WCAG 2.2)
+- **Criteria count:** 54 success criteria total — all 30 Level A criteria PLUS all 24 Level AA criteria (WCAG 2.2)
 - **Meaning:** Addresses the most significant barriers for users with disabilities across a broad range of assistive technologies and usage contexts.
 - **Typical additions at this level:** sufficient color contrast (4.5:1 for normal text), live captions, orientation not locked, input purpose identifiable, reflow at 320px, non-text contrast 3:1, text spacing support, content on hover/focus, focus visible, multiple navigation methods, consistent navigation and identification, error suggestions, error prevention for legal/financial transactions, language of parts, status messages.
 - **Legal baseline:** The most widely referenced level in accessibility law, regulation, and procurement policy worldwide (e.g., EN 301 549, Section 508, AODA, EAA).
 
 ### Critical Clarification: What AA Conformance Means
 
-AA conformance does NOT mean satisfying 50% of criteria or only the AA-labelled criteria. It means satisfying ALL Level A criteria AND ALL Level AA criteria — every single one of the 50 applicable criteria without exception. A single unresolved failure of any A or AA criterion means the page does not conform at Level AA.
+AA conformance does NOT mean satisfying 50% of criteria or only the AA-labelled criteria. It means satisfying ALL Level A criteria AND ALL Level AA criteria — every single one of the 54 applicable criteria without exception. A single unresolved failure of any A or AA criterion means the page does not conform at Level AA.
 
 ---
 
 ## Level AAA — Enhanced Conformance
 
 - **Criteria count (WCAG 2.1):** 78 success criteria total — all A, AA, and AAA criteria
-- **Criteria count (WCAG 2.2):** 87 success criteria total — all A, AA, and AAA criteria (includes 9 new criteria added in 2.2; note 4.1.1 Parsing is obsolete/always-passes)
+- **Criteria count (WCAG 2.2):** 86 active success criteria total — all A, AA, and AAA criteria (9 new; SC 4.1.1 Parsing obsolete)
 - **Meaning:** The highest level of accessibility. Not recommended as a blanket conformance target for entire sites because some AAA criteria cannot be met for all content types.
 - **W3C guidance:** "It is not recommended that Level AAA conformance be required as a general policy for entire sites because it is not possible to satisfy all Level AAA Success Criteria for some content." (WCAG 2.2 spec)
 - **Appropriate use:** Target specific AAA criteria that are achievable and beneficial for your user base rather than claiming full AAA conformance.
@@ -151,7 +151,7 @@ Iframes embedded in a page are part of that page for conformance purposes. If an
 
 ### Misconception 1: "AA means we only need to meet AA-labeled criteria."
 
-**Incorrect.** Level AA conformance requires meeting ALL Level A criteria AND ALL Level AA criteria — all 50 applicable criteria in WCAG 2.2. The label "AA" on a criterion does not mean only AA-designated criteria need to be met.
+**Incorrect.** Level AA conformance requires meeting ALL Level A criteria AND ALL Level AA criteria — all 54 applicable criteria in WCAG 2.2. The label "AA" on a criterion does not mean only AA-designated criteria need to be met.
 
 ### Misconception 2: "AA means we've met 50% of the criteria."
 
@@ -180,10 +180,10 @@ Iframes embedded in a page are part of that page for conformance purposes. If an
 | Level | Criteria at That Level | Cumulative Total |
 |-------|----------------------|-----------------|
 | A     | 30                   | 30              |
-| AA    | 20                   | 50              |
-| AAA   | 28 (incl. 4.1.1 obsolete) | 87 (incl. 4.1.1) |
+| AA    | 24                   | 54              |
+| AAA   | 32                   | 86              |
 
-Note: SC 4.1.1 Parsing is formally listed in WCAG 2.2 but is noted as always passing for HTML and XML content given modern browsers. It is effectively obsolete. Some count tables show 86 "active" criteria; the official specification lists 87 numbered criteria at all levels combined.
+Note: SC 4.1.1 Parsing is obsolete in WCAG 2.2 and is not included in the active totals above.
 
 ---
 

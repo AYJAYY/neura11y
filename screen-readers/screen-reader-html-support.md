@@ -1,6 +1,6 @@
 ---
 title: "Screen Reader HTML Support Matrix"
-standard: "WCAG 2.2 / HTML Living Standard"
+standard: "WCAG / HTML Living Standard"
 source_url: "https://a11ysupport.io"
 domain: ["web"]
 last_fetched: "2026-03-13"

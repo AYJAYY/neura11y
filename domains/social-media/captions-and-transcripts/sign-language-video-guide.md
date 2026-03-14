@@ -1,6 +1,6 @@
 ---
 title: "Sign Language for Social Video"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/WCAG22/Understanding/sign-language-prerecorded.html"
 domain: ["social-media", "media"]
 last_fetched: "2026-03-14"
@@ -19,7 +19,7 @@ Under WCAG, sign language for prerecorded synchronized media is SC 1.2.6 at Leve
 
 That means:
 
-- It is not part of a basic WCAG 2.2 AA baseline
+- It is not part of a basic WCAG AA baseline
 - It may still be the right product, audience, or legal choice
 - Captions remain necessary for many users even when sign language is provided
 

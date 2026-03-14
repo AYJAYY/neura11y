@@ -1,6 +1,6 @@
 ---
 title: "Social Media Accessibility Overview"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: ""
 domain: ["social-media"]
 last_fetched: "2026-03-13"

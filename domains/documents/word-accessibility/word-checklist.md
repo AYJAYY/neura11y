@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Word Accessibility Checklist"
-standard: "WCAG 2.2 + PDF/UA + Section 508"
+standard: "WCAG + PDF/UA + Section 508"
 source_url: "https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-d9bf3683-87ac-47ea-b91a-78dcacb3c66d"
 domain: ["documents"]
 last_fetched: "2026-03-14"

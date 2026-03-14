@@ -1,15 +1,15 @@
 ---
-title: "Prompt Template: Audit HTML Snippet for WCAG 2.2 AA"
-standard: "WCAG 2.2"
+title: "Prompt Template: Audit HTML Snippet for WCAG AA"
+standard: "WCAG"
 source_url: ""
 domain: ["web"]
 last_fetched: "2026-03-13"
 status: "template"
 tags: ["ai-prompt", "audit", "wcag-2.2", "html", "template"]
-ai_context: "Ready-to-use prompt template for auditing HTML snippets against WCAG 2.2 AA. Load this with the WCAG quick-ref and relevant domain files."
+ai_context: "Ready-to-use prompt template for auditing HTML snippets against WCAG AA. Load this with the WCAG quick-ref and relevant domain files."
 ---
 
-# Prompt Template: Audit HTML Snippet for WCAG 2.2 AA
+# Prompt Template: Audit HTML Snippet for WCAG AA
 
 ## Context Files to Load
 
@@ -32,7 +32,7 @@ domains/web/forms-accessibility.md  (if form elements present)
 ## Prompt Template
 
 ```
-You are an expert web accessibility auditor. I need you to audit the following HTML for WCAG 2.2 Level AA conformance.
+You are an expert web accessibility auditor. I need you to audit the following HTML for WCAG Level AA conformance.
 
 For each issue found:
 1. State the WCAG SC number and title (e.g., "SC 1.1.1 Non-text Content")
@@ -59,7 +59,7 @@ HTML to audit:
 ## Example Prompt (Filled)
 
 ```
-You are an expert web accessibility auditor. Audit this HTML for WCAG 2.2 Level AA conformance.
+You are an expert web accessibility auditor. Audit this HTML for WCAG Level AA conformance.
 
 For each issue:
 1. State the SC number and title
@@ -87,7 +87,7 @@ HTML:
 
 ```
 ACCESSIBILITY AUDIT REPORT
-WCAG 2.2 Level AA
+WCAG Level AA
 
 [FAIL] SC 4.1.2 Name, Role, Value (Level A)
 Issue: The outer <div> with onclick has no role, no accessible name, and cannot receive keyboard focus.

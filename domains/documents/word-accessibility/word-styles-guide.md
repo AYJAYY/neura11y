@@ -1,6 +1,6 @@
 ---
 title: "Word Styles and Structure Guide"
-standard: "WCAG 2.2 + PDF/UA"
+standard: "WCAG + PDF/UA"
 source_url: "https://support.microsoft.com/en-us/office/make-your-word-documents-accessible-d9bf3683-87ac-47ea-b91a-78dcacb3c66d"
 domain: ["documents"]
 last_fetched: "2026-03-14"

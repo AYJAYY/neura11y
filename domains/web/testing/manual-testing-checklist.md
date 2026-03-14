@@ -1,9 +1,9 @@
 ---
 title: "Manual Accessibility Testing Checklist"
-standard: "WCAG 2.2"
+standard: "WCAG"
 source_url: "https://www.w3.org/WAI/test-evaluate/preliminary/"
 domain: ["web"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-14"
 status: "prescriptive"
 tags: ["testing", "manual", "checklist", "keyboard", "screen-reader", "visual"]
 ai_context: "Step-by-step manual accessibility testing procedures for web pages. Load when writing testing instructions or planning an accessibility audit."
@@ -37,7 +37,8 @@ Test **without** a screen reader. Just keyboard + browser.
 
 **Focus visible:**
 - [ ] Every interactive element shows a visible focus indicator when Tab reaches it
-- [ ] Focus ring meets 3:1 contrast against adjacent colors (SC 2.4.11)
+- [ ] Focus indicator has at least 3:1 contrast against adjacent colors (SC 1.4.11)
+- [ ] Focused elements are not entirely hidden behind sticky UI or overlays while tabbing (SC 2.4.11)
 - [ ] Focus is never invisible (hidden outline, zero-width, off-screen)
 
 **Focus order:**
@@ -128,10 +129,10 @@ Apply WCAG 1.4.12 test bookmarklet (see automated-testing.md) or manually set:
 ## Phase 4: Content and Structure
 
 **Headings (DevTools or Headings Map extension):**
-- [ ] Page has exactly one `<h1>`
-- [ ] Heading levels are not skipped (no H1 → H3 without H2)
+- [ ] Page has a clear main heading (`<h1>`)
+- [ ] Heading levels create a sensible outline and are not used only for visual styling
 - [ ] Headings describe the content that follows
-- [ ] Every section of content has a heading (no orphaned content)
+- [ ] Major sections of content have headings
 
 **Links:**
 - [ ] No links say only "click here," "here," "read more," "more," or show a bare URL

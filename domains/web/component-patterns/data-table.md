@@ -1,6 +1,6 @@
 ---
 title: "Accessible Data Table Pattern"
-standard: "WCAG 2.2 + HTML"
+standard: "WCAG + HTML"
 source_url: "https://www.w3.org/WAI/tutorials/tables/"
 domain: ["web"]
 last_fetched: "2026-03-13"
