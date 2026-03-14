@@ -1,24 +1,34 @@
 ---
-title: "AI-Ready Accessibility Knowledge Repository"
+title: "neura11y — AI-Ready Accessibility Knowledge Repository"
 type: "root"
 status: "active"
 last_updated: "2026-03-14"
-ai_context: "Entry point for this repository. Read AI-USAGE-GUIDE.md before loading other files into AI context."
+ai_context: "Entry point for neura11y. Read AI-USAGE-GUIDE.md before loading other files into AI context."
 ---
 
-# AI-Ready Accessibility Knowledge Repository
+# neura11y
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/AYJAYY/neura11y/main/logo-bright3.png" alt="neura11y logo" width="84">
 </p>
 
-A comprehensive, machine-readable knowledge base covering web, documents, social media, voice UI, and physical ICT accessibility. Designed to be loaded into AI systems (direct context or RAG) to produce accessible content grounded in normative standards.
+<p align="center">
+  <strong>Accessibility knowledge, structured for AI.</strong>
+</p>
 
-Current repository version: `0.2.0` (`VERSION`)
+<p align="center">
+  neura11y is a structured accessibility knowledge base for AI context loading, RAG pipelines, and accessibility-aware content generation across web, documents, social media, voice UI, and physical ICT.
+</p>
+
+<p align="center">
+  <code>v0.2.0</code> • standards • workflow guides • prompt packs • validation tooling
+</p>
+
+neura11y packages normative standards, applied workflow guidance, prompt templates, and validation tooling into a single repository so AI systems can produce accessibility guidance and accessible outputs with stronger traceability and less hallucination.
 
 ## Purpose
 
-This repository provides structured accessibility knowledge that enables AI systems to:
+neura11y enables AI systems to:
 
 - Generate accessible HTML, content, and documents without hallucinating requirements
 - Cite specific WCAG success criteria with correct thresholds and level designations
