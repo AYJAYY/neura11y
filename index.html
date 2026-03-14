@@ -13,32 +13,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
       :root {
-        --bg: #05070f;
-        --bg2: #080c18;
-        --surface: #0d1120;
-        --surface2: #111827;
-        --surface3: #161e2e;
-        --border: rgba(255,255,255,0.08);
-        --border-strong: rgba(255,255,255,0.14);
-        --ink: #f0f4ff;
-        --ink2: #a8b8d8;
-        --ink3: #6b7fa0;
-        --accent: #4f7fff;
-        --accent2: #7c5cfc;
-        --accent3: #0ea9a0;
-        --accent-glow: rgba(79, 127, 255, 0.25);
-        --amber: #f59e0b;
-        --amber-soft: rgba(245, 158, 11, 0.12);
-        --green: #22c55e;
-        --green-soft: rgba(34, 197, 94, 0.1);
+        --bg: #0a0a0c;
+        --bg2: #0f0f12;
+        --surface: #141416;
+        --surface2: #1a1a1d;
+        --surface3: #202024;
+        --border: rgba(168, 85, 247, 0.12);
+        --border-strong: rgba(168, 85, 247, 0.24);
+        --ink: #f4f4f5;
+        --ink2: #a1a1aa;
+        --ink3: #52525b;
+        --accent: #a855f7;
+        --accent2: #f97316;
+        --accent3: #c084fc;
+        --accent-glow: rgba(168, 85, 247, 0.25);
+        --amber: #f97316;
+        --amber-soft: rgba(249, 115, 22, 0.12);
+        --green: #a855f7;
+        --green-soft: rgba(168, 85, 247, 0.1);
         --red: #ef4444;
-        --gradient-hero: linear-gradient(135deg, #4f7fff 0%, #7c5cfc 50%, #0ea9a0 100%);
+        --gradient-hero: #a855f7;
         --gradient-card: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 100%);
         --radius-sm: 0.5rem;
         --radius: 0.875rem;
         --radius-lg: 1.25rem;
-        --shadow-card: 0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3);
-        --shadow-glow: 0 0 40px rgba(79,127,255,0.15);
+        --shadow-card: 0 1px 3px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.4);
+        --shadow-glow: 0 0 40px rgba(168,85,247,0.18);
         --container: 72rem;
         --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         --mono: "JetBrains Mono", "Cascadia Code", "SFMono-Regular", Consolas, monospace;
@@ -56,8 +56,8 @@
         color: var(--ink);
         background-color: var(--bg);
         background-image:
-          radial-gradient(ellipse 80% 60% at 50% -10%, rgba(79,127,255,0.15) 0%, transparent 60%),
-          radial-gradient(ellipse 40% 30% at 80% 20%, rgba(124,92,252,0.1) 0%, transparent 50%);
+          radial-gradient(ellipse 80% 60% at 50% -10%, rgba(168,85,247,0.1) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 30% at 80% 20%, rgba(249,115,22,0.07) 0%, transparent 50%);
         -webkit-font-smoothing: antialiased;
       }
 
@@ -93,7 +93,7 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(5, 7, 15, 0.85);
+        background: rgba(10, 10, 12, 0.9);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--border);
@@ -172,8 +172,8 @@
         gap: 0.4rem;
         padding: 0.45rem 0.9rem;
         border-radius: 999px;
-        background: rgba(79,127,255,0.12);
-        border: 1px solid rgba(79,127,255,0.3);
+        background: rgba(168,85,247,0.1);
+        border: 1px solid rgba(168,85,247,0.3);
         color: var(--accent) !important;
         font-weight: 600 !important;
         font-size: 0.875rem;
@@ -182,8 +182,8 @@
       }
 
       .nav-cta:hover {
-        background: rgba(79,127,255,0.2) !important;
-        border-color: rgba(79,127,255,0.5) !important;
+        background: rgba(168,85,247,0.18) !important;
+        border-color: rgba(168,85,247,0.5) !important;
       }
 
       /* ─── Hero ─── */
@@ -198,7 +198,7 @@
         position: absolute;
         inset: 0;
         background-image:
-          radial-gradient(ellipse 50% 50% at 50% 0%, rgba(79,127,255,0.07) 0%, transparent 70%);
+          radial-gradient(ellipse 50% 50% at 50% 0%, rgba(168,85,247,0.07) 0%, transparent 70%);
         pointer-events: none;
       }
 
@@ -218,11 +218,11 @@
         padding: 0.3rem 0.75rem;
         margin-bottom: 1.5rem;
         border-radius: 999px;
-        background: rgba(79,127,255,0.1);
-        border: 1px solid rgba(79,127,255,0.25);
+        background: rgba(168,85,247,0.1);
+        border: 1px solid rgba(168,85,247,0.22);
         font-size: 0.82rem;
         font-weight: 600;
-        color: #a0b4ff;
+        color: #c084fc;
         letter-spacing: 0.04em;
         text-transform: uppercase;
       }
@@ -250,10 +250,7 @@
       }
 
       .h1-gradient {
-        background: var(--gradient-hero);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--accent2);
       }
 
       h2 {
@@ -305,11 +302,11 @@
       .btn-primary {
         background: var(--gradient-hero);
         color: #fff;
-        box-shadow: 0 4px 16px rgba(79,127,255,0.35);
+        box-shadow: 0 4px 16px rgba(168,85,247,0.35);
       }
 
       .btn-primary:hover {
-        box-shadow: 0 6px 24px rgba(79,127,255,0.5);
+        box-shadow: 0 6px 24px rgba(168,85,247,0.5);
       }
 
       .btn-ghost {
@@ -350,10 +347,7 @@
         font-weight: 900;
         line-height: 1;
         margin-bottom: 0.3rem;
-        background: var(--gradient-hero);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--accent);
       }
 
       .stat-card span {
@@ -447,8 +441,8 @@
         width: 2.2rem;
         height: 2.2rem;
         border-radius: 0.55rem;
-        background: rgba(79,127,255,0.12);
-        border: 1px solid rgba(79,127,255,0.2);
+        background: rgba(168,85,247,0.1);
+        border: 1px solid rgba(168,85,247,0.22);
         color: var(--accent);
         font-size: 0.95rem;
         font-weight: 900;
@@ -465,8 +459,8 @@
       .card code {
         font-family: var(--mono);
         font-size: 0.8rem;
-        background: rgba(79,127,255,0.1);
-        color: #93b4ff;
+        background: rgba(168,85,247,0.1);
+        color: #c084fc;
         padding: 0.1em 0.35em;
         border-radius: 0.3rem;
       }
@@ -513,10 +507,10 @@
         margin-bottom: 0.6rem;
       }
 
-      .tag-blue { background: rgba(79,127,255,0.12); color: #93b4ff; }
-      .tag-purple { background: rgba(124,92,252,0.12); color: #b49cfc; }
-      .tag-teal { background: rgba(14,169,160,0.12); color: #5cccc8; }
-      .tag-amber { background: rgba(245,158,11,0.12); color: #fbbf24; }
+      .tag-blue { background: rgba(168,85,247,0.12); color: #c084fc; }
+      .tag-purple { background: rgba(249,115,22,0.12); color: #fb923c; }
+      .tag-teal { background: rgba(168,85,247,0.12); color: #a855f7; }
+      .tag-amber { background: rgba(249,115,22,0.12); color: #fb923c; }
 
       .bundle-body {
         padding: 1rem 1.5rem 1.4rem;
@@ -562,7 +556,7 @@
 
       .file-list code {
         font-family: var(--mono);
-        color: #93b4ff;
+        color: #c084fc;
         font-size: 0.78rem;
         word-break: break-all;
         overflow-wrap: anywhere;
@@ -600,14 +594,14 @@
         font-size: 1.1rem;
       }
 
-      .map-icon-blue { background: rgba(79,127,255,0.12); }
-      .map-icon-purple { background: rgba(124,92,252,0.12); }
-      .map-icon-teal { background: rgba(14,169,160,0.12); }
-      .map-icon-amber { background: rgba(245,158,11,0.12); }
-      .map-icon-green { background: rgba(34,197,94,0.1); }
-      .map-icon-pink { background: rgba(236,72,153,0.1); }
-      .map-icon-rose { background: rgba(244,63,94,0.1); }
-      .map-icon-sky { background: rgba(14,165,233,0.1); }
+      .map-icon-blue { background: rgba(168,85,247,0.14); }
+      .map-icon-purple { background: rgba(249,115,22,0.12); }
+      .map-icon-teal { background: rgba(168,85,247,0.14); }
+      .map-icon-amber { background: rgba(249,115,22,0.12); }
+      .map-icon-green { background: rgba(168,85,247,0.12); }
+      .map-icon-pink { background: rgba(249,115,22,0.1); }
+      .map-icon-rose { background: rgba(168,85,247,0.12); }
+      .map-icon-sky { background: rgba(249,115,22,0.1); }
 
       .map-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
       .map-card p { margin: 0; color: var(--ink3); font-size: 0.82rem; line-height: 1.5; }
@@ -647,7 +641,7 @@
 
       .dot-red { background: #ef4444; }
       .dot-amber { background: #f59e0b; }
-      .dot-green { background: #22c55e; }
+      .dot-green { background: #a855f7; }
 
       pre {
         margin: 0;
@@ -657,7 +651,7 @@
         font-family: var(--mono);
         font-size: 0.88rem;
         line-height: 1.75;
-        color: #c8d8ff;
+        color: #e9d5ff;
       }
 
       pre code { font-family: inherit; }
