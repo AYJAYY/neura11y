@@ -10,6 +10,8 @@ ai_context: "Entry point for this repository. Read AI-USAGE-GUIDE.md before load
 
 A comprehensive, machine-readable knowledge base covering web, documents, social media, voice UI, and physical ICT accessibility. Designed to be loaded into AI systems (direct context or RAG) to produce accessible content grounded in normative standards.
 
+Current repository version: `0.2.0` (`VERSION`)
+
 ## Purpose
 
 This repository provides structured accessibility knowledge that enables AI systems to:
@@ -34,6 +36,7 @@ This repository provides structured accessibility knowledge that enables AI syst
 
 ```
 claude-a11y-repo/
+├── VERSION                   — Repository release version
 ├── README.md                 — This file
 ├── INDEX.md                  — Machine-readable cross-reference map
 ├── GLOSSARY.md               — Canonical definitions for all key terms
@@ -44,6 +47,10 @@ claude-a11y-repo/
 │   ├── fetch-log.md          — Record of auto-fetch operations
 │   ├── fetch-log.jsonl       — Structured fetch history for tooling
 │   ├── ai-validation-fixtures.json — Validation fixtures for AI usage patterns
+│   ├── chunk-manifest.jsonl  — Exported AI-ingestion corpus
+│   ├── chunk-manifest-summary.json — Chunk-export summary statistics
+│   ├── freshness-manifest.json — Per-file freshness signals for tooling
+│   ├── latest-ai-validation-report.md — Latest validation run report
 │   ├── update-schedule.md    — Maintenance cadence per content type
 │   └── coverage-gaps.md      — Known gaps and planned additions
 │
@@ -109,13 +116,14 @@ claude-a11y-repo/
 
 ## Current Coverage Notes
 
+- **Release 0.2.0:** Adds AI ingestion/export tooling, schema and reference validation, freshness sync, and pattern-level validation artifacts under `meta/`.
 - **AI operations:** The repository now includes schema validation, reference auditing, chunk export, freshness sync, and pattern-level AI validation scripts under `scripts/`.
 - **Prompt coverage:** Prompt packs now exist for all documented AI usage patterns in `AI-USAGE-GUIDE.md`.
 - **Remaining backlog:** The primary optional backlog item remains video game accessibility, which is still out of scope for v1.
 
 ## Maintenance
 
-Auto-fetchable standards are refreshed via scripts in `/scripts/`. Use `scripts/fetch-all.py` for managed runs, `scripts/sync-freshness.py` to update registry freshness signals, and `scripts/validate-ai-suite.py` before claiming AI readiness. See `meta/update-schedule.md` for cadence.
+Auto-fetchable standards are refreshed via scripts in `/scripts/`. Use `scripts/fetch-all.py` for managed runs, `scripts/export-ai-context.py` to regenerate AI-ingestion artifacts, `scripts/sync-freshness.py` to update registry freshness signals, and `scripts/validate-ai-suite.py` before claiming AI readiness. See `meta/update-schedule.md` for cadence.
 
 ## Contributing
 

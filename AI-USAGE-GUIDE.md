@@ -222,6 +222,46 @@ standards/en-301-549/en-301-549-requirements.md
 domains/physical-ict/kiosk-and-embedded-playbook.md
 ```
 
+### Supplemental Context Bundles
+
+These are not part of the core 8 loading patterns above, but they reflect newer repo coverage that is often useful in production workflows.
+
+#### Native Mobile App Accessibility
+
+```
+standards/wcag/wcag-2.2-quick-ref.md
+domains/mobile/native-mobile-app-accessibility.md
+screen-readers/voiceover-guide.md
+screen-readers/talkback-guide.md
+```
+
+#### CMS and Design Handoff
+
+```
+domains/web/cms-authoring-workflow.md
+domains/web/design-to-development-handoff.md
+domains/web/html-semantics-guide.md
+domains/web/forms-accessibility.md
+```
+
+#### Email and Newsletter Workflow
+
+```
+standards/wcag/wcag-2.2-quick-ref.md
+domains/documents/email-accessibility/email-and-newsletters-guide.md
+domains/web/color-and-contrast.md
+media/images/alt-text-decision-tree.md
+```
+
+#### Google Workspace Workflow
+
+```
+domains/documents/google-workspace/google-docs-guide.md
+domains/documents/google-workspace/google-slides-guide.md
+domains/documents/google-workspace/google-sheets-guide.md
+domains/documents/plain-language/plain-language-guide.md
+```
+
 ---
 
 ## RAG Pipeline Configuration
@@ -262,6 +302,10 @@ When the user's query includes:
 - "social media" or platform name → Prefer `/domains/social-media/` chunks
 - "document" or "PDF" or "Word" → Prefer `/domains/documents/` chunks
 - "mobile app" or "iOS" or "Android" → Prefer `/domains/mobile/` chunks
+- "email" or "newsletter" → Prefer `/domains/documents/email-accessibility/` chunks
+- "Google Docs" or "Google Slides" or "Google Sheets" → Prefer `/domains/documents/google-workspace/` chunks
+- "CMS" or "content model" → Prefer `/domains/web/cms-authoring-workflow.md`
+- "handoff" or "design system" → Prefer `/domains/web/design-to-development-handoff.md`
 
 ---
 
@@ -347,6 +391,32 @@ Use these scripts to keep AI ingestion and validation assets current:
 - `scripts/validate-references.py` — detect broken internal file references
 - `scripts/validate-ai-suite.py` — run the pattern-level validation harness using `meta/ai-validation-fixtures.json`
 - `scripts/sync-freshness.py` — build a freshness manifest and sync registry freshness columns
+
+### Generated Artifacts
+
+These files are produced or refreshed by the automation scripts and can be treated as operational outputs rather than hand-authored guidance:
+
+- `meta/chunk-manifest.jsonl` — canonical exported chunk corpus for ingestion
+- `meta/chunk-manifest-summary.json` — chunk counts and export settings
+- `meta/freshness-manifest.json` — per-file freshness metadata for tooling
+- `meta/latest-ai-validation-report.md` — latest structural and pattern-level validation report
+- `meta/fetch-log.jsonl` — structured fetch history
+
+### Recommended Refresh Sequence
+
+For a full repo refresh or release pass, run:
+
+1. `scripts/fetch-all.py`
+2. `scripts/export-ai-context.py`
+3. `scripts/sync-freshness.py`
+4. `scripts/validate-ai-suite.py`
+
+```bash
+python3 scripts/fetch-all.py
+python3 scripts/export-ai-context.py
+python3 scripts/sync-freshness.py
+python3 scripts/validate-ai-suite.py
+```
 
 ---
 
