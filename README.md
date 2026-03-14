@@ -21,6 +21,10 @@ ai_context: "Entry point for neura11y. Read AI-USAGE-GUIDE.md before loading oth
 </p>
 
 <p align="center">
+  <a href="https://neura11y.com">neura11y.com</a>
+</p>
+
+<p align="center">
   <code>v0.2.1</code> • standards • workflow guides • prompt packs • validation tooling
 </p>
 
