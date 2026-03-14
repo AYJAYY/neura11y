@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Use This Accessibility Repo With AI</title>
+    <meta
+      name="description"
+      content="A human-friendly landing page for using this accessibility repository with AI. Download the repo, attach the right files, and let the AI use the markdown as source material."
+    >
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #eef3f8;
+        --bg-accent: #dce7f5;
+        --surface: #ffffff;
+        --surface-soft: #f7faff;
+        --ink: #142033;
+        --muted: #536177;
+        --line: #c9d5e5;
+        --primary: #0d6efd;
+        --primary-dark: #0a4fb4;
+        --primary-soft: #dce9ff;
+        --navy: #0f172a;
+        --teal: #0f766e;
+        --amber: #b45309;
+        --focus: #8a2d0a;
+        --shadow: 0 22px 54px rgba(15, 23, 42, 0.12);
+        --radius: 1rem;
+        --container: 72rem;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Aptos", "Segoe UI Variable", "Trebuchet MS", sans-serif;
+        line-height: 1.6;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top right, rgba(13, 110, 253, 0.12), transparent 20rem),
+          linear-gradient(180deg, #f8fbff 0%, var(--bg) 42%, var(--bg-accent) 100%);
+      }
+
+      a {
+        color: var(--primary-dark);
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 3px;
+        border-radius: 0.4rem;
+      }
+
+      code,
+      pre {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -4rem;
+        left: 1rem;
+        z-index: 1000;
+        padding: 0.75rem 1rem;
+        background: var(--navy);
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      .container {
+        width: min(100% - 2rem, var(--container));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        background: linear-gradient(180deg, #111a31 0%, #16223f 100%);
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .brand small {
+        display: block;
+        margin-top: 0.15rem;
+        color: #c5d3ee;
+        font-weight: 500;
+      }
+
+      .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-list a {
+        display: inline-block;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        color: #edf4ff;
+        text-decoration: none;
+        border: 1px solid transparent;
+      }
+
+      .nav-list a:hover,
+      .nav-list a:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .hero-wrap {
+        padding: 2.5rem 0 2rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.95fr);
+        gap: 1.25rem;
+        align-items: stretch;
+      }
+
+      .hero-card,
+      .card,
+      .panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: calc(var(--radius) + 0.15rem);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1.5rem, 4vw, 3rem);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(244, 249, 255, 0.96)),
+          var(--surface);
+      }
+
+      .hero-card::after {
+        content: "";
+        position: absolute;
+        right: -4rem;
+        top: -4rem;
+        width: 14rem;
+        height: 14rem;
+        border-radius: 2rem;
+        transform: rotate(18deg);
+        background: linear-gradient(180deg, rgba(13, 110, 253, 0.18), rgba(15, 118, 110, 0.12));
+      }
+
+      .hero-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.35rem 0.75rem;
+        margin: 0 0 1rem;
+        border-radius: 999px;
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Aptos Display", "Franklin Gothic Medium", "Trebuchet MS", sans-serif;
+        line-height: 1.1;
+      }
+
+      h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2.4rem, 5vw, 4.6rem);
+        max-width: 11ch;
+        text-wrap: balance;
+      }
+
+      h2 {
+        margin: 0 0 0.85rem;
+        font-size: clamp(1.75rem, 3vw, 2.4rem);
+        text-wrap: balance;
+      }
+
+      h3 {
+        margin: 0 0 0.55rem;
+        font-size: 1.15rem;
+      }
+
+      .lede {
+        max-width: 58ch;
+        margin: 0 0 1.4rem;
+        font-size: 1.1rem;
+        color: var(--muted);
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.85rem 1.05rem;
+        border-radius: 0.75rem;
+        border: 2px solid var(--primary);
+        background: var(--primary);
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        background: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: var(--primary-dark);
+      }
+
+      .hero-side {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+      }
+
+      .stat {
+        padding: 1rem;
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, #f7fbff 0%, #eef5ff 100%);
+        border: 1px solid #cfdcf0;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.8rem;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+        color: var(--navy);
+      }
+
+      .side-note {
+        padding: 1.15rem;
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, #fff9f1 0%, #fff3e5 100%);
+        border: 1px solid #ecd4b4;
+        color: #69421b;
+      }
+
+      .side-note p {
+        margin: 0;
+      }
+
+      .section {
+        padding: 1.25rem 0 0;
+      }
+
+      .section-head {
+        max-width: 52rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        gap: 1rem;
+      }
+
+      .card,
+      .panel {
+        padding: 1.25rem;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 0.3rem;
+        background: linear-gradient(90deg, var(--primary), var(--teal));
+      }
+
+      .step-num,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2rem;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 800;
+      }
+
+      .step-num {
+        margin-bottom: 0.85rem;
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .badge {
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .file-list {
+        list-style: none;
+        padding: 0;
+        margin: 0.75rem 0 0;
+        display: grid;
+        gap: 0.65rem;
+      }
+
+      .file-list li {
+        padding: 0.75rem 0.9rem;
+        border-radius: 0.8rem;
+        background: var(--surface-soft);
+        border: 1px solid #dbe5f1;
+      }
+
+      .repo-map {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: 1rem;
+      }
+
+      .map-card {
+        padding: 1.1rem;
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(245, 249, 255, 0.94));
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .map-card p {
+        margin-bottom: 0;
+      }
+
+      .code-panel {
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .code-panel header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .code-panel header p,
+      .code-panel header h3 {
+        margin: 0;
+      }
+
+      pre {
+        margin: 0;
+        padding: 1.25rem;
+        overflow-x: auto;
+        background: linear-gradient(180deg, #15213d 0%, #111a31 100%);
+        color: #eef5ff;
+      }
+
+      footer {
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+      }
+
+      footer p {
+        margin: 0;
+        padding-top: 1rem;
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 60rem) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 42rem) {
+        .navbar {
+          align-items: flex-start;
+        }
+
+        .stat-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container navbar">
+        <div class="brand">
+          claude-a11y-repo
+          <small>This page is for you. The markdown files are for the AI.</small>
+        </div>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#process">Process</a></li>
+            <li><a href="#bundles">Task bundles</a></li>
+            <li><a href="#map">What is in the repo</a></li>
+            <li><a href="#prompt">Prompt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero-wrap">
+        <div class="container hero">
+          <div class="hero-card">
+            <p class="eyebrow">Human instructions page</p>
+            <h1>You read this page. Your AI reads the repo.</h1>
+            <p class="lede">
+              This repository has grown into a full accessibility source pack: standards, applied guidance, prompt
+              templates, social platform guides, document guidance, legal summaries, media help, and screen reader
+              references. You do not need to read all of that yourself. Download the repo, attach the right files, and
+              let the AI use them as source material.
+            </p>
+            <div class="button-row">
+              <a class="btn" href="#process">Start with the process</a>
+              <a class="btn btn-secondary" href="#bundles">Pick a task bundle</a>
+            </div>
+          </div>
+
+          <aside class="hero-side" aria-label="Repository highlights">
+            <div class="stat-grid">
+              <div class="stat">
+                <strong>15</strong>
+                <span>standards files</span>
+              </div>
+              <div class="stat">
+                <strong>38</strong>
+                <span>domain guides</span>
+              </div>
+              <div class="stat">
+                <strong>3</strong>
+                <span>AI prompt templates</span>
+              </div>
+              <div class="stat">
+                <strong>16</strong>
+                <span>support and reference files</span>
+              </div>
+            </div>
+            <div class="side-note">
+              <p>
+                Current repo coverage includes 8 web component patterns, 7 social platform guides, 5 document guides,
+                4 legal summaries, and screen reader notes.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="process" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>How to use it</h2>
+            <p>A simple flow is enough. The repo does the heavy lifting after you hand the right files to the model.</p>
+          </div>
+
+          <div class="card-grid">
+            <article class="card">
+              <div class="step-num">1</div>
+              <h3>Download the repository</h3>
+              <p class="muted">Put it in the same workspace, folder, or project context your AI tool can access.</p>
+            </article>
+
+            <article class="card">
+              <div class="step-num">2</div>
+              <h3>Feed the routing files first</h3>
+              <p class="muted">
+                Start by giving the AI <code>AI-USAGE-GUIDE.md</code> and <code>INDEX.md</code>.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="step-num">3</div>
+              <h3>Add a small task bundle</h3>
+              <p class="muted">
+                Add only the files for your task instead of dumping the whole repo into a single prompt.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="step-num">4</div>
+              <h3>Review the result</h3>
+              <p class="muted">
+                Treat the AI output as assisted draft work. Check important claims, thresholds, and details.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="bundles" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Pick a task bundle</h2>
+            <p>
+              Use these as starting sets. They match the repo that is present now and keep the AI focused on the job
+              you actually want done.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <article class="panel">
+              <span class="badge">Web</span>
+              <h3>Build or audit a page or component</h3>
+              <ul class="file-list" aria-label="Web task bundle">
+                <li><code>AI-USAGE-GUIDE.md</code> and <code>INDEX.md</code></li>
+                <li><code>standards/wcag/wcag-2.2-quick-ref.md</code></li>
+                <li><code>standards/aria/wai-aria-1.2-roles.md</code></li>
+                <li><code>standards/aria/aria-authoring-practices.md</code></li>
+                <li><code>domains/web/</code> files for your exact task</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <span class="badge">Documents</span>
+              <h3>Create an accessible document</h3>
+              <ul class="file-list" aria-label="Documents task bundle">
+                <li><code>AI-USAGE-GUIDE.md</code> and <code>INDEX.md</code></li>
+                <li><code>ai-prompts/documents/accessible-document.md</code></li>
+                <li><code>domains/documents/</code> guide for Word, PDF, PowerPoint, Excel, or plain language</li>
+                <li><code>standards/pdf-ua/pdf-ua-overview.md</code> when PDF rules matter</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <span class="badge">Social</span>
+              <h3>Write an accessible social post</h3>
+              <ul class="file-list" aria-label="Social media task bundle">
+                <li><code>AI-USAGE-GUIDE.md</code> and <code>INDEX.md</code></li>
+                <li><code>ai-prompts/social-media/accessible-social-post.md</code></li>
+                <li><code>domains/social-media/alt-text/alt-text-principles.md</code></li>
+                <li><code>domains/social-media/captions-and-transcripts/caption-guide.md</code></li>
+                <li><code>domains/social-media/platforms/</code> guide for the platform you are using</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <span class="badge">Compliance</span>
+              <h3>Check standards or legal framing</h3>
+              <ul class="file-list" aria-label="Compliance task bundle">
+                <li><code>AI-USAGE-GUIDE.md</code> and <code>INDEX.md</code></li>
+                <li><code>standards/wcag/wcag-conformance-levels.md</code></li>
+                <li><code>standards/section-508/section-508-overview.md</code></li>
+                <li><code>legal-and-compliance/</code> files for region-specific context</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>What is in the repo now</h2>
+            <p>
+              The repo is no longer just a few setup files. It now spans the standards layer, applied guidance,
+              templates, and supporting reference material.
+            </p>
+          </div>
+
+          <div class="repo-map">
+            <article class="map-card">
+              <span class="badge">Standards</span>
+              <h3>Normative source material</h3>
+              <p>WCAG, ARIA, Section 508, PDF/UA, EPUB, EN 301 549, ATAG, and related files under <code>standards/</code>.</p>
+            </article>
+
+            <article class="map-card">
+              <span class="badge">Domains</span>
+              <h3>Applied guidance</h3>
+              <p>Web, documents, and social media guidance under <code>domains/</code>, including components and testing.</p>
+            </article>
+
+            <article class="map-card">
+              <span class="badge">Prompts</span>
+              <h3>Starter templates</h3>
+              <p>Use the prompt files in <code>ai-prompts/</code> when you want the AI to start from a known framing.</p>
+            </article>
+
+            <article class="map-card">
+              <span class="badge">Support</span>
+              <h3>Extra context</h3>
+              <p>Legal, media, screen reader, cognitive, color, reference, and repo-maintenance material round out the pack.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="prompt" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Example prompt</h2>
+            <p>
+              If you want a plain starting prompt, use something like this after attaching the files for your task.
+            </p>
+          </div>
+
+          <section class="panel code-panel" aria-labelledby="prompt-card-title">
+            <header>
+              <h3 id="prompt-card-title">Starter prompt</h3>
+              <p>Short and direct</p>
+            </header>
+            <pre><code>I attached files from an accessibility repository.
+Use only those files as source material.
+If the files do not fully cover the request, say that clearly.
+Help me create or review accessible [page / component / document / social post].</code></pre>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>You do not need to read the markdown files yourself. This page tells you how to hand them to the AI.</p>
+      </div>
+    </footer>
+  </body>
+</html>
