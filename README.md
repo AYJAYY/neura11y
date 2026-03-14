@@ -17,7 +17,7 @@ ai_context: "Entry point for neura11y. Read AI-USAGE-GUIDE.md before loading oth
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/neural-accessibility-purple?style=plastic" alt="Static Badge">
+  Neura11y<img src="https://img.shields.io/badge/neural-accessibility-purple?style=plastic" alt="Static Badge">
 </p>
 
 <p align="center">
