@@ -677,6 +677,47 @@
         letter-spacing: 0.02em;
       }
 
+      .prompt-body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .prompt-block {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .prompt-block:last-child { border-bottom: none; }
+
+      .prompt-label {
+        font-family: var(--font-m);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.18rem 0.5rem;
+        border-radius: 3px;
+        width: fit-content;
+      }
+      .prompt-label-context      { background: var(--purple-dim); color: var(--purple); }
+      .prompt-label-instructions { background: var(--orange-dim);  color: var(--orange); }
+      .prompt-label-task         { background: rgba(134,239,172,0.1); color: #86efac; }
+
+      .prompt-text {
+        font-family: var(--font-m);
+        font-size: 0.83rem;
+        line-height: 1.9;
+        color: var(--ink2);
+        white-space: pre-wrap;
+        margin: 0;
+      }
+
+      .prompt-text .p-dim   { color: var(--ink3); }
+      .prompt-text .p-hi    { color: var(--mono-fg); }
+      .prompt-text .p-key   { color: #86efac; }
+
       pre {
         padding: 1.5rem;
         font-family: var(--font-m);
@@ -1121,21 +1162,22 @@
               <h3>starter-prompt.txt</h3>
               <span></span>
             </div>
-            <pre><code>You have access to the neura11y accessibility repository.
-First, read AI-USAGE-GUIDE.md and INDEX.md to understand
-the repository structure and guidelines.
-Next, identify and load only the tight, focused bundle of
-files relevant to this exact task.
-Use strictly those files as your source material. If the
-repository files do not fully cover the request, state that
-clearly rather than filling gaps from general knowledge.
-
-Help me create or review an accessible [HTML page /
-component / Markdown document / social post]. Pay special
-attention to WCAG compliance for elements like multimedia
-captions and semantic structure. Ensure the final code or
-content prioritizes an intuitive, aesthetic flow rather
-than relying on dry, rigid logic.</code></pre>
+            <div class="prompt-body">
+              <div class="prompt-block">
+                <span class="prompt-label prompt-label-context">Context</span>
+                <p class="prompt-text">You have access to the <span class="p-hi">neura11y</span> accessibility repository.</p>
+              </div>
+              <div class="prompt-block">
+                <span class="prompt-label prompt-label-instructions">Instructions</span>
+                <p class="prompt-text"><span class="p-dim">1.</span> Read <span class="p-hi">AI-USAGE-GUIDE.md</span> and <span class="p-hi">INDEX.md</span> to understand the repository structure and guidelines.
+<span class="p-dim">2.</span> Identify and load only the tight, focused bundle of files relevant to this exact task.
+<span class="p-dim">3.</span> Use strictly those files as your source material. If they do not fully cover the request, state that clearly rather than filling gaps from general knowledge.</p>
+              </div>
+              <div class="prompt-block">
+                <span class="prompt-label prompt-label-task">Task</span>
+                <p class="prompt-text">Help me create or review an accessible <span class="p-key">[HTML page / component / Markdown document / social post]</span>. Pay special attention to WCAG compliance for elements like multimedia captions and semantic structure. Ensure the final code or content prioritizes an intuitive, aesthetic flow rather than relying on dry, rigid logic.</p>
+              </div>
+            </div>
           </div>
 
           <div class="gh-callout">
