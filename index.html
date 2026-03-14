@@ -471,7 +471,11 @@
         border-radius: 3px;
       }
 
-      /* ── Bundle panels ── */
+      /* ── Use-case cards ── */
+      .usecase-card { display: flex; flex-direction: column; }
+      .usecase-card h3 { margin-bottom: 0.6rem; }
+
+      /* ── Bundle panels (kept for reference) ── */
       .bundle-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -920,80 +924,41 @@
 
       <div class="divider" role="separator"></div>
 
-      <!-- ── Task bundles ── -->
+      <!-- ── Use cases ── -->
       <section id="bundles" class="section" aria-labelledby="bundles-heading">
         <div class="container">
           <div class="section-intro">
             <div class="section-kicker">
               <span class="kicker-num">02</span>
-              <span class="kicker-label">Task bundles</span>
+              <span class="kicker-label">Use cases</span>
             </div>
-            <h2 id="bundles-heading">Pick the right files for your task</h2>
-            <p>Each bundle is a minimal, focused set of files. Add the platform or component-specific file on top of the base set.</p>
+            <h2 id="bundles-heading">What you can do with it</h2>
+            <p>Load the relevant files for your task and let the model do the work — grounded in real standards, not general knowledge.</p>
           </div>
 
-          <div class="bundle-grid">
-            <article class="bundle" aria-labelledby="bundle-web">
-              <div class="bundle-header">
-                <span class="tag tag-blue">Web</span>
-                <h3 id="bundle-web">Build or audit a page or component</h3>
-              </div>
-              <div class="bundle-body">
-                <ul class="file-list" aria-label="File list for web task bundle">
-                  <li><code>AI-USAGE-GUIDE.md</code> + <code>INDEX.md</code></li>
-                  <li><code>standards/wcag/wcag-2.2-quick-ref.md</code></li>
-                  <li><code>standards/aria/wai-aria-1.2-roles.md</code></li>
-                  <li><code>standards/aria/aria-authoring-practices.md</code></li>
-                  <li>Relevant file from <code>domains/web/</code></li>
-                  <li>Component file from <code>domains/web/component-patterns/</code></li>
-                </ul>
-              </div>
+          <div class="card-grid usecase-grid">
+            <article class="card usecase-card">
+              <span class="tag tag-blue" style="margin-bottom:1rem;">Web</span>
+              <h3>Build or audit a page</h3>
+              <p>Generate accessible components, review HTML for WCAG 2.2 issues, and get ARIA patterns for modals, tabs, carousels, comboboxes, and more.</p>
             </article>
 
-            <article class="bundle" aria-labelledby="bundle-docs">
-              <div class="bundle-header">
-                <span class="tag tag-purple">Documents</span>
-                <h3 id="bundle-docs">Create an accessible document</h3>
-              </div>
-              <div class="bundle-body">
-                <ul class="file-list" aria-label="File list for documents task bundle">
-                  <li><code>AI-USAGE-GUIDE.md</code> + <code>INDEX.md</code></li>
-                  <li><code>ai-prompts/documents/accessible-document.md</code></li>
-                  <li>Relevant file from <code>domains/documents/</code> — Word, PDF, PPT, Excel, plain language</li>
-                  <li><code>standards/pdf-ua/pdf-ua-overview.md</code> for PDF work</li>
-                </ul>
-              </div>
+            <article class="card usecase-card">
+              <span class="tag tag-purple" style="margin-bottom:1rem;">Documents</span>
+              <h3>Create accessible documents</h3>
+              <p>Get step-by-step guidance for Word, PowerPoint, Excel, and PDF. Covers heading structure, alt text, reading order, and plain language.</p>
             </article>
 
-            <article class="bundle" aria-labelledby="bundle-social">
-              <div class="bundle-header">
-                <span class="tag tag-teal">Social media</span>
-                <h3 id="bundle-social">Write an accessible social post</h3>
-              </div>
-              <div class="bundle-body">
-                <ul class="file-list" aria-label="File list for social media task bundle">
-                  <li><code>AI-USAGE-GUIDE.md</code> + <code>INDEX.md</code></li>
-                  <li><code>ai-prompts/social-media/accessible-social-post.md</code></li>
-                  <li><code>domains/social-media/alt-text/alt-text-principles.md</code></li>
-                  <li><code>domains/social-media/captions-and-transcripts/caption-guide.md</code></li>
-                  <li>Platform guide — Twitter/X, Instagram, LinkedIn, YouTube, Facebook, TikTok, or Mastodon</li>
-                </ul>
-              </div>
+            <article class="card usecase-card">
+              <span class="tag tag-teal" style="margin-bottom:1rem;">Social media</span>
+              <h3>Write accessible social posts</h3>
+              <p>Generate alt text, captions, and accessible copy for Twitter/X, Instagram, LinkedIn, YouTube, TikTok, Facebook, and Mastodon.</p>
             </article>
 
-            <article class="bundle" aria-labelledby="bundle-legal">
-              <div class="bundle-header">
-                <span class="tag tag-amber">Compliance</span>
-                <h3 id="bundle-legal">Standards and legal framing</h3>
-              </div>
-              <div class="bundle-body">
-                <ul class="file-list" aria-label="File list for compliance task bundle">
-                  <li><code>AI-USAGE-GUIDE.md</code> + <code>INDEX.md</code></li>
-                  <li><code>standards/wcag/wcag-conformance-levels.md</code></li>
-                  <li><code>standards/section-508/section-508-overview.md</code></li>
-                  <li>Region file from <code>legal-and-compliance/</code> — US, EU, UK, or Canada</li>
-                </ul>
-              </div>
+            <article class="card usecase-card">
+              <span class="tag tag-amber" style="margin-bottom:1rem;">Compliance</span>
+              <h3>Navigate legal requirements</h3>
+              <p>Understand WCAG conformance levels, Section 508, and regional law — US ADA, EU EAA, UK PSBAR, Canada ACA, and Australia DDA.</p>
             </article>
           </div>
         </div>
