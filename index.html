@@ -167,6 +167,25 @@
 
       .brand-name .hi { color: var(--orange); }
 
+      .dev-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 3px;
+        font-family: var(--font-m);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: var(--orange-dim);
+        color: var(--orange);
+        border: 1px solid rgba(249,115,22,0.25);
+        vertical-align: middle;
+        margin-left: 0.4rem;
+        flex-shrink: 0;
+      }
+
       .nav-list {
         display: flex;
         align-items: center;
@@ -861,7 +880,7 @@
           <div class="brand-mark">
             <img src="logo-bright3.png" alt="" aria-hidden="true">
           </div>
-          <div class="brand-name">neur<span class="hi">a11y</span></div>
+          <div class="brand-name">neur<span class="hi">a11y</span><span class="dev-badge">v0.1.2 · dev</span></div>
         </a>
         <nav aria-label="Primary sections">
           <ul class="nav-list">
@@ -1258,7 +1277,7 @@
     <footer>
       <div class="container footer-inner">
         <div class="footer-brand">neur<span class="hi">a11y</span></div>
-        <p>Built to make accessibility knowledge easier to apply, for everyone.</p>
+        <p>Built to make accessibility knowledge easier to apply, for everyone. &mdash; <span style="color:var(--orange);">v0.1.2</span> &middot; In development</p>
       </div>
     </footer>
 
