@@ -8,6 +8,8 @@ ai_context: "Entry point for this repository. Read AI-USAGE-GUIDE.md before load
 
 # AI-Ready Accessibility Knowledge Repository
 
+<img src="https://raw.githubusercontent.com/AYJAYY/neura11y/main/logo-bright3.png" alt="neura11y logo" width="84">
+
 A comprehensive, machine-readable knowledge base covering web, documents, social media, voice UI, and physical ICT accessibility. Designed to be loaded into AI systems (direct context or RAG) to produce accessible content grounded in normative standards.
 
 Current repository version: `0.2.0` (`VERSION`)
