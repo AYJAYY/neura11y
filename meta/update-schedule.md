@@ -2,7 +2,7 @@
 title: "Update Schedule"
 type: "meta"
 status: "curated"
-last_updated: "2026-03-13"
+last_updated: "2026-03-14"
 ai_context: "Maintenance cadence for all repository content. Use to determine when content may be stale."
 ---
 
@@ -64,7 +64,14 @@ Maintenance cadence for all repository content. Distinguishes auto-fetchable fro
 | Australia compliance | Quarterly | DDA and WCAG 2.1 adoption | |
 | Component patterns | On APG update | W3C APG living document | Synthesize from APG + real-world testing |
 | SPA patterns | Quarterly | Framework release notes | React, Angular, Vue accessibility changes |
+| CMS authoring workflow | Quarterly | CMS/editor UX changes | Re-check reusable blocks, link fields, media workflows |
+| Design-to-development handoff guide | Quarterly | Design system updates | Update when component states or tokens change |
+| Native mobile app guide | On iOS/Android major release | Apple or Google release | Re-check focus, gestures, scaling, and announcement APIs |
+| Email/newsletter guide | Quarterly | Major client rendering changes | Review Outlook, Gmail, Apple Mail behavior changes |
+| Google Workspace guides | Quarterly | Google Workspace UI/export changes | Re-check Docs, Slides, Sheets workflows |
 | Automated testing tools | Quarterly | Tool release notes | axe, WAVE, Lighthouse, ARC Toolkit |
+| Prompt templates | After each context-pattern change | Manual | Keep prompt packs aligned with AI-USAGE-GUIDE patterns |
+| AI validation fixtures | After each prompt or context change | Manual | Keep fixtures aligned with prompt/context expectations |
 | Coverage gaps | After each content update | Manual | Track known gaps for next iteration |
 
 ---
@@ -79,7 +86,7 @@ Maintenance cadence for all repository content. Distinguishes auto-fetchable fro
 | WCAG/ARIA (stable specs) | 365 days | Re-run fetch script |
 | Living documents (APG, techniques) | 90 days | Re-run fetch script |
 
-AI systems loading files should check `last_fetched` or `last_verified` against the staleness threshold above and add a caveat to outputs when content may be outdated.
+AI systems loading files should check `last_fetched`, `last_verified`, or `last_reviewed` against the staleness threshold above and add a caveat to outputs when content may be outdated.
 
 ---
 
@@ -87,6 +94,7 @@ AI systems loading files should check `last_fetched` or `last_verified` against 
 
 Create calendar reminders for:
 - **First Monday of each month** — Review all 7 platform guides for UI changes
-- **First Monday of each quarter** — Run all fetch scripts; review legal and SR matrices
+- **First Monday of each quarter** — Run `scripts/fetch-all.py`, `scripts/sync-freshness.py`, and `scripts/validate-ai-suite.py`; review legal and SR matrices
 - **First Monday after major browser/SR release** — Update screen reader support matrices
+- **First Monday after major iOS/Android release** — Review native mobile and Google Workspace guidance
 - **On W3C publication** — Subscribe to https://www.w3.org/TR/ RSS feed for WCAG and ARIA publications

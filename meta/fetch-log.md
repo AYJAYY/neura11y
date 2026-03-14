@@ -2,13 +2,15 @@
 title: "Fetch Log"
 type: "meta"
 status: "curated"
-last_updated: "2026-03-13"
+last_updated: "2026-03-14"
 ai_context: "Record of all auto-fetch operations. Use to determine content freshness and diagnose fetch failures."
 ---
 
 # Fetch Log
 
 Record of all automated content fetch operations. Updated by fetch scripts on each run.
+
+Machine-readable fetch entries are also written to `meta/fetch-log.jsonl` by `scripts/fetch-all.py`.
 
 ---
 
@@ -66,10 +68,13 @@ python scripts/fetch-all.py
 ### Run all scripts
 
 ```bash
-python scripts/fetch-all.py --log meta/fetch-log.md
+python scripts/fetch-all.py
 ```
 
-The `--log` flag writes fetch results back to this file automatically.
+`scripts/fetch-all.py` now:
+- appends markdown results to this file
+- appends structured JSONL results to `meta/fetch-log.jsonl`
+- runs `scripts/sync-freshness.py` to refresh `meta/standards-registry.md` and `meta/freshness-manifest.json`
 
 ---
 

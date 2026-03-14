@@ -4,6 +4,7 @@ standard: "ACA 2019 + AODA + WCAG 2.0/2.1"
 source_url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada.html"
 domain: ["legal-and-compliance"]
 last_fetched: "2026-03-13"
+last_reviewed: "2026-03-13"
 status: "curated"
 tags: ["canada", "aca", "aoda", "ontario", "wcag", "legal", "compliance"]
 ai_context: "Overview of Canadian federal and provincial accessibility laws. Load when asked about Canadian accessibility legal requirements."

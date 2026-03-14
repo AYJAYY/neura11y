@@ -22,6 +22,7 @@ See meta/update-schedule.md for recommended cadence per script.
 
 import argparse
 import datetime
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -73,6 +74,52 @@ def append_fetch_log(log_path: Path, results: list[dict]) -> None:
     print(f"\nFetch log updated: {log_path}")
 
 
+def append_structured_fetch_log(log_path: Path, results: list[dict]) -> None:
+    """Append machine-readable fetch results to JSONL."""
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.datetime.now().isoformat(timespec="seconds")
+    record = {
+        "timestamp": timestamp,
+        "results": [
+            {
+                "key": result["key"],
+                "script": result["script"],
+                "status": "success" if result["success"] else "failed",
+            }
+            for result in results
+        ],
+    }
+    with log_path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=True) + "\n")
+    print(f"Structured fetch log updated: {log_path}")
+
+
+def sync_freshness_metadata() -> None:
+    """Refresh standards-registry freshness columns after fetch runs."""
+    sync_script = SCRIPTS_DIR / "sync-freshness.py"
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(sync_script),
+            "--registry",
+            "meta/standards-registry.md",
+            "--manifest",
+            "meta/freshness-manifest.json",
+        ],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode == 0:
+        print(result.stdout.strip())
+    else:
+        print("WARNING: freshness sync failed")
+        if result.stdout.strip():
+            print(result.stdout.strip())
+        if result.stderr.strip():
+            print(result.stderr.strip())
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Run all accessibility standards fetch scripts"
@@ -93,7 +140,13 @@ def main():
     )
     parser.add_argument(
         "--log", type=str, metavar="PATH",
-        help="Append results to a fetch log file (e.g. meta/fetch-log.md)"
+        default="meta/fetch-log.md",
+        help="Append results to a fetch log file (default: meta/fetch-log.md)"
+    )
+    parser.add_argument(
+        "--structured-log", type=str, metavar="PATH",
+        default="meta/fetch-log.jsonl",
+        help="Append machine-readable results to a JSONL log file (default: meta/fetch-log.jsonl)"
     )
     parser.add_argument(
         "--list", action="store_true",
@@ -135,9 +188,13 @@ def main():
         print("Re-run individual scripts to diagnose. See meta/fetch-log.md.")
 
     # Optional log update
-    if args.log:
-        log_path = REPO_ROOT / args.log
-        append_fetch_log(log_path, results)
+    log_path = REPO_ROOT / args.log
+    append_fetch_log(log_path, results)
+
+    structured_log_path = REPO_ROOT / args.structured_log
+    append_structured_fetch_log(structured_log_path, results)
+
+    sync_freshness_metadata()
 
     sys.exit(0 if not failed else 1)
 

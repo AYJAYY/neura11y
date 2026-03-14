@@ -1,0 +1,30 @@
+{
+  "chunks_exported": 1257,
+  "files_processed": 135,
+  "max_tokens": 512,
+  "min_tokens": 100,
+  "overlap": 50,
+  "status_counts": {
+    "active": 1,
+    "curated": 45,
+    "normative": 19,
+    "prescriptive": 62,
+    "template": 8
+  },
+  "top_level_counts": {
+    "AI-USAGE-GUIDE.md": 1,
+    "GLOSSARY.md": 1,
+    "INDEX.md": 1,
+    "README.md": 1,
+    "ai-prompts": 8,
+    "cognitive": 2,
+    "color-and-visual": 4,
+    "domains": 65,
+    "legal-and-compliance": 5,
+    "media": 3,
+    "meta": 4,
+    "reference": 2,
+    "screen-readers": 7,
+    "standards": 31
+  }
+}

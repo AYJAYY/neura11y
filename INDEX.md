@@ -79,6 +79,7 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 | `standards/other-standards/atag-2.0-overview.md` | ATAG 2.0 overview for authoring tools | prescriptive |
 | `standards/other-standards/uaag-2.0-overview.md` | UAAG 2.0 overview for browsers and user agents | prescriptive |
 | `standards/other-standards/iso-9241-171.md` | ISO 9241-171 software accessibility overview | curated |
+| `media/video/webvtt-spec.md` | WebVTT 1.0 file-structure and cue-syntax overview | normative |
 
 ---
 
@@ -98,6 +99,8 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 | `domains/web/spa-accessibility.md` | SPA routing, announcements, and focus handling | spa, react, live-region |
 | `domains/web/mobile-accessibility-patterns.md` | Mobile web accessibility guidance | mobile, touch, gestures |
 | `domains/web/pwa-accessibility.md` | Progressive web app accessibility guidance | pwa, offline, install |
+| `domains/web/cms-authoring-workflow.md` | Accessibility requirements for CMS-driven publishing workflows | cms, authoring, workflow |
+| `domains/web/design-to-development-handoff.md` | Accessibility expectations for design-to-development handoff | design, development, handoff |
 | `domains/web/component-patterns/accordion.md` | Accessible accordion pattern | accordion, disclosure |
 | `domains/web/component-patterns/carousel.md` | Accessible carousel pattern | carousel, rotation |
 | `domains/web/component-patterns/combobox.md` | Accessible combobox/autocomplete pattern | combobox, listbox |
@@ -130,6 +133,10 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 | `domains/documents/excel-accessibility/excel-data-visualization-guide.md` | Focused chart and dashboard accessibility guide | excel, charts, dashboards |
 | `domains/documents/plain-language/plain-language-guide.md` | Federal plain language guidance | plain-language, writing |
 | `domains/documents/plain-language/readability-guide.md` | Readability metrics and targets | readability, cognitive |
+| `domains/documents/email-accessibility/email-and-newsletters-guide.md` | Accessible email and newsletter authoring guide | email, newsletter, html-email |
+| `domains/documents/google-workspace/google-docs-guide.md` | Google Docs accessibility workflow guide | google-docs, workspace |
+| `domains/documents/google-workspace/google-slides-guide.md` | Google Slides accessibility workflow guide | google-slides, workspace |
+| `domains/documents/google-workspace/google-sheets-guide.md` | Google Sheets accessibility workflow guide | google-sheets, workspace |
 
 ### Social Media
 
@@ -161,6 +168,12 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 |------|-------------|------|
 | `domains/voice/voice-ui-accessibility.md` | Voice command and spoken UI accessibility guide | voice, speech, multimodal |
 
+### Mobile
+
+| File | Description | Tags |
+|------|-------------|------|
+| `domains/mobile/native-mobile-app-accessibility.md` | Native iOS and Android accessibility guidance | mobile, ios, android |
+
 ### Physical ICT
 
 | File | Description | Tags |
@@ -179,6 +192,7 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 | Color and Visual | `color-and-visual/typography.md` | Accessible typography guidance |
 | Media | `media/images/alt-text-decision-tree.md` | Alt text decision tree |
 | Media | `media/video/video-captions-guide.md` | Captions, transcripts, audio description, WebVTT, SRT |
+| Media | `media/video/webvtt-spec.md` | WebVTT 1.0 overview for timed text files |
 | Screen Readers | `screen-readers/screen-reader-overview.md` | Screen reader ecosystem overview |
 | Screen Readers | `screen-readers/jaws-guide.md` | JAWS guide |
 | Screen Readers | `screen-readers/nvda-guide.md` | NVDA guide |
@@ -192,8 +206,13 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 | Legal | `legal-and-compliance/canada-accessibility.md` | Canada accessibility overview |
 | Legal | `legal-and-compliance/australia-accessibility.md` | Australia accessibility overview |
 | Prompts | `ai-prompts/web-content/audit-html-snippet.md` | Web audit prompt template |
+| Prompts | `ai-prompts/web-content/generate-accessible-component.md` | Web component generation prompt template |
+| Prompts | `ai-prompts/web-content/full-site-accessibility-review.md` | Full-site web review prompt template |
 | Prompts | `ai-prompts/documents/accessible-document.md` | Document creation prompt template |
 | Prompts | `ai-prompts/social-media/accessible-social-post.md` | Social post prompt template |
+| Prompts | `ai-prompts/legal-and-compliance/check-accessibility-compliance.md` | Compliance review prompt template |
+| Prompts | `ai-prompts/voice/accessible-voice-ui.md` | Voice UI prompt template |
+| Prompts | `ai-prompts/physical-ict/accessible-kiosk-and-embedded.md` | Kiosk and embedded ICT prompt template |
 | Reference | `GLOSSARY.md` | Canonical terminology |
 | Reference | `reference/accessibility-tools.md` | Tools and testing resources |
 | Reference | `reference/statistics.md` | Accessibility statistics and reference data |
@@ -218,6 +237,7 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 - `domains/social-media/captions-and-transcripts/sign-language-video-guide.md`
 - `domains/social-media/captions-and-transcripts/subtitles-vs-captions-by-region.md`
 - `media/video/video-captions-guide.md`
+- `media/video/webvtt-spec.md`
 - `standards/wcag/wcag-2.2-quick-ref.md` (SC 1.2.x)
 
 ### color-and-contrast
@@ -246,6 +266,7 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 - `domains/web/mobile-accessibility-patterns.md`
 - `domains/web/pwa-accessibility.md`
 - `domains/web/spa-accessibility.md`
+- `domains/mobile/native-mobile-app-accessibility.md`
 - `screen-readers/talkback-guide.md`
 - `screen-readers/voiceover-guide.md`
 
@@ -267,6 +288,20 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 - `domains/documents/excel-accessibility/excel-guide.md`
 - `domains/documents/excel-accessibility/excel-checklist.md`
 - `domains/documents/excel-accessibility/excel-data-visualization-guide.md`
+- `domains/documents/email-accessibility/email-and-newsletters-guide.md`
+- `domains/documents/google-workspace/google-docs-guide.md`
+- `domains/documents/google-workspace/google-slides-guide.md`
+- `domains/documents/google-workspace/google-sheets-guide.md`
+
+### authoring-workflows
+
+- `domains/web/cms-authoring-workflow.md`
+- `domains/web/design-to-development-handoff.md`
+- `domains/documents/email-accessibility/email-and-newsletters-guide.md`
+- `domains/documents/google-workspace/google-docs-guide.md`
+- `domains/documents/google-workspace/google-slides-guide.md`
+- `domains/documents/google-workspace/google-sheets-guide.md`
+- `domains/mobile/native-mobile-app-accessibility.md`
 
 ### screen-reader-support
 
@@ -322,6 +357,7 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 
 ## Coverage Notes
 
-- Critical and important gaps from the previous pass are now covered by canonical files in `standards/` and `domains/`.
-- Remaining open content backlog is limited to video game accessibility; validation work is still pending in `meta/coverage-gaps.md`.
+- Canonical prompt templates now exist for every context-loading pattern documented in `AI-USAGE-GUIDE.md`.
+- AI operations now include schema validation, reference auditing, chunk export, freshness sync, and pattern-level validation scripts.
+- Remaining optional content backlog is limited to video game accessibility.
 - Prefer canonical files listed here over raw `*-fetched.md` source captures.

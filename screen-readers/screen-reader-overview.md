@@ -179,7 +179,7 @@ Test in this order because:
 
 ## ARIA Support Differences
 
-Screen readers have varying levels of ARIA support. See `screen-readers/sr-aria-support-matrix.md` for a detailed matrix.
+Screen readers have varying levels of ARIA support. See `screen-readers/screen-reader-aria-support.md` for a detailed matrix.
 
 Key general notes:
 - Most ARIA roles are well-supported in JAWS, NVDA, VoiceOver

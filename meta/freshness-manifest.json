@@ -1,0 +1,872 @@
+{
+  "AI-USAGE-GUIDE.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "AI Usage Guide"
+  },
+  "GLOSSARY.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Accessibility Glossary"
+  },
+  "INDEX.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Repository Index"
+  },
+  "README.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-14",
+    "status": "active",
+    "title": "AI-Ready Accessibility Knowledge Repository"
+  },
+  "ai-prompts/documents/accessible-document.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "template",
+    "title": "AI Prompt Templates \u2014 Document Accessibility"
+  },
+  "ai-prompts/legal-and-compliance/check-accessibility-compliance.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "template",
+    "title": "Prompt Template: Accessibility Compliance Review"
+  },
+  "ai-prompts/physical-ict/accessible-kiosk-and-embedded.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "template",
+    "title": "Prompt Template: Accessible Kiosk and Embedded ICT Review"
+  },
+  "ai-prompts/social-media/accessible-social-post.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "template",
+    "title": "Prompt Template: Create Accessible Social Media Post"
+  },
+  "ai-prompts/voice/accessible-voice-ui.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "template",
+    "title": "Prompt Template: Accessible Voice UI"
+  },
+  "ai-prompts/web-content/audit-html-snippet.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "template",
+    "title": "Prompt Template: Audit HTML Snippet for WCAG 2.2 AA"
+  },
+  "ai-prompts/web-content/full-site-accessibility-review.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "template",
+    "title": "Prompt Template: Full Web Accessibility Review"
+  },
+  "ai-prompts/web-content/generate-accessible-component.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "template",
+    "title": "Prompt Template: Generate Accessible Web Component"
+  },
+  "cognitive/coga-design-guide-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "Making Content Usable for People with Cognitive Disabilities (Fetched)"
+  },
+  "cognitive/coga-design-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "COGA Design Guide \u2014 Patterns and Examples"
+  },
+  "cognitive/coga-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Cognitive Accessibility Overview"
+  },
+  "color-and-visual/apca-contrast.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "APCA Contrast Model Guide"
+  },
+  "color-and-visual/color-blindness.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Color Blindness and Vision Impairment Design Guide"
+  },
+  "color-and-visual/contrast-ratios.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Contrast Ratios and Color Accessibility"
+  },
+  "color-and-visual/typography.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Typography Accessibility"
+  },
+  "domains/documents/email-accessibility/email-and-newsletters-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Accessible Email and Newsletter Guide"
+  },
+  "domains/documents/excel-accessibility/excel-checklist.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Excel Accessibility Checklist"
+  },
+  "domains/documents/excel-accessibility/excel-data-visualization-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Excel Chart and Data Visualization Accessibility"
+  },
+  "domains/documents/excel-accessibility/excel-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Microsoft Excel Accessibility Guide"
+  },
+  "domains/documents/google-workspace/google-docs-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Google Docs Accessibility Guide"
+  },
+  "domains/documents/google-workspace/google-sheets-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Google Sheets Accessibility Guide"
+  },
+  "domains/documents/google-workspace/google-slides-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Google Slides Accessibility Guide"
+  },
+  "domains/documents/pdf-creation/pdf-accessibility-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "PDF Accessibility Guide"
+  },
+  "domains/documents/pdf-creation/pdf-form-accessibility-examples.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "PDF Form Accessibility Examples"
+  },
+  "domains/documents/pdf-creation/pdf-from-indesign.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Creating Accessible PDF from InDesign"
+  },
+  "domains/documents/pdf-creation/pdf-from-word.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Creating Accessible PDF from Word"
+  },
+  "domains/documents/pdf-creation/pdf-remediation.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "PDF Remediation Guide"
+  },
+  "domains/documents/plain-language/plain-language-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Federal Plain Language Guidelines (Fetched)"
+  },
+  "domains/documents/plain-language/plain-language-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Plain Language Guide"
+  },
+  "domains/documents/plain-language/readability-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Readability Guide"
+  },
+  "domains/documents/powerpoint-accessibility/powerpoint-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Microsoft PowerPoint Accessibility Guide"
+  },
+  "domains/documents/powerpoint-accessibility/ppt-checklist.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "PowerPoint Accessibility Checklist"
+  },
+  "domains/documents/powerpoint-accessibility/slide-layout-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Accessible Slide Layout and Reading Order Guide"
+  },
+  "domains/documents/word-accessibility/word-checklist.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Microsoft Word Accessibility Checklist"
+  },
+  "domains/documents/word-accessibility/word-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Microsoft Word Accessibility Guide"
+  },
+  "domains/documents/word-accessibility/word-styles-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Word Styles and Structure Guide"
+  },
+  "domains/mobile/native-mobile-app-accessibility.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Native Mobile App Accessibility Guide"
+  },
+  "domains/physical-ict/kiosk-and-embedded-playbook.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Kiosk and Embedded Systems Accessibility Playbook"
+  },
+  "domains/social-media/alt-text/alt-text-by-image-type.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Alt Text by Image Type"
+  },
+  "domains/social-media/alt-text/alt-text-examples.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Alt Text Examples by Image Type"
+  },
+  "domains/social-media/alt-text/alt-text-principles.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Alt Text Principles for Social Media"
+  },
+  "domains/social-media/captions-and-transcripts/audio-description-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Audio Description Guide for Social Media and Web Video"
+  },
+  "domains/social-media/captions-and-transcripts/caption-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Caption Writing Guide for Social Media"
+  },
+  "domains/social-media/captions-and-transcripts/sign-language-video-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Sign Language for Social Video"
+  },
+  "domains/social-media/captions-and-transcripts/subtitles-vs-captions-by-region.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Subtitles vs. Captions by Region"
+  },
+  "domains/social-media/captions-and-transcripts/webvtt-format.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "WebVTT Format Reference"
+  },
+  "domains/social-media/platforms/facebook/facebook-guide.md": {
+    "freshness_field": "last_verified",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Facebook Accessibility Guide"
+  },
+  "domains/social-media/platforms/instagram/instagram-guide.md": {
+    "freshness_field": "last_verified",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Instagram Accessibility Guide"
+  },
+  "domains/social-media/platforms/linkedin/linkedin-guide.md": {
+    "freshness_field": "last_verified",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "LinkedIn Accessibility Guide"
+  },
+  "domains/social-media/platforms/mastodon/mastodon-guide.md": {
+    "freshness_field": "last_verified",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Mastodon Accessibility Guide"
+  },
+  "domains/social-media/platforms/tiktok/tiktok-guide.md": {
+    "freshness_field": "last_verified",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "TikTok Accessibility Guide"
+  },
+  "domains/social-media/platforms/twitter-x/twitter-guide.md": {
+    "freshness_field": "last_verified",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Twitter/X Accessibility Guide"
+  },
+  "domains/social-media/platforms/youtube/youtube-guide.md": {
+    "freshness_field": "last_verified",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "YouTube Accessibility Guide"
+  },
+  "domains/social-media/social-media-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Social Media Accessibility Overview"
+  },
+  "domains/social-media/writing-for-accessibility/emoji-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Accessible Emoji Guide"
+  },
+  "domains/social-media/writing-for-accessibility/hashtag-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Accessible Hashtag Writing"
+  },
+  "domains/social-media/writing-for-accessibility/inclusive-language.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Inclusive Language for Social Media"
+  },
+  "domains/voice/voice-ui-accessibility.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Voice UI Accessibility"
+  },
+  "domains/web/cms-authoring-workflow.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "CMS Authoring Workflow Accessibility Guide"
+  },
+  "domains/web/color-and-contrast.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Color and Contrast Requirements"
+  },
+  "domains/web/component-patterns/accordion.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Accessible Accordion Component Pattern"
+  },
+  "domains/web/component-patterns/carousel.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Accessible Carousel (Slider) Component Pattern"
+  },
+  "domains/web/component-patterns/combobox.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Accessible Combobox (Autocomplete) Pattern"
+  },
+  "domains/web/component-patterns/data-table.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Accessible Data Table Pattern"
+  },
+  "domains/web/component-patterns/modal-dialog.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Accessible Modal Dialog Pattern"
+  },
+  "domains/web/component-patterns/navigation-menu.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Accessible Navigation Menu Patterns"
+  },
+  "domains/web/component-patterns/tabs.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Accessible Tabs Component Pattern"
+  },
+  "domains/web/component-patterns/tooltip.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Accessible Tooltip Pattern"
+  },
+  "domains/web/design-to-development-handoff.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Accessible Design-to-Development Handoff"
+  },
+  "domains/web/focus-management.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Focus Management"
+  },
+  "domains/web/forms-accessibility.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Forms Accessibility"
+  },
+  "domains/web/html-semantics-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "HTML Semantics for Accessibility"
+  },
+  "domains/web/images-and-media.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Images and Media Accessibility"
+  },
+  "domains/web/keyboard-navigation-patterns.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Keyboard Navigation Patterns"
+  },
+  "domains/web/mobile-accessibility-patterns.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "Mobile Web Accessibility Patterns"
+  },
+  "domains/web/pwa-accessibility.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "prescriptive",
+    "title": "PWA Accessibility Patterns"
+  },
+  "domains/web/spa-accessibility.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Single-Page Application (SPA) Accessibility"
+  },
+  "domains/web/testing/automated-testing.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Automated Accessibility Testing"
+  },
+  "domains/web/testing/manual-testing-checklist.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Manual Accessibility Testing Checklist"
+  },
+  "domains/web/testing/screen-reader-testing-matrix.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Screen Reader Testing Matrix"
+  },
+  "domains/web/web-accessibility-checklist.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Web Accessibility Checklist \u2014 WCAG 2.2 Level AA"
+  },
+  "legal-and-compliance/australia-accessibility.md": {
+    "freshness_field": "last_reviewed",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Australia Accessibility Laws Overview"
+  },
+  "legal-and-compliance/canada-accessibility.md": {
+    "freshness_field": "last_reviewed",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Canada Accessibility Laws Overview"
+  },
+  "legal-and-compliance/eu-eaa-overview.md": {
+    "freshness_field": "last_reviewed",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "EU European Accessibility Act (EAA) Overview"
+  },
+  "legal-and-compliance/uk-accessibility-regulations.md": {
+    "freshness_field": "last_reviewed",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "UK Accessibility Regulations Overview"
+  },
+  "legal-and-compliance/us-ada-overview.md": {
+    "freshness_field": "last_reviewed",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "US ADA Web Accessibility Overview"
+  },
+  "media/images/alt-text-decision-tree.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Alt Text Decision Tree (Fetched)"
+  },
+  "media/video/video-captions-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "Video Captions and Audio Description Guide"
+  },
+  "media/video/webvtt-spec.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "normative",
+    "title": "WebVTT 1.0 Specification Overview"
+  },
+  "meta/coverage-gaps.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Coverage Gaps"
+  },
+  "meta/fetch-log.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Fetch Log"
+  },
+  "meta/latest-ai-validation-report.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Latest AI Validation Report"
+  },
+  "meta/standards-registry.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Standards Registry"
+  },
+  "meta/update-schedule.md": {
+    "freshness_field": "last_updated",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Update Schedule"
+  },
+  "reference/accessibility-tools.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Accessibility Testing Tools Reference"
+  },
+  "reference/statistics.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Disability and Accessibility Statistics"
+  },
+  "screen-readers/jaws-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "JAWS Screen Reader Guide"
+  },
+  "screen-readers/nvda-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "NVDA Screen Reader Guide for Testing"
+  },
+  "screen-readers/screen-reader-aria-support.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Screen Reader ARIA Support Matrix"
+  },
+  "screen-readers/screen-reader-html-support.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Screen Reader HTML Support Matrix"
+  },
+  "screen-readers/screen-reader-overview.md": {
+    "freshness_field": "last_reviewed",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Screen Reader Overview"
+  },
+  "screen-readers/talkback-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "TalkBack Screen Reader Guide"
+  },
+  "screen-readers/voiceover-guide.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "VoiceOver Screen Reader Guide for Testing"
+  },
+  "standards/aria/aria-authoring-practices.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "ARIA Authoring Practices Guide \u2014 Keyboard Patterns"
+  },
+  "standards/aria/aria-common-mistakes.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Common ARIA Mistakes"
+  },
+  "standards/aria/aria-in-html-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "ARIA in HTML (Fetched)"
+  },
+  "standards/aria/aria-in-html.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "ARIA in HTML \u2014 Implicit Semantics and Allowed Overrides"
+  },
+  "standards/aria/wai-aria-1.2-full-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WAI-ARIA 1.2 Full Specification (Fetched)"
+  },
+  "standards/aria/wai-aria-1.2-roles.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WAI-ARIA 1.2 Roles Reference"
+  },
+  "standards/aria/wai-aria-1.2-states-properties.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WAI-ARIA 1.2 States and Properties Reference"
+  },
+  "standards/en-301-549/en-301-549-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "EN 301 549 Overview"
+  },
+  "standards/en-301-549/en-301-549-requirements.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "EN 301 549 v3.2.1 \u2014 Accessibility Requirements for ICT Products and Services"
+  },
+  "standards/epub/epub-accessibility-1.1-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "EPUB Accessibility 1.1 (Fetched)"
+  },
+  "standards/epub/epub-accessibility-1.1.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "EPUB Accessibility 1.1"
+  },
+  "standards/epub/epub-metadata-schema.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "EPUB Accessibility Metadata Schema"
+  },
+  "standards/other-standards/atag-2.0-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "ATAG 2.0 (Fetched)"
+  },
+  "standards/other-standards/atag-2.0-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "ATAG 2.0 \u2014 Authoring Tool Accessibility Guidelines Overview"
+  },
+  "standards/other-standards/iso-9241-171.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "ISO 9241-171 \u2014 Software Accessibility Overview"
+  },
+  "standards/other-standards/uaag-2.0-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "UAAG 2.0 (Fetched)"
+  },
+  "standards/other-standards/uaag-2.0-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "prescriptive",
+    "title": "UAAG 2.0 \u2014 User Agent Accessibility Guidelines Overview"
+  },
+  "standards/pdf-ua/matterhorn-protocol.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "Matterhorn Protocol 1.1 \u2014 PDF/UA Conformance Checking"
+  },
+  "standards/pdf-ua/pdf-ua-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "PDF/UA (ISO 14289-1) Overview"
+  },
+  "standards/section-508/section-508-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "Section 508 Overview"
+  },
+  "standards/section-508/section-508-technical-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "Section 508 Technical Standards (Fetched)"
+  },
+  "standards/section-508/section-508-technical-standards.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "Section 508 Technical Standards"
+  },
+  "standards/section-508/section-508-wcag-mapping.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "curated",
+    "title": "Section 508 to WCAG Mapping"
+  },
+  "standards/wcag/wcag-2.1-full.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WCAG 2.1 Full Specification"
+  },
+  "standards/wcag/wcag-2.1-quick-ref.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WCAG 2.1 Quick Reference \u2014 All Success Criteria"
+  },
+  "standards/wcag/wcag-2.2-full.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WCAG 2.2 Full Specification"
+  },
+  "standards/wcag/wcag-2.2-new-criteria.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WCAG 2.2 New Success Criteria"
+  },
+  "standards/wcag/wcag-2.2-quick-ref-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WCAG 2.2 Quick Reference (Fetched)"
+  },
+  "standards/wcag/wcag-2.2-quick-ref.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WCAG 2.2 Quick Reference \u2014 All Success Criteria"
+  },
+  "standards/wcag/wcag-3.0-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WCAG 3.0 Overview"
+  },
+  "standards/wcag/wcag-conformance-levels.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-13",
+    "status": "normative",
+    "title": "WCAG Conformance Levels"
+  },
+  "standards/wcag/wcag-techniques/advisory-techniques.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "WCAG 2.2 Advisory Techniques"
+  },
+  "standards/wcag/wcag-techniques/failure-techniques.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "WCAG 2.2 Failure Techniques"
+  },
+  "standards/wcag/wcag-techniques/sufficient-techniques.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "WCAG 2.2 Sufficient Techniques"
+  },
+  "standards/wcag/wcag-understanding/operable.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Understanding WCAG 2.2 \u2014 Operable"
+  },
+  "standards/wcag/wcag-understanding/perceivable.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Understanding WCAG 2.2 \u2014 Perceivable"
+  },
+  "standards/wcag/wcag-understanding/robust.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Understanding WCAG 2.2 \u2014 Robust"
+  },
+  "standards/wcag/wcag-understanding/understandable.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-14",
+    "status": "curated",
+    "title": "Understanding WCAG 2.2 \u2014 Understandable"
+  }
+}

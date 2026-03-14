@@ -4,6 +4,7 @@ standard: "DDA 1992 + WCAG 2.0/2.1 + AGMO"
 source_url: "https://www.legislation.gov.au/Details/C2016C00763"
 domain: ["legal-and-compliance"]
 last_fetched: "2026-03-13"
+last_reviewed: "2026-03-13"
 status: "curated"
 tags: ["australia", "dda", "wcag", "legal", "compliance", "government", "agmo"]
 ai_context: "Overview of Australian accessibility laws for web and digital content. Load when asked about Australian accessibility legal requirements."

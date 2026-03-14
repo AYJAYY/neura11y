@@ -4,6 +4,7 @@ standard: "EU Directive 2019/882"
 source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882"
 domain: ["legal-and-compliance"]
 last_fetched: "2026-03-13"
+last_reviewed: "2026-03-13"
 status: "curated"
 tags: ["eaa", "eu", "european-accessibility-act", "en-301-549", "legal", "compliance"]
 ai_context: "Overview of the EU European Accessibility Act and its requirements for private sector digital products and services. Load when asked about EU accessibility law."

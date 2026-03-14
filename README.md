@@ -26,7 +26,7 @@ This repository provides structured accessibility knowledge that enables AI syst
 
 **Quick navigation:** Use `INDEX.md` to find files by standard, domain, or tag without loading the full repository.
 
-**For AI pipelines:** Chunk at `##` heading level. Preserve `source_file`, `heading_path`, `standard`, `sc_number`, `domain`, and `platform` as chunk metadata.
+**For AI pipelines:** Chunk at `##` heading level. Preserve `source_file`, `heading_path`, `standard`, `sc_number`, `domain`, `platform`, `status`, and freshness fields as chunk metadata.
 
 **Canonical files:** Prefer the curated files referenced by `INDEX.md` and `AI-USAGE-GUIDE.md`. Treat `*-fetched.md` files as raw source captures and provenance, not the default context payload.
 
@@ -42,6 +42,8 @@ claude-a11y-repo/
 ├── meta/                     — Repository management metadata
 │   ├── standards-registry.md — Master list of all standards with source URLs
 │   ├── fetch-log.md          — Record of auto-fetch operations
+│   ├── fetch-log.jsonl       — Structured fetch history for tooling
+│   ├── ai-validation-fixtures.json — Validation fixtures for AI usage patterns
 │   ├── update-schedule.md    — Maintenance cadence per content type
 │   └── coverage-gaps.md      — Known gaps and planned additions
 │
@@ -56,7 +58,8 @@ claude-a11y-repo/
 │
 ├── domains/                  — Applied guidance by content domain (Layer 2)
 │   ├── web/                  — HTML, ARIA, components, testing
-│   ├── documents/            — Word, PowerPoint, PDF, Excel, plain language
+│   ├── documents/            — Word, PowerPoint, PDF, Excel, plain language, email, Google Workspace
+│   ├── mobile/               — Native iOS and Android app guidance
 │   ├── social-media/         — Alt text, captions, 7 platform guides
 │   ├── voice/                — Voice UI and speech-command guidance
 │   └── physical-ict/         — Kiosk and embedded system playbooks
@@ -68,7 +71,7 @@ claude-a11y-repo/
 ├── ai-prompts/               — Ready-to-use prompt templates (Layer 3)
 ├── legal-and-compliance/     — ADA, Section 508, EU EAA, UK, Canada, Australia
 ├── reference/                — Tools, statistics, citations
-└── scripts/                  — Fetch and maintenance scripts
+└── scripts/                  — Fetch, validation, chunk-export, and maintenance scripts
 ```
 
 ## Content Layers
@@ -97,18 +100,22 @@ claude-a11y-repo/
 
 - **Web** — HTML semantics, ARIA, focus management, keyboard navigation, forms, components, SPAs, mobile patterns, PWAs, testing
 - **Documents** — Microsoft Word, PowerPoint, PDF, Excel; federal plain language guidelines; PDF form and Excel data-viz examples
+- **Document Workflows** — Accessible email/newsletters and Google Docs/Slides/Sheets authoring
+- **Mobile** — Native iOS and Android accessibility patterns for labels, focus, gestures, scaling, and announcements
 - **Social Media** — Twitter/X, LinkedIn, Instagram, Facebook, TikTok, YouTube, Mastodon; sign-language and terminology notes
 - **Voice** — Voice command and spoken UI accessibility patterns
 - **Physical ICT** — Kiosk and embedded system accessibility playbook
+- **Production Workflows** — CMS authoring workflow and design-to-development handoff guidance
 
 ## Current Coverage Notes
 
-- **Critical and important coverage gaps:** The previous critical and important gaps are now covered by canonical files in `standards/` and `domains/`.
-- **Remaining backlog:** The content backlog is now reduced to video game accessibility, which remains out of scope for v1. Validation work is still pending in `meta/coverage-gaps.md`.
+- **AI operations:** The repository now includes schema validation, reference auditing, chunk export, freshness sync, and pattern-level AI validation scripts under `scripts/`.
+- **Prompt coverage:** Prompt packs now exist for all documented AI usage patterns in `AI-USAGE-GUIDE.md`.
+- **Remaining backlog:** The primary optional backlog item remains video game accessibility, which is still out of scope for v1.
 
 ## Maintenance
 
-Auto-fetchable standards are refreshed via scripts in `/scripts/`. See `meta/update-schedule.md` for cadence. Platform-specific social media guides require manual monthly review.
+Auto-fetchable standards are refreshed via scripts in `/scripts/`. Use `scripts/fetch-all.py` for managed runs, `scripts/sync-freshness.py` to update registry freshness signals, and `scripts/validate-ai-suite.py` before claiming AI readiness. See `meta/update-schedule.md` for cadence.
 
 ## Contributing
 

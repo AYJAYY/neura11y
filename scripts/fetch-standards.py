@@ -6,7 +6,7 @@ Usage:
   python scripts/fetch-standards.py --all            # Fetch all standards
   python scripts/fetch-standards.py --wcag           # Fetch only WCAG
   python scripts/fetch-standards.py --aria           # Fetch only ARIA
-  python scripts/fetch-standards.py --w3c-other      # ATAG, UAAG, EPUB, COGA, etc.
+  python scripts/fetch-standards.py --w3c-other      # ATAG, UAAG, EPUB, WebVTT, COGA, etc.
   python scripts/fetch-standards.py --us-gov         # Section 508, Plain Language
   python scripts/fetch-standards.py --source wcag-2.2  # Fetch specific source
 
@@ -234,6 +234,21 @@ SOURCES = {
         "selector": "main",
         "skip_selectors": ["nav", "header", "footer"],
     },
+    "webvtt-1.0": {
+        "url": "https://www.w3.org/TR/webvtt1/",
+        "output": "media/video/webvtt-spec.md",
+        "frontmatter": {
+            "title": "WebVTT 1.0 Specification",
+            "standard": "WebVTT 1.0",
+            "source_url": "https://www.w3.org/TR/webvtt1/",
+            "domain": ["media", "social-media"],
+            "status": "normative",
+            "tags": ["webvtt", "captions", "timed-text", "video"],
+            "ai_context": "WebVTT timed text specification. Load for caption file syntax, cue settings, and track authoring details.",
+        },
+        "selector": "body",
+        "skip_selectors": ["nav", "#toc", "header", "footer"],
+    },
     "alt-text-tree": {
         "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
         "output": "media/images/alt-text-decision-tree.md",
@@ -276,7 +291,7 @@ SOURCE_GROUPS = {
         "wcag-2.2-understanding",
     ],
     "aria": ["wai-aria-1.2", "aria-in-html"],
-    "w3c-other": ["atag-2.0", "uaag-2.0", "epub-a11y-1.1", "alt-text-tree", "coga-usable"],
+    "w3c-other": ["atag-2.0", "uaag-2.0", "epub-a11y-1.1", "webvtt-1.0", "alt-text-tree", "coga-usable"],
     "us-gov": ["section-508-tech", "plain-language"],
 }
 

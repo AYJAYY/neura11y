@@ -1,0 +1,113 @@
+[
+  {
+    "id": "pattern-1-web-audit",
+    "pattern": "Pattern 1: Web Accessibility Audit",
+    "prompt_file": "ai-prompts/web-content/audit-html-snippet.md",
+    "context_files": [
+      "standards/wcag/wcag-2.2-quick-ref.md",
+      "standards/aria/wai-aria-1.2-roles.md",
+      "standards/aria/aria-common-mistakes.md",
+      "domains/web/web-accessibility-checklist.md",
+      "domains/web/html-semantics-guide.md"
+    ],
+    "expected_citations": ["SC 2.4.4", "SC 2.5.3"],
+    "forbidden_citations": ["SC 4.1.2"]
+  },
+  {
+    "id": "pattern-2-component-generation",
+    "pattern": "Pattern 2: Accessible Web Component Generation",
+    "prompt_file": "ai-prompts/web-content/generate-accessible-component.md",
+    "context_files": [
+      "standards/wcag/wcag-2.2-quick-ref.md",
+      "standards/aria/wai-aria-1.2-roles.md",
+      "standards/aria/wai-aria-1.2-states-properties.md",
+      "standards/aria/aria-authoring-practices.md",
+      "domains/web/keyboard-navigation-patterns.md",
+      "domains/web/focus-management.md"
+    ],
+    "expected_citations": ["SC 2.1.1", "SC 4.1.2"]
+  },
+  {
+    "id": "pattern-3-social-post",
+    "pattern": "Pattern 3: Social Media Post Creation",
+    "prompt_file": "ai-prompts/social-media/accessible-social-post.md",
+    "context_files": [
+      "domains/social-media/social-media-overview.md",
+      "domains/social-media/alt-text/alt-text-principles.md",
+      "domains/social-media/writing-for-accessibility/inclusive-language.md",
+      "domains/social-media/platforms/instagram/instagram-guide.md"
+    ],
+    "expected_citations": ["SC 1.1.1", "CamelCase"]
+  },
+  {
+    "id": "pattern-4-document-accessibility",
+    "pattern": "Pattern 4: Document Accessibility",
+    "prompt_file": "ai-prompts/documents/accessible-document.md",
+    "context_files": [
+      "standards/pdf-ua/pdf-ua-overview.md",
+      "domains/documents/word-accessibility/word-guide.md",
+      "domains/documents/powerpoint-accessibility/powerpoint-guide.md",
+      "domains/documents/pdf-creation/pdf-accessibility-guide.md",
+      "domains/documents/excel-accessibility/excel-guide.md",
+      "domains/documents/plain-language/plain-language-guide.md"
+    ],
+    "expected_citations": ["PDF/UA", "Plain Language"]
+  },
+  {
+    "id": "pattern-5-legal-compliance",
+    "pattern": "Pattern 5: Legal Compliance Check",
+    "prompt_file": "ai-prompts/legal-and-compliance/check-accessibility-compliance.md",
+    "context_files": [
+      "standards/wcag/wcag-2.2-quick-ref.md",
+      "standards/section-508/section-508-overview.md",
+      "standards/section-508/section-508-technical-standards.md",
+      "legal-and-compliance/us-ada-overview.md",
+      "legal-and-compliance/eu-eaa-overview.md",
+      "legal-and-compliance/uk-accessibility-regulations.md",
+      "legal-and-compliance/canada-accessibility.md",
+      "legal-and-compliance/australia-accessibility.md"
+    ],
+    "expected_citations": ["Section 508", "WCAG 2.1 Level AA"]
+  },
+  {
+    "id": "pattern-6-full-web-context",
+    "pattern": "Pattern 6: Full Web Accessibility Context",
+    "prompt_file": "ai-prompts/web-content/full-site-accessibility-review.md",
+    "context_files": [
+      "standards/wcag/wcag-2.2-quick-ref.md",
+      "standards/wcag/wcag-conformance-levels.md",
+      "standards/aria/wai-aria-1.2-roles.md",
+      "standards/aria/wai-aria-1.2-states-properties.md",
+      "domains/web/web-accessibility-checklist.md",
+      "domains/web/html-semantics-guide.md",
+      "domains/web/forms-accessibility.md",
+      "domains/web/keyboard-navigation-patterns.md",
+      "domains/web/focus-management.md",
+      "domains/web/color-and-contrast.md"
+    ],
+    "expected_citations": ["SC 1.4.3", "SC 3.3.2"]
+  },
+  {
+    "id": "pattern-7-voice-ui",
+    "pattern": "Pattern 7: Voice UI and Speech Commands",
+    "prompt_file": "ai-prompts/voice/accessible-voice-ui.md",
+    "context_files": [
+      "standards/wcag/wcag-2.2-quick-ref.md",
+      "standards/other-standards/iso-9241-171.md",
+      "standards/en-301-549/en-301-549-requirements.md",
+      "domains/voice/voice-ui-accessibility.md"
+    ],
+    "expected_citations": ["ISO 9241-171", "EN 301 549"]
+  },
+  {
+    "id": "pattern-8-kiosk-ict",
+    "pattern": "Pattern 8: Kiosk and Embedded / Closed Functionality",
+    "prompt_file": "ai-prompts/physical-ict/accessible-kiosk-and-embedded.md",
+    "context_files": [
+      "standards/other-standards/iso-9241-171.md",
+      "standards/en-301-549/en-301-549-requirements.md",
+      "domains/physical-ict/kiosk-and-embedded-playbook.md"
+    ],
+    "expected_citations": ["EN 301 549", "closed functionality"]
+  }
+]

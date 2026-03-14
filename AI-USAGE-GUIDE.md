@@ -24,18 +24,47 @@ This file tells AI systems and their operators how to use this repository effect
 
 ## File Frontmatter Format
 
-Every file in this repository uses this YAML frontmatter schema:
+This repository uses **path-specific frontmatter schemas** rather than a single universal schema.
+
+### Content Files
+
+Use for files under `/standards/`, `/domains/`, `/media/`, `/color-and-visual/`, `/cognitive/`, `/screen-readers/`, `/reference/`, and `/ai-prompts/`.
 
 ```yaml
 ---
 title: ""            # Descriptive title of the file
-standard: ""         # Primary standard (e.g., "WCAG 2.2", "WAI-ARIA 1.2")
-source_url: ""       # Canonical URL of the normative source
-domain: []           # Array: "web", "documents", "social-media", "general"
-last_fetched: ""     # ISO 8601 date of last content update (YYYY-MM-DD)
+standard: ""         # Primary standard or framework
+source_url: ""       # Canonical source URL when applicable
+domain: []           # Domain tags such as "web", "documents", "social-media", "mobile"
+last_fetched: ""     # ISO 8601 date of content update
 status: ""           # "normative" | "prescriptive" | "curated" | "template"
 tags: []             # Searchable tags
 ai_context: ""       # One-line hint for AI: what this file is for
+---
+```
+
+### Manually Verified Content
+
+Add these fields when manual review matters more than fetch date:
+
+```yaml
+last_verified: ""    # Platform-specific or UI-specific manual verification
+last_reviewed: ""    # Legal or editorial review date
+stale: false         # Optional; set true when the file exceeds freshness thresholds
+```
+
+### Root and Meta Files
+
+Use for `README.md`, `INDEX.md`, `GLOSSARY.md`, `AI-USAGE-GUIDE.md`, and `/meta/`.
+
+```yaml
+---
+title: ""
+type: ""             # "root" | "index" | "reference" | "meta"
+status: "curated"
+last_updated: ""     # ISO 8601 date of metadata update
+tags: []             # Optional
+ai_context: ""
 ---
 ```
 
@@ -134,6 +163,14 @@ domains/documents/plain-language/plain-language-guide.md
 domains/documents/plain-language/readability-guide.md
 ```
 
+Add these when the workflow is authoring-surface specific:
+```
+domains/documents/email-accessibility/email-and-newsletters-guide.md
+domains/documents/google-workspace/google-docs-guide.md
+domains/documents/google-workspace/google-slides-guide.md
+domains/documents/google-workspace/google-sheets-guide.md
+```
+
 ### Pattern 5: Legal Compliance Check
 
 ```
@@ -160,6 +197,12 @@ domains/web/forms-accessibility.md
 domains/web/keyboard-navigation-patterns.md
 domains/web/focus-management.md
 domains/web/color-and-contrast.md
+```
+
+Add these for production workflow coverage:
+```
+domains/web/cms-authoring-workflow.md
+domains/web/design-to-development-handoff.md
 ```
 
 ### Pattern 7: Voice UI and Speech Commands
@@ -218,6 +261,7 @@ When the user's query includes:
 - "WCAG" → Prefer `/standards/wcag/` chunks
 - "social media" or platform name → Prefer `/domains/social-media/` chunks
 - "document" or "PDF" or "Word" → Prefer `/domains/documents/` chunks
+- "mobile app" or "iOS" or "Android" → Prefer `/domains/mobile/` chunks
 
 ---
 
@@ -241,8 +285,13 @@ When providing guidance:
 
 See `/ai-prompts/` for ready-to-use prompt templates:
 - `ai-prompts/web-content/audit-html-snippet.md` — HTML auditing and remediation
+- `ai-prompts/web-content/generate-accessible-component.md` — component generation and review
+- `ai-prompts/web-content/full-site-accessibility-review.md` — broader site review and remediation planning
 - `ai-prompts/documents/accessible-document.md` — accessible document creation
 - `ai-prompts/social-media/accessible-social-post.md` — accessible social post creation
+- `ai-prompts/legal-and-compliance/check-accessibility-compliance.md` — issue-to-regulation mapping
+- `ai-prompts/voice/accessible-voice-ui.md` — voice UI design and review
+- `ai-prompts/physical-ict/accessible-kiosk-and-embedded.md` — kiosk and closed-functionality review
 
 ---
 
@@ -284,6 +333,20 @@ Expected output should **not** cite:
 | Legal compliance | `/legal-and-compliance/` | `last_reviewed` frontmatter |
 
 If `last_fetched` or `last_verified` is more than 6 months old for platform guides, treat content as potentially outdated and recommend manual verification.
+
+If `stale: true` is present, surface that caveat explicitly in the AI output.
+
+---
+
+## Automation Scripts
+
+Use these scripts to keep AI ingestion and validation assets current:
+
+- `scripts/export-ai-context.py` — export chunked JSONL plus a summary manifest for RAG ingestion
+- `scripts/validate-frontmatter.py` — enforce path-specific frontmatter schemas
+- `scripts/validate-references.py` — detect broken internal file references
+- `scripts/validate-ai-suite.py` — run the pattern-level validation harness using `meta/ai-validation-fixtures.json`
+- `scripts/sync-freshness.py` — build a freshness manifest and sync registry freshness columns
 
 ---
 

@@ -4,6 +4,7 @@ standard: "The Public Sector Bodies Accessibility Regulations 2018 + UK EAA"
 source_url: "https://www.legislation.gov.uk/uksi/2018/952/contents/made"
 domain: ["legal-and-compliance"]
 last_fetched: "2026-03-13"
+last_reviewed: "2026-03-13"
 status: "curated"
 tags: ["uk", "wcag", "legal", "compliance", "public-sector", "eaa"]
 ai_context: "Overview of UK accessibility laws for public and private sector. Load when asked about UK accessibility legal requirements."
