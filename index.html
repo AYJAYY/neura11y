@@ -870,15 +870,17 @@
         justify-content: center;
         min-height: 2.75rem;
         padding: 0.35rem 0.45rem;
-        border: 1px solid var(--border);
+        border: 1px solid rgba(249,115,22,0.2);
         border-radius: var(--r-sm);
-        background: var(--surface);
+        background: linear-gradient(180deg, rgba(249,115,22,0.08), rgba(17,17,19,0.92));
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
       }
 
       .visitor-counter img {
         display: block;
         max-width: 100%;
         height: auto;
+        filter: hue-rotate(120deg) saturate(1.25) brightness(1.02) contrast(1.03);
       }
 
       .footer-link {
