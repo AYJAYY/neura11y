@@ -864,6 +864,23 @@
         gap: 0.75rem;
       }
 
+      .visitor-counter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.75rem;
+        padding: 0.35rem 0.45rem;
+        border: 1px solid var(--border);
+        border-radius: var(--r-sm);
+        background: var(--surface);
+      }
+
+      .visitor-counter img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
       .footer-link {
         appearance: none;
         border: 1px solid var(--border);
@@ -1015,6 +1032,12 @@
         .footer-link {
           width: 100%;
           justify-content: center;
+        }
+        .visitor-counter {
+          width: 100%;
+        }
+        .visitor-counter img {
+          margin: 0 auto;
         }
         .statement-header {
           align-items: flex-start;
@@ -1498,6 +1521,9 @@
           <p>Built to make accessibility knowledge easier to apply, for everyone.</p>
         </div>
         <div class="footer-actions">
+          <div class="visitor-counter">
+            <img src="https://bullock.app:8733/api/counters/neura11y/badge.svg?hit=true" alt="visitors">
+          </div>
           <button
             type="button"
             class="footer-link"
