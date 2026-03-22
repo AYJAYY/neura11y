@@ -6,7 +6,8 @@ Usage:
   python scripts/fetch-standards.py --all            # Fetch all standards
   python scripts/fetch-standards.py --wcag           # Fetch only WCAG
   python scripts/fetch-standards.py --aria           # Fetch only ARIA
-  python scripts/fetch-standards.py --w3c-other      # ATAG, UAAG, EPUB, WebVTT, COGA, etc.
+  python scripts/fetch-standards.py --w3c-other      # ATAG, UAAG, EPUB, WebVTT, COGA, WCAG2ICT, tutorials
+  python scripts/fetch-standards.py --screen-readers # Vendor screen reader support docs
   python scripts/fetch-standards.py --us-gov         # Section 508, Plain Language
   python scripts/fetch-standards.py --source wcag-2.2  # Fetch specific source
 
@@ -46,6 +47,7 @@ HEADERS = {
 
 # Delay between requests in seconds (be respectful to W3C servers)
 REQUEST_DELAY = 2.0
+GOOGLE_API_KEY_PATTERN = re.compile(r"AIza[0-9A-Za-z_-]{20,}")
 
 
 # ─────────────────────────────────────────────
@@ -143,6 +145,225 @@ SOURCES = {
         },
         "selector": "body",
         "skip_selectors": ["nav", "#toc", "header", "footer"],
+    },
+    "accname-1.2": {
+        "url": "https://www.w3.org/TR/accname-1.2/",
+        "output": "standards/aria/accname-1.2.md",
+        "frontmatter": {
+            "title": "Accessible Name and Description Computation 1.2",
+            "standard": "Accessible Name and Description Computation 1.2",
+            "source_url": "https://www.w3.org/TR/accname-1.2/",
+            "domain": ["web"],
+            "status": "normative",
+            "tags": ["aria", "accname", "accessible-name", "labeling"],
+            "ai_context": "Accessible name and description computation algorithm for labels, names, and descriptions exposed to assistive technologies.",
+        },
+        "selector": "body",
+        "skip_selectors": ["nav", "#toc", "header", "footer"],
+    },
+    "core-aam-1.2": {
+        "url": "https://www.w3.org/TR/core-aam-1.2/",
+        "output": "standards/aria/core-aam-1.2-full-fetched.md",
+        "frontmatter": {
+            "title": "Core Accessibility API Mappings 1.2 (Full Fetched)",
+            "standard": "Core Accessibility API Mappings 1.2",
+            "source_url": "https://www.w3.org/TR/core-aam-1.2/",
+            "domain": ["web"],
+            "status": "normative",
+            "tags": ["aria", "core-aam", "accessibility-api", "mappings"],
+            "ai_context": "Auto-fetched full Core-AAM 1.2 specification. Prefer split core-aam-1.2-*.md files for AI use.",
+        },
+        "selector": "body",
+        "skip_selectors": ["nav", "#toc", "header", "footer"],
+        "derived_outputs": [
+            {
+                "output": "standards/aria/core-aam-1.2-overview.md",
+                "document_title": "Core Accessibility API Mappings 1.2 Overview",
+                "frontmatter": {
+                    "title": "Core Accessibility API Mappings 1.2 Overview",
+                    "standard": "Core Accessibility API Mappings 1.2",
+                    "source_url": "https://www.w3.org/TR/core-aam-1.2/",
+                    "domain": ["web"],
+                    "status": "normative",
+                    "tags": ["aria", "core-aam", "overview", "accessibility-api", "mappings"],
+                    "ai_context": "Overview of Core-AAM 1.2 scope, conformance, accessibility API model, and algorithm context.",
+                },
+                "ranges": [
+                    {
+                        "start": "## Abstract",
+                        "end_before": "### 3.1 General rules for exposing WAI-ARIA semantics",
+                    },
+                    {
+                        "start": "## 5. Privacy considerations",
+                        "end_before": "## A. Change Log",
+                    },
+                ],
+            },
+            {
+                "output": "standards/aria/core-aam-1.2-role-mappings.md",
+                "document_title": "Core Accessibility API Mappings 1.2 Role Mappings",
+                "frontmatter": {
+                    "title": "Core Accessibility API Mappings 1.2 Role Mappings",
+                    "standard": "Core Accessibility API Mappings 1.2",
+                    "source_url": "https://www.w3.org/TR/core-aam-1.2/",
+                    "domain": ["web"],
+                    "status": "normative",
+                    "tags": ["aria", "core-aam", "roles", "role-mappings", "accessibility-api"],
+                    "ai_context": "Core-AAM role exposure rules and role mapping tables for WAI-ARIA semantics.",
+                },
+                "ranges": [
+                    {
+                        "wrap_heading": "General Rules and Role Mappings",
+                        "start": "### 3.1 General rules for exposing WAI-ARIA semantics",
+                        "end_before": "### 3.5 State and Property Mapping",
+                    },
+                ],
+            },
+            {
+                "output": "standards/aria/core-aam-1.2-state-property-and-event-mappings.md",
+                "document_title": "Core Accessibility API Mappings 1.2 State, Property, and Event Mappings",
+                "frontmatter": {
+                    "title": "Core Accessibility API Mappings 1.2 State, Property, and Event Mappings",
+                    "standard": "Core Accessibility API Mappings 1.2",
+                    "source_url": "https://www.w3.org/TR/core-aam-1.2/",
+                    "domain": ["web"],
+                    "status": "normative",
+                    "tags": ["aria", "core-aam", "states", "properties", "events", "accessibility-api"],
+                    "ai_context": "Core-AAM mappings for ARIA states, properties, special processing, actions, events, and notify algorithms.",
+                },
+                "ranges": [
+                    {
+                        "wrap_heading": "State, Property, Action, and Event Mappings",
+                        "start": "### 3.5 State and Property Mapping",
+                        "end_before": "### 4.1 ARIANotifyMixin Algorithm Mapping Tables",
+                    },
+                    {
+                        "wrap_heading": "ARIANotifyMixin Algorithm Mapping Tables",
+                        "start": "### 4.1 ARIANotifyMixin Algorithm Mapping Tables",
+                        "end_before": "## 5. Privacy considerations",
+                    },
+                ],
+            },
+        ],
+    },
+    "html-aam-1.0": {
+        "url": "https://www.w3.org/TR/html-aam-1.0/",
+        "output": "standards/aria/html-aam-1.0-full-fetched.md",
+        "frontmatter": {
+            "title": "HTML Accessibility API Mappings 1.0 (Full Fetched)",
+            "standard": "HTML Accessibility API Mappings 1.0",
+            "source_url": "https://www.w3.org/TR/html-aam-1.0/",
+            "domain": ["web"],
+            "status": "normative",
+            "tags": ["aria", "html-aam", "html", "accessibility-api", "mappings"],
+            "ai_context": "Auto-fetched full HTML-AAM 1.0 specification. Prefer split html-aam-1.0-*.md files for AI use.",
+        },
+        "selector": "body",
+        "skip_selectors": ["nav", "#toc", "header", "footer"],
+        "derived_outputs": [
+            {
+                "output": "standards/aria/html-aam-1.0-overview.md",
+                "document_title": "HTML Accessibility API Mappings 1.0 Overview",
+                "frontmatter": {
+                    "title": "HTML Accessibility API Mappings 1.0 Overview",
+                    "standard": "HTML Accessibility API Mappings 1.0",
+                    "source_url": "https://www.w3.org/TR/html-aam-1.0/",
+                    "domain": ["web"],
+                    "status": "normative",
+                    "tags": ["aria", "html-aam", "overview", "html", "accessibility-api"],
+                    "ai_context": "Overview of HTML-AAM 1.0 scope, conformance, and general HTML-to-accessibility API rules.",
+                },
+                "ranges": [
+                    {
+                        "start": "## Abstract",
+                        "end_before": "### 3.5 HTML Element Role Mappings",
+                    },
+                    {
+                        "start": "## 5. Privacy considerations",
+                        "end_before": "## A. Appendices",
+                    },
+                ],
+            },
+            {
+                "output": "standards/aria/html-aam-1.0-element-role-mappings.md",
+                "document_title": "HTML Accessibility API Mappings 1.0 Element Role Mappings",
+                "frontmatter": {
+                    "title": "HTML Accessibility API Mappings 1.0 Element Role Mappings",
+                    "standard": "HTML Accessibility API Mappings 1.0",
+                    "source_url": "https://www.w3.org/TR/html-aam-1.0/",
+                    "domain": ["web"],
+                    "status": "normative",
+                    "tags": ["aria", "html-aam", "html", "roles", "element-mappings"],
+                    "ai_context": "HTML-AAM element role mappings for native HTML elements and states.",
+                },
+                "ranges": [
+                    {
+                        "wrap_heading": "HTML Element Role Mappings",
+                        "start": "### 3.5 HTML Element Role Mappings",
+                        "end_before": "### 3.6 HTML Attribute State and Property Mappings",
+                    },
+                ],
+            },
+            {
+                "output": "standards/aria/html-aam-1.0-attribute-state-property-mappings-a-to-m.md",
+                "document_title": "HTML Accessibility API Mappings 1.0 Attribute State and Property Mappings A-M",
+                "frontmatter": {
+                    "title": "HTML Accessibility API Mappings 1.0 Attribute State and Property Mappings A-M",
+                    "standard": "HTML Accessibility API Mappings 1.0",
+                    "source_url": "https://www.w3.org/TR/html-aam-1.0/",
+                    "domain": ["web"],
+                    "status": "normative",
+                    "tags": ["aria", "html-aam", "html", "attributes", "states", "properties"],
+                    "ai_context": "HTML-AAM attribute mappings for HTML attributes from abbr through muted.",
+                },
+                "ranges": [
+                    {
+                        "wrap_heading": "HTML Attribute State and Property Mappings A-M",
+                        "start": "### 3.6 HTML Attribute State and Property Mappings",
+                        "end_before": "#### 3.6.92 `name`",
+                    },
+                ],
+            },
+            {
+                "output": "standards/aria/html-aam-1.0-attribute-state-property-mappings-n-to-z.md",
+                "document_title": "HTML Accessibility API Mappings 1.0 Attribute State and Property Mappings N-Z",
+                "frontmatter": {
+                    "title": "HTML Accessibility API Mappings 1.0 Attribute State and Property Mappings N-Z",
+                    "standard": "HTML Accessibility API Mappings 1.0",
+                    "source_url": "https://www.w3.org/TR/html-aam-1.0/",
+                    "domain": ["web"],
+                    "status": "normative",
+                    "tags": ["aria", "html-aam", "html", "attributes", "states", "properties"],
+                    "ai_context": "HTML-AAM attribute mappings for HTML attributes from name through wrap.",
+                },
+                "ranges": [
+                    {
+                        "wrap_heading": "HTML Attribute State and Property Mappings N-Z",
+                        "start": "#### 3.6.92 `name`",
+                        "end_before": "## 4. Accessible Name and Description Computation",
+                    },
+                ],
+            },
+            {
+                "output": "standards/aria/html-aam-1.0-accessible-name-and-description-computation.md",
+                "document_title": "HTML Accessibility API Mappings 1.0 Accessible Name and Description Computation",
+                "frontmatter": {
+                    "title": "HTML Accessibility API Mappings 1.0 Accessible Name and Description Computation",
+                    "standard": "HTML Accessibility API Mappings 1.0",
+                    "source_url": "https://www.w3.org/TR/html-aam-1.0/",
+                    "domain": ["web"],
+                    "status": "normative",
+                    "tags": ["aria", "html-aam", "accessible-name", "accessible-description", "html"],
+                    "ai_context": "HTML-AAM accessible name and accessible description computation rules for HTML elements.",
+                },
+                "ranges": [
+                    {
+                        "start": "## 4. Accessible Name and Description Computation",
+                        "end_before": "## 5. Privacy considerations",
+                    },
+                ],
+            },
+        ],
     },
     "aria-in-html": {
         "url": "https://www.w3.org/TR/html-aria/",
@@ -279,6 +500,236 @@ SOURCES = {
         "selector": "body",
         "skip_selectors": ["nav", "#toc", "header", "footer"],
     },
+    "wcag2ict-22": {
+        "url": "https://www.w3.org/TR/wcag2ict-22/",
+        "output": "standards/other-standards/wcag2ict-22-full-fetched.md",
+        "frontmatter": {
+            "title": "WCAG2ICT 2.2 (Full Fetched)",
+            "standard": "WCAG2ICT 2.2",
+            "source_url": "https://www.w3.org/TR/wcag2ict-22/",
+            "domain": ["documents", "mobile", "physical-ict", "general"],
+            "status": "prescriptive",
+            "tags": ["wcag2ict", "non-web", "documents", "software", "ict"],
+            "ai_context": "Auto-fetched full WCAG2ICT 2.2 Note. Prefer split wcag2ict-22-*.md files for AI use.",
+        },
+        "selector": "body",
+        "skip_selectors": ["nav", "#toc", "header", "footer"],
+        "derived_outputs": [
+            {
+                "output": "standards/other-standards/wcag2ict-22-overview.md",
+                "document_title": "WCAG2ICT 2.2 Overview",
+                "frontmatter": {
+                    "title": "WCAG2ICT 2.2 Overview",
+                    "standard": "WCAG2ICT 2.2",
+                    "source_url": "https://www.w3.org/TR/wcag2ict-22/",
+                    "domain": ["documents", "mobile", "physical-ict", "general"],
+                    "status": "prescriptive",
+                    "tags": ["wcag2ict", "non-web", "overview", "documents", "software", "ict"],
+                    "ai_context": "Overview of WCAG2ICT scope, terminology, closed functionality, text interfaces, and conformance notes.",
+                },
+                "ranges": [
+                    {
+                        "start": "## Abstract",
+                        "end_before": "### 1. Perceivable",
+                    },
+                ],
+            },
+            {
+                "output": "standards/other-standards/wcag2ict-22-guideline-comments-perceivable-and-operable.md",
+                "document_title": "WCAG2ICT 2.2 Guideline Comments: Perceivable and Operable",
+                "frontmatter": {
+                    "title": "WCAG2ICT 2.2 Guideline Comments: Perceivable and Operable",
+                    "standard": "WCAG2ICT 2.2",
+                    "source_url": "https://www.w3.org/TR/wcag2ict-22/",
+                    "domain": ["documents", "mobile", "physical-ict", "general"],
+                    "status": "prescriptive",
+                    "tags": ["wcag2ict", "non-web", "perceivable", "operable", "guideline-comments"],
+                    "ai_context": "WCAG2ICT interpretations for Principles 1 and 2 in non-web documents and software contexts.",
+                },
+                "ranges": [
+                    {
+                        "wrap_heading": "Guideline Comments for Principles 1 and 2",
+                        "start": "### 1. Perceivable",
+                        "end_before": "### 3. Understandable",
+                    },
+                ],
+            },
+            {
+                "output": "standards/other-standards/wcag2ict-22-guideline-comments-understandable-and-robust.md",
+                "document_title": "WCAG2ICT 2.2 Guideline Comments: Understandable and Robust",
+                "frontmatter": {
+                    "title": "WCAG2ICT 2.2 Guideline Comments: Understandable and Robust",
+                    "standard": "WCAG2ICT 2.2",
+                    "source_url": "https://www.w3.org/TR/wcag2ict-22/",
+                    "domain": ["documents", "mobile", "physical-ict", "general"],
+                    "status": "prescriptive",
+                    "tags": ["wcag2ict", "non-web", "understandable", "robust", "guideline-comments"],
+                    "ai_context": "WCAG2ICT interpretations for Principles 3 and 4 in non-web documents and software contexts.",
+                },
+                "ranges": [
+                    {
+                        "wrap_heading": "Guideline Comments for Principles 3 and 4",
+                        "start": "### 3. Understandable",
+                        "end_before": "## Comments on Definitions in WCAG 2 Glossary",
+                    },
+                ],
+            },
+            {
+                "output": "standards/other-standards/wcag2ict-22-glossary-and-appendices.md",
+                "document_title": "WCAG2ICT 2.2 Glossary and Appendices",
+                "frontmatter": {
+                    "title": "WCAG2ICT 2.2 Glossary and Appendices",
+                    "standard": "WCAG2ICT 2.2",
+                    "source_url": "https://www.w3.org/TR/wcag2ict-22/",
+                    "domain": ["documents", "mobile", "physical-ict", "general"],
+                    "status": "prescriptive",
+                    "tags": ["wcag2ict", "non-web", "glossary", "appendices", "definitions"],
+                    "ai_context": "WCAG2ICT glossary interpretations, privacy and security considerations, appendices, and references.",
+                },
+                "ranges": [
+                    {
+                        "start": "## Comments on Definitions in WCAG 2 Glossary",
+                    },
+                ],
+            },
+        ],
+    },
+    "wai-tutorial-forms": {
+        "url": "https://www.w3.org/WAI/tutorials/forms/",
+        "output": "domains/web/source/wai-tutorials/forms-tutorial-fetched.md",
+        "frontmatter": {
+            "title": "WAI Forms Tutorial (Fetched)",
+            "standard": "WAI Tutorials",
+            "source_url": "https://www.w3.org/WAI/tutorials/forms/",
+            "domain": ["web"],
+            "status": "prescriptive",
+            "tags": ["forms", "tutorial", "wai", "web"],
+            "ai_context": "Auto-fetched W3C forms tutorial. Supporting source for forms guidance and examples.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "#toc", "header", "footer", ".pager", ".nextprev"],
+    },
+    "wai-tutorial-tables": {
+        "url": "https://www.w3.org/WAI/tutorials/tables/",
+        "output": "domains/web/source/wai-tutorials/tables-tutorial-fetched.md",
+        "frontmatter": {
+            "title": "WAI Tables Tutorial (Fetched)",
+            "standard": "WAI Tutorials",
+            "source_url": "https://www.w3.org/WAI/tutorials/tables/",
+            "domain": ["web", "documents"],
+            "status": "prescriptive",
+            "tags": ["tables", "tutorial", "wai", "web"],
+            "ai_context": "Auto-fetched W3C tables tutorial. Supporting source for accessible data table guidance and examples.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "#toc", "header", "footer", ".pager", ".nextprev"],
+    },
+    "wai-tutorial-page-structure": {
+        "url": "https://www.w3.org/WAI/tutorials/page-structure/",
+        "output": "domains/web/source/wai-tutorials/page-structure-tutorial-fetched.md",
+        "frontmatter": {
+            "title": "WAI Page Structure Tutorial (Fetched)",
+            "standard": "WAI Tutorials",
+            "source_url": "https://www.w3.org/WAI/tutorials/page-structure/",
+            "domain": ["web"],
+            "status": "prescriptive",
+            "tags": ["page-structure", "tutorial", "wai", "web"],
+            "ai_context": "Auto-fetched W3C page structure tutorial. Supporting source for headings, landmarks, and navigation guidance.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "#toc", "header", "footer", ".pager", ".nextprev"],
+    },
+    "wai-tutorial-menus": {
+        "url": "https://www.w3.org/WAI/tutorials/menus/",
+        "output": "domains/web/source/wai-tutorials/menus-tutorial-fetched.md",
+        "frontmatter": {
+            "title": "WAI Menus Tutorial (Fetched)",
+            "standard": "WAI Tutorials",
+            "source_url": "https://www.w3.org/WAI/tutorials/menus/",
+            "domain": ["web"],
+            "status": "prescriptive",
+            "tags": ["menus", "tutorial", "wai", "web"],
+            "ai_context": "Auto-fetched W3C menus tutorial. Supporting source for navigation and disclosure menu guidance.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "#toc", "header", "footer", ".pager", ".nextprev"],
+    },
+    "wai-tutorial-images": {
+        "url": "https://www.w3.org/WAI/tutorials/images/",
+        "output": "media/images/images-tutorial-fetched.md",
+        "frontmatter": {
+            "title": "WAI Images Tutorial (Fetched)",
+            "standard": "WAI Tutorials",
+            "source_url": "https://www.w3.org/WAI/tutorials/images/",
+            "domain": ["web", "documents", "social-media"],
+            "status": "prescriptive",
+            "tags": ["images", "tutorial", "wai", "alt-text"],
+            "ai_context": "Auto-fetched W3C images tutorial. Supporting source for image purpose and text alternative guidance.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "#toc", "header", "footer", ".pager", ".nextprev"],
+    },
+    "nvda-user-guide": {
+        "url": "https://www.nvaccess.org/files/nvda/documentation/userGuide.html",
+        "output": "screen-readers/source/nvda-user-guide-fetched.md",
+        "frontmatter": {
+            "title": "NVDA User Guide (Fetched)",
+            "standard": "NVDA",
+            "source_url": "https://www.nvaccess.org/files/nvda/documentation/userGuide.html",
+            "domain": ["web", "general"],
+            "status": "prescriptive",
+            "tags": ["screen-reader", "nvda", "windows", "testing", "commands"],
+            "ai_context": "Auto-fetched NVDA user guide. Supporting provenance source for the curated NVDA testing guides.",
+        },
+        "selector": "body",
+        "skip_selectors": ["nav", "header", "footer", ".sidebar", ".menu"],
+    },
+    "voiceover-user-guide-mac": {
+        "url": "https://support.apple.com/guide/voiceover/welcome/mac",
+        "output": "screen-readers/source/voiceover-user-guide-mac-fetched.md",
+        "frontmatter": {
+            "title": "VoiceOver User Guide for Mac (Fetched)",
+            "standard": "VoiceOver",
+            "source_url": "https://support.apple.com/guide/voiceover/welcome/mac",
+            "domain": ["web", "general"],
+            "status": "prescriptive",
+            "tags": ["screen-reader", "voiceover", "macos", "testing", "commands"],
+            "ai_context": "Auto-fetched VoiceOver for Mac user guide. Supporting provenance source for the curated VoiceOver testing guides.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "header", "footer", "aside"],
+    },
+    "talkback-user-guide": {
+        "url": "https://support.google.com/accessibility/android/answer/6283677",
+        "output": "screen-readers/source/talkback-user-guide-fetched.md",
+        "frontmatter": {
+            "title": "TalkBack Guide for Android (Fetched)",
+            "standard": "TalkBack",
+            "source_url": "https://support.google.com/accessibility/android/answer/6283677",
+            "domain": ["mobile", "web", "general"],
+            "status": "prescriptive",
+            "tags": ["screen-reader", "talkback", "android", "testing", "gestures"],
+            "ai_context": "Auto-fetched TalkBack support guide. Supporting provenance source for curated Android and TalkBack guidance.",
+        },
+        "selector": "main",
+        "skip_selectors": ["nav", "header", "footer", "aside"],
+        "truncate_after_markers": ["window['prt']= new Date().getTime();"],
+    },
+    "jaws-keystrokes": {
+        "url": "https://support.freedomscientific.com/content/html/jawshq/JAWS-Keystrokes.html",
+        "output": "screen-readers/source/jaws-keystrokes-fetched.md",
+        "frontmatter": {
+            "title": "JAWS Keystrokes Guide (Fetched)",
+            "standard": "JAWS",
+            "source_url": "https://support.freedomscientific.com/content/html/jawshq/JAWS-Keystrokes.html",
+            "domain": ["web", "documents", "general"],
+            "status": "prescriptive",
+            "tags": ["screen-reader", "jaws", "windows", "testing", "keyboard"],
+            "ai_context": "Auto-fetched JAWS keystrokes guide. Supporting provenance source for curated JAWS testing guidance.",
+        },
+        "selector": "body",
+        "skip_selectors": ["nav", "header", "footer", "aside"],
+    },
 }
 
 # Group sources by family
@@ -290,8 +741,27 @@ SOURCE_GROUPS = {
         "wcag-2.2-techniques",
         "wcag-2.2-understanding",
     ],
-    "aria": ["wai-aria-1.2", "aria-in-html"],
-    "w3c-other": ["atag-2.0", "uaag-2.0", "epub-a11y-1.1", "webvtt-1.0", "alt-text-tree", "coga-usable"],
+    "aria": ["wai-aria-1.2", "accname-1.2", "core-aam-1.2", "html-aam-1.0", "aria-in-html"],
+    "w3c-other": [
+        "atag-2.0",
+        "uaag-2.0",
+        "epub-a11y-1.1",
+        "webvtt-1.0",
+        "alt-text-tree",
+        "coga-usable",
+        "wcag2ict-22",
+        "wai-tutorial-forms",
+        "wai-tutorial-tables",
+        "wai-tutorial-page-structure",
+        "wai-tutorial-menus",
+        "wai-tutorial-images",
+    ],
+    "screen-readers": [
+        "nvda-user-guide",
+        "voiceover-user-guide-mac",
+        "talkback-user-guide",
+        "jaws-keystrokes",
+    ],
     "us-gov": ["section-508-tech", "plain-language"],
 }
 
@@ -349,6 +819,50 @@ def html_to_markdown(
     return md
 
 
+def truncate_at_markers(markdown: str, markers: list[str]) -> tuple[str, str | None]:
+    """Trim unwanted bootstrap content that appears after the real article."""
+    first_marker: str | None = None
+    first_index: int | None = None
+    for marker in markers:
+        index = markdown.find(marker)
+        if index == -1:
+            continue
+        if first_index is None or index < first_index:
+            first_index = index
+            first_marker = marker
+
+    if first_index is None:
+        return markdown, None
+    return markdown[:first_index].rstrip(), first_marker
+
+
+def redact_google_api_keys(markdown: str) -> tuple[str, int]:
+    """Redact Google-style API keys if a fetched page leaks them into markdown."""
+    replacements = 0
+
+    def replace(match: re.Match[str]) -> str:
+        nonlocal replacements
+        replacements += 1
+        return "[REDACTED_GOOGLE_API_KEY]"
+
+    return GOOGLE_API_KEY_PATTERN.sub(replace, markdown), replacements
+
+
+def sanitize_markdown(markdown: str, config: dict) -> str:
+    """Apply source-specific cleanup and token redaction to fetched markdown."""
+    truncate_markers = config.get("truncate_after_markers", [])
+    if truncate_markers:
+        markdown, marker = truncate_at_markers(markdown, truncate_markers)
+        if marker:
+            print(f"  Truncated content at marker: {marker}")
+
+    markdown, redactions = redact_google_api_keys(markdown)
+    if redactions:
+        print(f"  Redacted {redactions} Google API-style token(s)")
+
+    return markdown.strip()
+
+
 def apply_frontmatter(content: str, fm_data: dict) -> str:
     """Prepend YAML frontmatter to content."""
     post = frontmatter.Post(content, **fm_data)
@@ -371,6 +885,57 @@ def check_line_count(content: str, output_path: str) -> None:
         print(f"  Consider splitting at guideline/principle boundaries")
 
 
+def extract_heading_range(content: str, start_heading: str, end_before_heading: str | None = None) -> str:
+    """Extract content between two exact markdown headings."""
+    start_pattern = re.compile(rf"(?m)^{re.escape(start_heading)}\s*$")
+    start_match = start_pattern.search(content)
+    if not start_match:
+        raise ValueError(f"Heading not found: {start_heading}")
+
+    start = start_match.start()
+    end = len(content)
+    if end_before_heading:
+        end_pattern = re.compile(rf"(?m)^{re.escape(end_before_heading)}\s*$")
+        end_match = end_pattern.search(content, start_match.end())
+        if not end_match:
+            raise ValueError(f"Heading not found: {end_before_heading}")
+        end = end_match.start()
+
+    return content[start:end].strip()
+
+
+def build_derived_markdown(markdown: str, document_title: str, ranges: list[dict]) -> str:
+    """Build a split markdown file from selected ranges of a fetched source."""
+    parts = [f"# {document_title}"]
+    for range_config in ranges:
+        excerpt = extract_heading_range(
+            markdown,
+            range_config["start"],
+            range_config.get("end_before"),
+        )
+        wrap_heading = range_config.get("wrap_heading")
+        if wrap_heading:
+            parts.append(f"## {wrap_heading}\n\n{excerpt}")
+        else:
+            parts.append(excerpt)
+    return "\n\n".join(part.strip() for part in parts if part.strip())
+
+
+def write_derived_outputs(markdown: str, derived_outputs: list[dict], last_fetched: str) -> None:
+    """Write split canonical files derived from a fetched raw source."""
+    for derived in derived_outputs:
+        derived_markdown = build_derived_markdown(
+            markdown,
+            derived["document_title"],
+            derived["ranges"],
+        )
+        fm_data = derived["frontmatter"].copy()
+        fm_data["last_fetched"] = last_fetched
+        content = apply_frontmatter(derived_markdown, fm_data)
+        check_line_count(content, derived["output"])
+        write_output(content, derived["output"], REPO_ROOT)
+
+
 def fetch_source(key: str, config: dict) -> bool:
     """Fetch a single source and write to output file."""
     print(f"\nFetching: {key}")
@@ -384,14 +949,20 @@ def fetch_source(key: str, config: dict) -> bool:
         selector=config.get("selector", "body"),
         skip_selectors=config.get("skip_selectors", []),
     )
+    markdown = sanitize_markdown(markdown, config)
 
     # Add fetch timestamp to frontmatter
+    last_fetched = datetime.date.today().isoformat()
     fm_data = config["frontmatter"].copy()
-    fm_data["last_fetched"] = datetime.date.today().isoformat()
+    fm_data["last_fetched"] = last_fetched
 
     content = apply_frontmatter(markdown, fm_data)
     check_line_count(content, config["output"])
     write_output(content, config["output"], REPO_ROOT)
+
+    derived_outputs = config.get("derived_outputs", [])
+    if derived_outputs:
+        write_derived_outputs(markdown, derived_outputs, last_fetched)
     return True
 
 
@@ -407,6 +978,7 @@ def main():
     parser.add_argument("--wcag", action="store_true", help="Fetch WCAG standards")
     parser.add_argument("--aria", action="store_true", help="Fetch ARIA standards")
     parser.add_argument("--w3c-other", action="store_true", help="Fetch other W3C standards")
+    parser.add_argument("--screen-readers", action="store_true", help="Fetch screen reader source docs")
     parser.add_argument("--us-gov", action="store_true", help="Fetch US government standards")
     parser.add_argument("--source", type=str, help="Fetch specific source by key")
     parser.add_argument("--list", action="store_true", help="List all available sources")
@@ -431,6 +1003,8 @@ def main():
         sources_to_fetch = SOURCE_GROUPS["aria"]
     elif getattr(args, "w3c_other", False):
         sources_to_fetch = SOURCE_GROUPS["w3c-other"]
+    elif getattr(args, "screen_readers", False):
+        sources_to_fetch = SOURCE_GROUPS["screen-readers"]
     elif getattr(args, "us_gov", False):
         sources_to_fetch = SOURCE_GROUPS["us-gov"]
     elif args.source:

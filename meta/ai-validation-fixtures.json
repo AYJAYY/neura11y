@@ -11,7 +11,8 @@
       "domains/web/html-semantics-guide.md"
     ],
     "expected_citations": ["SC 2.4.4", "SC 2.5.3"],
-    "forbidden_citations": ["SC 4.1.2"]
+    "forbidden_citations": ["SC 4.1.2"],
+    "required_response_terms": ["manual testing", "keyboard", "screen reader"]
   },
   {
     "id": "pattern-2-component-generation",
@@ -67,7 +68,8 @@
       "legal-and-compliance/canada-accessibility.md",
       "legal-and-compliance/australia-accessibility.md"
     ],
-    "expected_citations": ["Section 508", "WCAG 2.1 Level AA"]
+    "expected_citations": ["Section 508", "WCAG 2.1 Level AA"],
+    "requires_normative_prescriptive_distinction": true
   },
   {
     "id": "pattern-6-full-web-context",
@@ -85,7 +87,8 @@
       "domains/web/focus-management.md",
       "domains/web/color-and-contrast.md"
     ],
-    "expected_citations": ["SC 1.4.3", "SC 3.3.2"]
+    "expected_citations": ["SC 1.4.3", "SC 3.3.2"],
+    "required_response_terms": ["manual testing", "screen reader", "keyboard"]
   },
   {
     "id": "pattern-7-voice-ui",
@@ -109,5 +112,57 @@
       "domains/physical-ict/kiosk-and-embedded-playbook.md"
     ],
     "expected_citations": ["EN 301 549", "closed functionality"]
+  },
+  {
+    "id": "pattern-9-nvda-web-testing",
+    "pattern": "Pattern 9: NVDA Web Testing Workflow",
+    "prompt_file": "ai-prompts/screen-readers/nvda-web-testing.md",
+    "context_files": [
+      "screen-readers/nvda-guide.md",
+      "screen-readers/screen-reader-overview.md",
+      "domains/web/testing/screen-reader-testing-matrix.md",
+      "domains/web/focus-management.md"
+    ],
+    "required_context_terms": ["Browse Mode", "Forms/Application Mode", "NVDA + F7"],
+    "required_response_terms": ["NVDA + F7", "browse mode", "forms mode", "Chrome"]
+  },
+  {
+    "id": "pattern-10-voiceover-safari",
+    "pattern": "Pattern 10: VoiceOver + Safari Audit",
+    "prompt_file": "ai-prompts/screen-readers/voiceover-safari-audit.md",
+    "context_files": [
+      "screen-readers/voiceover-guide.md",
+      "screen-readers/screen-reader-overview.md",
+      "domains/web/testing/screen-reader-testing-matrix.md",
+      "domains/web/focus-management.md"
+    ],
+    "required_context_terms": ["VO + U", "Safari", "Rotor"],
+    "required_response_terms": ["VO + U", "Safari", "rotor"]
+  },
+  {
+    "id": "pattern-11-talkback-mobile-web",
+    "pattern": "Pattern 11: TalkBack Mobile Web Review",
+    "prompt_file": "ai-prompts/screen-readers/talkback-mobile-web-review.md",
+    "context_files": [
+      "screen-readers/talkback-guide.md",
+      "screen-readers/screen-reader-overview.md",
+      "domains/web/testing/screen-reader-testing-matrix.md",
+      "domains/mobile/native-mobile-app-accessibility.md"
+    ],
+    "required_context_terms": ["Reading Controls", "Swipe right", "TalkBack"],
+    "required_response_terms": ["TalkBack", "Android", "reading controls"]
+  },
+  {
+    "id": "pattern-12-jaws-enterprise",
+    "pattern": "Pattern 12: JAWS Enterprise Testing",
+    "prompt_file": "ai-prompts/screen-readers/jaws-enterprise-testing.md",
+    "context_files": [
+      "screen-readers/jaws-guide.md",
+      "screen-readers/screen-reader-overview.md",
+      "domains/web/testing/screen-reader-testing-matrix.md",
+      "domains/web/focus-management.md"
+    ],
+    "required_context_terms": ["Virtual PC Cursor", "Forms Mode", "JAWS Key + F7"],
+    "required_response_terms": ["JAWS", "virtual cursor", "Chrome", "native semantics"]
   }
 ]

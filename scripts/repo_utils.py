@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from hashlib import sha1
 from pathlib import Path
 from typing import Iterable
 
@@ -65,6 +66,28 @@ def platform_from_path(rel_path: str) -> str | None:
     if len(parts) >= 5 and parts[:3] == ("domains", "social-media", "platforms"):
         return parts[3]
     return None
+
+
+def content_kind(rel_path: str) -> str:
+    if rel_path.endswith("-full-fetched.md"):
+        return "raw-full-capture"
+    if rel_path.endswith("-fetched.md"):
+        return "raw-capture"
+    if rel_path in GENERATED_MARKDOWN_FILES:
+        return "generated-markdown"
+    return "canonical"
+
+
+def content_family(rel_path: str) -> str:
+    path = Path(rel_path)
+    if len(path.parts) == 1:
+        return "root"
+    return path.parts[0]
+
+
+def make_chunk_id(rel_path: str, heading_path: str, chunk_text: str) -> str:
+    payload = f"{rel_path}\n{heading_path}\n{chunk_text}".encode("utf-8")
+    return sha1(payload).hexdigest()[:16]
 
 
 def freshness_signal(metadata: dict) -> tuple[str | None, str | None]:
@@ -198,12 +221,24 @@ def chunk_markdown_file(
             freshness_key, freshness_value = freshness_signal(metadata)
             chunks.append(
                 {
+                    "chunk_id": make_chunk_id(rel_path, heading_path, chunk_text),
                     "source_file": rel_path,
+                    "title": metadata.get("title", fallback_heading),
                     "heading_path": heading_path,
                     "standard": metadata.get("standard", ""),
                     "domain": metadata.get("domain", []),
+                    "tags": metadata.get("tags", []),
                     "status": metadata.get("status", ""),
+                    "type": metadata.get("type", ""),
+                    "source_url": metadata.get("source_url", ""),
                     "platform": platform_from_path(rel_path),
+                    "content_family": content_family(rel_path),
+                    "content_kind": content_kind(rel_path),
+                    "last_fetched": metadata.get("last_fetched"),
+                    "last_verified": metadata.get("last_verified"),
+                    "last_reviewed": metadata.get("last_reviewed"),
+                    "last_updated": metadata.get("last_updated"),
+                    "stale": bool(metadata.get("stale", False)),
                     "sc_number": extract_sc_number(chunk_text) or extract_sc_number(section_title),
                     "level": extract_level(chunk_text),
                     "freshness_field": freshness_key,

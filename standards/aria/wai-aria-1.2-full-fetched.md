@@ -3,7 +3,7 @@ ai_context: Auto-fetched WAI-ARIA 1.2 specification. Prefer wai-aria-1.2-roles.m
   for AI use.
 domain:
 - web
-last_fetched: '2026-03-13'
+last_fetched: '2026-03-21'
 source_url: https://www.w3.org/TR/wai-aria-1.2/
 standard: WAI-ARIA 1.2
 status: normative

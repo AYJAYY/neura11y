@@ -6,7 +6,7 @@
     <title>neura11y — AI-Ready Accessibility Knowledge Repository</title>
     <meta
       name="description"
-      content="neura11y is a structured accessibility knowledge base designed for AI context loading and RAG pipelines. 145 markdown files covering WCAG, ARIA, social media, documents, voice UI, physical ICT, legal compliance, and more."
+      content="neura11y is a structured accessibility knowledge base designed for AI context loading and RAG pipelines. 178 markdown files covering WCAG, ARIA, social media, documents, voice UI, physical ICT, legal compliance, and more."
     >
     <link rel="icon" type="image/png" href="logo-bright3.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -291,6 +291,26 @@
         margin-bottom: 2.5rem;
       }
 
+      .hero-version {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.35rem 0.7rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(249,115,22,0.22);
+        border-radius: var(--r-sm);
+        background: rgba(249,115,22,0.08);
+        font-family: var(--font-m);
+        font-size: 0.82rem;
+        color: #fdba74;
+        letter-spacing: 0.04em;
+      }
+
+      .hero-version strong {
+        color: var(--orange);
+        font-weight: 700;
+      }
+
       .btn-row {
         display: flex;
         flex-wrap: wrap;
@@ -573,6 +593,13 @@
         min-width: 0;
       }
 
+      .bundle-note {
+        color: #c4c4cc;
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin-top: 1rem;
+      }
+
       .file-list {
         list-style: none;
         display: grid;
@@ -822,6 +849,124 @@
         font-size: 1.1rem;
       }
 
+      .footer-copy {
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .footer-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .footer-link {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--ink2);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font: inherit;
+        font-size: 0.95rem;
+        padding: 0.55rem 0.85rem;
+        border-radius: var(--r-sm);
+        cursor: pointer;
+        transition: background 0.12s, color 0.12s, border-color 0.12s;
+      }
+
+      .footer-link:hover {
+        color: var(--ink);
+        background: rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.12);
+      }
+
+      .statement-dialog {
+        width: min(100% - 1.5rem, 42rem);
+        max-height: min(90vh, 48rem);
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--border-hi);
+        border-radius: var(--r-lg);
+        background: linear-gradient(180deg, rgba(17,17,19,0.98), rgba(9,9,11,0.98));
+        color: var(--ink);
+        box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: auto;
+        z-index: 1000;
+      }
+
+      .statement-dialog::backdrop {
+        background: rgba(9,9,11,0.78);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+
+      .statement-panel {
+        display: grid;
+        gap: 1rem;
+        padding: 1.4rem;
+      }
+
+      .statement-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .statement-meta {
+        font-family: var(--font-m);
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--orange);
+      }
+
+      .statement-header h2 {
+        font-family: var(--font-d);
+        font-size: 1.4rem;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      .statement-panel p {
+        color: var(--ink2);
+        font-size: 1rem;
+      }
+
+      .statement-panel a {
+        color: var(--orange);
+        text-underline-offset: 3px;
+      }
+
+      .statement-close {
+        appearance: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface2);
+        color: var(--ink2);
+        font: inherit;
+        font-size: 1.2rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: background 0.12s, color 0.12s, border-color 0.12s;
+      }
+
+      .statement-close:hover {
+        background: var(--surface3);
+        color: var(--ink);
+        border-color: rgba(255,255,255,0.12);
+      }
+
       /* ── Responsive ── */
       @media (max-width: 64rem) {
         .hero-layout { grid-template-columns: 1fr; gap: 3rem; }
@@ -860,6 +1005,16 @@
         .gh-callout .btn {
           width: 100%;
         }
+        .footer-actions {
+          width: 100%;
+        }
+        .footer-link {
+          width: 100%;
+          justify-content: center;
+        }
+        .statement-header {
+          align-items: flex-start;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -892,6 +1047,7 @@
             <li><a href="#bundles">Use cases</a></li>
             <li><a href="#coverage">Coverage</a></li>
             <li><a href="#prompt">Starter prompt</a></li>
+            <li><a href="#refresh">Refresh data</a></li>
             <li>
               <a
                 class="nav-cta"
@@ -926,9 +1082,10 @@
               </h1>
               <p class="hero-lede">
                 neura11y is a structured accessibility knowledge base built for AI context loading and RAG pipelines.
-                145 markdown files covering WCAG, WAI-ARIA, seven social platforms, document workflows,
+                178 markdown files covering WCAG, WAI-ARIA, seven social platforms, document workflows,
                 voice UI, kiosk guidance, legal compliance, component patterns, and more — all with YAML frontmatter for clean ingestion.
               </p>
+              <p class="hero-version"><strong>v0.3.0</strong> expanded AI validation, screen-reader provenance, tooling references, and refresh automation updates</p>
               <div class="btn-row">
                 <a class="btn btn-ghost" href="#how">
                   How to use it
@@ -947,7 +1104,8 @@
               </div>
             </div>
 
-            <div aria-label="Example file frontmatter">
+            <figure aria-labelledby="yaml-preview-label">
+              <figcaption id="yaml-preview-label" class="sr-only">Example file frontmatter</figcaption>
               <div class="yaml-block">
                 <div class="yaml-titlebar">
                   <div class="yaml-dots" aria-hidden="true">
@@ -975,16 +1133,16 @@
 ## Principle 1: Perceivable
 ### 1.1 Text Alternatives</span></code></pre>
               </div>
-            </div>
+            </figure>
           </div>
 
           <ul class="stats-strip" aria-label="Repository statistics">
             <li class="stat-item">
-              <span class="stat-num">145</span>
+              <span class="stat-num">178</span>
               <span class="stat-label">markdown files</span>
             </li>
             <li class="stat-item">
-              <span class="stat-num">8</span>
+              <span class="stat-num">12</span>
               <span class="stat-label">prompt packs</span>
             </li>
             <li class="stat-item">
@@ -1041,14 +1199,12 @@
         </div>
       </section>
 
-      <div class="divider" aria-hidden="true"></div>
-
       <!-- ── Use cases ── -->
       <section id="bundles" class="section" aria-labelledby="bundles-heading">
         <div class="container">
           <div class="section-intro">
             <div class="section-kicker">
-              <span class="kicker-num">02</span>
+              <span class="kicker-num">03</span>
               <span class="kicker-label">Use cases</span>
             </div>
             <h2 id="bundles-heading">What you can do with it</h2>
@@ -1102,7 +1258,7 @@
         <div class="container">
           <div class="section-intro">
             <div class="section-kicker">
-              <span class="kicker-num">03</span>
+              <span class="kicker-num">04</span>
               <span class="kicker-label">Coverage</span>
             </div>
             <h2 id="coverage-heading">What is in the repository</h2>
@@ -1122,7 +1278,7 @@
               <div class="cov-icon" aria-hidden="true">⚙️</div>
               <div class="cov-body">
                 <h3>WAI-ARIA</h3>
-                <p>Roles, states, and properties reference plus ARIA in HTML, APG patterns, and a curated common mistakes guide.</p>
+                <p>Roles, states, and properties reference plus AccName, split Core-AAM and HTML-AAM files, ARIA in HTML, APG patterns, and a curated common mistakes guide.</p>
               </div>
             </li>
 
@@ -1130,7 +1286,7 @@
               <div class="cov-icon" aria-hidden="true">🌐</div>
               <div class="cov-body">
                 <h3>Web Domain</h3>
-                <p>HTML semantics, focus management, forms, images, SPA patterns, mobile web, PWAs, color/contrast, keyboard navigation, 8 component patterns, and a testing suite covering automated tools, manual checklist, and screen-reader testing matrix.</p>
+                <p>HTML semantics, focus management, forms, images, SPA patterns, mobile web, PWAs, color/contrast, keyboard navigation, 8 component patterns, and a testing suite covering automated tools, checker and CLI references, manual checklist, and a screen-reader testing matrix.</p>
               </div>
             </li>
 
@@ -1162,7 +1318,7 @@
               <div class="cov-icon" aria-hidden="true">🖥️</div>
               <div class="cov-body">
                 <h3>Physical ICT</h3>
-                <p>Kiosk and embedded system playbook covering closed functionality, non-visual access, timed sessions, hardware controls, and transaction review patterns.</p>
+                <p>Kiosk and embedded system playbook covering closed functionality, non-visual access, timed sessions, hardware controls, transaction review patterns, and WCAG2ICT interpretation support for non-web software and documents.</p>
               </div>
             </li>
 
@@ -1170,7 +1326,7 @@
               <div class="cov-icon" aria-hidden="true">🔊</div>
               <div class="cov-body">
                 <h3>Screen Readers</h3>
-                <p>Support guides and testing matrices for JAWS, NVDA, VoiceOver, and TalkBack. Covers HTML and ARIA support levels, AT-specific patterns, and cross-platform screen reader behavior.</p>
+                <p>Support guides and testing matrices for JAWS, NVDA, VoiceOver, and TalkBack. Covers HTML and ARIA support levels, cross-tool testing workflows, mobile SR checks, and fetched vendor provenance for command and workflow traceability.</p>
               </div>
             </li>
 
@@ -1216,7 +1372,7 @@
         <div class="container">
           <div class="section-intro">
             <div class="section-kicker">
-              <span class="kicker-num">04</span>
+              <span class="kicker-num">05</span>
               <span class="kicker-label">Starter prompt</span>
             </div>
             <h2 id="prompt-heading">Paste this into Claude Code or Codex</h2>
@@ -1276,24 +1432,245 @@
         </div>
       </section>
 
+      <div class="divider" aria-hidden="true"></div>
+
+      <!-- ── Refresh data ── -->
+      <section id="refresh" class="section" aria-labelledby="refresh-heading">
+        <div class="container">
+          <div class="section-intro">
+            <div class="section-kicker">
+              <span class="kicker-num">06</span>
+              <span class="kicker-label">Maintenance</span>
+            </div>
+            <h2 id="refresh-heading">How to fetch new data</h2>
+            <p>When W3C, vendor, or government sources update, use the fetch scripts from the repo root. Large sources regenerate split canonical files for AI use plus raw <code>*-full-fetched.md</code> or <code>*-fetched.md</code> provenance captures.</p>
+          </div>
+
+          <div class="bundle-grid">
+            <article class="bundle">
+              <div class="bundle-header">
+                <span class="tag tag-purple">Full refresh</span>
+                <h3>Run the standard maintenance pass</h3>
+              </div>
+              <div class="bundle-body">
+                <ul class="file-list">
+                  <li><code>python3 scripts/fetch-all.py</code></li>
+                  <li><code>python3 scripts/refresh-repo.py</code></li>
+                </ul>
+                <p class="bundle-note">This refreshes tracked sources, syncs release metadata, rebuilds AI chunk artifacts, and reruns the structural plus fixture validation suite.</p>
+              </div>
+            </article>
+
+            <article class="bundle">
+              <div class="bundle-header">
+                <span class="tag tag-blue">Targeted fetches</span>
+                <h3>Refresh only one source family</h3>
+              </div>
+              <div class="bundle-body">
+                <ul class="file-list">
+                  <li><code>python3 scripts/fetch-aria.py</code> for WAI-ARIA, AccName, Core-AAM, HTML-AAM, and ARIA in HTML</li>
+                  <li><code>python3 scripts/fetch-w3c-other.py</code> for WCAG2ICT, WAI tutorials, ATAG, UAAG, EPUB, WebVTT, COGA, and the alt-text decision tree</li>
+                  <li><code>python3 scripts/fetch-screen-readers.py</code> for NVDA, VoiceOver, TalkBack, and JAWS vendor support docs</li>
+                  <li><code>python3 scripts/fetch-wcag.py</code> for WCAG full text, quick refs, techniques, and understanding docs</li>
+                </ul>
+                <p class="bundle-note">See <code>meta/update-schedule.md</code> for cadence and <code>AI-USAGE-GUIDE.md</code> for which split canonical files to load after each refresh.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer>
       <div class="container footer-inner">
-        <div class="footer-brand">neur<span class="hi">a11y</span><span class="dev-badge">v0.2.1 · release</span></div>
-        <p>Built to make accessibility knowledge easier to apply, for everyone.</p>
+        <div class="footer-copy">
+          <div class="footer-brand">neur<span class="hi">a11y</span><span class="dev-badge">v0.3.0 · release</span></div>
+          <p>Built to make accessibility knowledge easier to apply, for everyone.</p>
+        </div>
+        <div class="footer-actions">
+          <button
+            type="button"
+            class="footer-link"
+            data-open-statement
+            aria-haspopup="dialog"
+            aria-controls="accessibility-statement"
+          >
+            Accessibility statement
+          </button>
+        </div>
       </div>
     </footer>
+
+    <dialog
+      id="accessibility-statement"
+      class="statement-dialog"
+      aria-labelledby="statement-title"
+      aria-describedby="statement-description"
+      aria-modal="true"
+    >
+      <div class="statement-panel">
+        <div class="statement-header">
+          <div>
+            <p class="statement-meta">Accessibility statement</p>
+            <h2 id="statement-title">Designed to work with keyboard, zoom, and assistive tech</h2>
+          </div>
+          <button type="button" class="statement-close" data-close-statement aria-label="Close accessibility statement" autofocus>×</button>
+        </div>
+        <p id="statement-description">This statement applies to the public <code>neura11y.com</code> landing page. The repository's markdown corpus lives on GitHub and is maintained separately from this site shell.</p>
+        <p>The landing page targets WCAG 2.1 Level AA for core interactions. It includes semantic landmarks, a skip link, visible focus states, keyboard-operable controls, and reduced-motion handling.</p>
+        <p>Accessibility work is ongoing. If you hit a barrier, please <a href="https://github.com/AYJAYY/neura11y/issues" target="_blank" rel="noopener noreferrer">open a GitHub issue<span class="sr-only"> (opens in a new tab)</span></a> with the page, browser, device, and assistive technology you were using.</p>
+        <p class="statement-meta">Last reviewed: March 21, 2026</p>
+      </div>
+    </dialog>
 
     <script>
       const skipLink = document.querySelector(".skip-link");
       const main = document.getElementById("main");
+      const statementDialog = document.getElementById("accessibility-statement");
+      const statementOpenButton = document.querySelector("[data-open-statement]");
+      const statementCloseButton = statementDialog?.querySelector("[data-close-statement]");
+      const statementFocusableSelectors = [
+        "button:not([disabled])",
+        "[href]",
+        "input:not([disabled])",
+        "select:not([disabled])",
+        "textarea:not([disabled])",
+        "[tabindex]:not([tabindex='-1'])"
+      ].join(", ");
+      let statementReturnFocus = null;
+      let statementKeydownHandler = null;
+
+      const setStatementBackgroundInert = (isInert) => {
+        Array.from(document.body.children).forEach((element) => {
+          if (element === statementDialog) {
+            return;
+          }
+          if (isInert) {
+            element.setAttribute("inert", "");
+          } else {
+            element.removeAttribute("inert");
+          }
+        });
+      };
+
+      const getStatementFocusableElements = () => {
+        if (!statementDialog) {
+          return [];
+        }
+        return Array.from(statementDialog.querySelectorAll(statementFocusableSelectors))
+          .filter((element) => !element.hasAttribute("disabled") && !element.closest("[hidden]"));
+      };
+
+      const focusStatementStart = () => {
+        const firstFocusable = getStatementFocusableElements()[0];
+        (firstFocusable || statementDialog)?.focus();
+      };
+
+      const restoreStatementFocus = () => {
+        if (statementReturnFocus instanceof HTMLElement) {
+          statementReturnFocus.focus();
+        }
+      };
+
+      const teardownStatement = () => {
+        setStatementBackgroundInert(false);
+        if (statementDialog && statementKeydownHandler) {
+          statementDialog.removeEventListener("keydown", statementKeydownHandler);
+          statementKeydownHandler = null;
+        }
+        restoreStatementFocus();
+      };
+
+      const handleStatementKeydown = (event) => {
+        if (!statementDialog?.open && !statementDialog?.hasAttribute("open")) {
+          return;
+        }
+
+        if (event.key === "Escape" && typeof statementDialog.showModal !== "function") {
+          event.preventDefault();
+          closeStatement();
+          return;
+        }
+
+        if (event.key !== "Tab") {
+          return;
+        }
+
+        const focusable = getStatementFocusableElements();
+        if (focusable.length === 0) {
+          event.preventDefault();
+          statementDialog?.focus();
+          return;
+        }
+
+        const firstFocusable = focusable[0];
+        const lastFocusable = focusable[focusable.length - 1];
+
+        if (event.shiftKey) {
+          if (document.activeElement === firstFocusable || document.activeElement === statementDialog) {
+            event.preventDefault();
+            lastFocusable.focus();
+          }
+          return;
+        }
+
+        if (document.activeElement === lastFocusable) {
+          event.preventDefault();
+          firstFocusable.focus();
+        }
+      };
+
+      const closeStatement = () => {
+        if (!statementDialog) {
+          return;
+        }
+        if (typeof statementDialog.close === "function" && statementDialog.open) {
+          statementDialog.close();
+          return;
+        }
+        statementDialog.removeAttribute("open");
+        teardownStatement();
+      };
 
       if (skipLink && main) {
         skipLink.addEventListener("click", () => {
           window.requestAnimationFrame(() => {
             main.focus();
           });
+        });
+      }
+
+      if (statementDialog && statementOpenButton) {
+        statementOpenButton.addEventListener("click", () => {
+          statementReturnFocus = document.activeElement;
+          setStatementBackgroundInert(true);
+          statementKeydownHandler = handleStatementKeydown;
+          statementDialog.addEventListener("keydown", statementKeydownHandler);
+          if (typeof statementDialog.showModal === "function") {
+            statementDialog.showModal();
+          } else {
+            statementDialog.setAttribute("open", "open");
+          }
+          window.requestAnimationFrame(() => {
+            focusStatementStart();
+          });
+        });
+
+        statementCloseButton?.addEventListener("click", closeStatement);
+
+        statementDialog.addEventListener("close", teardownStatement);
+
+        statementDialog.addEventListener("click", (event) => {
+          const rect = statementDialog.getBoundingClientRect();
+          const clickedBackdrop =
+            event.clientX < rect.left ||
+            event.clientX > rect.right ||
+            event.clientY < rect.top ||
+            event.clientY > rect.bottom;
+          if (clickedBackdrop) {
+            closeStatement();
+          }
         });
       }
     </script>

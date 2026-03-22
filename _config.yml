@@ -1,0 +1,25 @@
+theme: jekyll-theme-primer
+title: neura11y
+
+# The public Pages site is the landing page in index.html.
+# The markdown corpus lives in the repository for GitHub browsing and AI loading,
+# not for Jekyll rendering.
+exclude:
+  - README.md
+  - AI-USAGE-GUIDE.md
+  - INDEX.md
+  - GLOSSARY.md
+  - VERSION
+  - ai-prompts/
+  - cognitive/
+  - color-and-visual/
+  - domains/
+  - legal-and-compliance/
+  - media/
+  - meta/
+  - reference/
+  - screen-readers/
+  - standards/
+  - scripts/
+  - venv/
+  - .venv/

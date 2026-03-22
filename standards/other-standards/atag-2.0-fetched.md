@@ -2,7 +2,7 @@
 ai_context: ATAG 2.0 specification for authoring tools.
 domain:
 - general
-last_fetched: '2026-03-13'
+last_fetched: '2026-03-21'
 source_url: https://www.w3.org/TR/ATAG20/
 standard: ATAG 2.0
 status: normative

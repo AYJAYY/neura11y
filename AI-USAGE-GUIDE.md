@@ -2,7 +2,7 @@
 title: "AI Usage Guide"
 type: "meta"
 status: "curated"
-last_updated: "2026-03-14"
+last_updated: "2026-03-21"
 tags: ["ai", "context-loading", "rag", "prompting"]
 ai_context: "Read this file first. It defines how to use this repository in AI context windows and RAG pipelines."
 ---
@@ -74,6 +74,8 @@ ai_context: ""
 - `curated` — Editorial synthesis; requires manual maintenance
 - `template` — Prompt template for AI use
 
+**Large-source rule:** For Core-AAM, HTML-AAM, and WCAG2ICT, prefer the split canonical files listed in `INDEX.md`. Treat `*-full-fetched.md` files as provenance captures rather than default AI payloads.
+
 ---
 
 ## Context-Loading Patterns
@@ -100,16 +102,30 @@ domains/web/mobile-accessibility-patterns.md
 domains/web/pwa-accessibility.md
 ```
 
+For accessible-name, label-in-name, or semantic exposure issues, also add:
+```
+standards/aria/accname-1.2.md
+standards/aria/html-aam-1.0-accessible-name-and-description-computation.md
+```
+
 ### Pattern 2: Accessible Web Component Generation
 
 ```
 standards/wcag/wcag-2.2-quick-ref.md
 standards/aria/wai-aria-1.2-roles.md
 standards/aria/wai-aria-1.2-states-properties.md
+standards/aria/accname-1.2.md
 standards/aria/aria-authoring-practices.md
 domains/web/component-patterns/[component-name].md
 domains/web/keyboard-navigation-patterns.md
 domains/web/focus-management.md
+```
+
+Add these when the component work depends on browser/AT exposure details:
+```
+standards/aria/html-aam-1.0-accessible-name-and-description-computation.md
+standards/aria/core-aam-1.2-role-mappings.md
+standards/aria/core-aam-1.2-state-property-and-event-mappings.md
 ```
 
 ### Pattern 3: Social Media Post Creation
@@ -171,6 +187,11 @@ domains/documents/google-workspace/google-slides-guide.md
 domains/documents/google-workspace/google-sheets-guide.md
 ```
 
+Add this when interpreting WCAG for non-web documents or software:
+```
+standards/other-standards/wcag2ict-22-overview.md
+```
+
 ### Pattern 5: Legal Compliance Check
 
 ```
@@ -214,9 +235,16 @@ standards/en-301-549/en-301-549-requirements.md
 domains/voice/voice-ui-accessibility.md
 ```
 
+Add this when the voice scope is a non-web software product:
+```
+standards/other-standards/wcag2ict-22-overview.md
+```
+
 ### Pattern 8: Kiosk and Embedded / Closed Functionality
 
 ```
+standards/other-standards/wcag2ict-22-overview.md
+standards/other-standards/wcag2ict-22-guideline-comments-perceivable-and-operable.md
 standards/other-standards/iso-9241-171.md
 standards/en-301-549/en-301-549-requirements.md
 domains/physical-ict/kiosk-and-embedded-playbook.md
@@ -262,6 +290,54 @@ domains/documents/google-workspace/google-sheets-guide.md
 domains/documents/plain-language/plain-language-guide.md
 ```
 
+#### Accessible Name and API Mappings
+
+```
+standards/aria/accname-1.2.md
+standards/aria/html-aam-1.0-accessible-name-and-description-computation.md
+standards/aria/core-aam-1.2-overview.md
+standards/aria/core-aam-1.2-role-mappings.md
+standards/aria/core-aam-1.2-state-property-and-event-mappings.md
+```
+
+#### Non-Web ICT Interpretation
+
+```
+standards/other-standards/wcag2ict-22-overview.md
+standards/other-standards/wcag2ict-22-guideline-comments-perceivable-and-operable.md
+standards/other-standards/wcag2ict-22-guideline-comments-understandable-and-robust.md
+standards/other-standards/wcag2ict-22-glossary-and-appendices.md
+```
+
+#### Screen Reader Testing Workflow
+
+```
+screen-readers/screen-reader-testing-workflows.md
+screen-readers/common-announcements-and-quirks.md
+domains/web/testing/screen-reader-testing-matrix.md
+screen-readers/[nvda-guide|jaws-guide|voiceover-guide|talkback-guide].md
+```
+
+Add the corresponding fetched provenance file under `screen-readers/source/` when you need vendor-specific command wording or source traceability.
+
+#### Mobile Screen Reader Workflow
+
+```
+screen-readers/mobile-screen-reader-testing.md
+domains/mobile/native-mobile-app-accessibility.md
+screen-readers/voiceover-guide.md
+screen-readers/talkback-guide.md
+```
+
+#### Accessibility Checker and CLI Tooling
+
+```
+reference/accessibility-checkers-and-cli-tools.md
+reference/accessibility-tools.md
+domains/web/testing/automated-testing.md
+domains/web/testing/manual-testing-checklist.md
+```
+
 ---
 
 ## RAG Pipeline Configuration
@@ -280,13 +356,24 @@ Preserve these fields as chunk metadata for all ingested files:
 | Field | Source | Purpose |
 |-------|--------|---------|
 | `source_file` | File path relative to repo root | Provenance |
+| `chunk_id` | Stable hash of file + heading path + chunk text | Deduplication and cache keys |
+| `title` | Frontmatter `title` field | Human-readable source title |
 | `heading_path` | Concatenated H1 > H2 path | Navigation |
 | `standard` | Frontmatter `standard` field | Filter by standard |
 | `sc_number` | Extracted from `## SC X.X.X` headings | Filter by SC |
 | `domain` | Frontmatter `domain` field | Filter by domain |
+| `tags` | Frontmatter `tags` field | Retrieval and faceting |
 | `platform` | Extracted from the platform directory segment under `/domains/social-media/platforms/` | Filter by platform |
 | `status` | Frontmatter `status` field | Filter normative vs. curated |
+| `type` | Frontmatter `type` field when present | Distinguish root/meta/reference documents |
+| `source_url` | Frontmatter `source_url` field | External provenance |
+| `content_family` | Top-level repo area or `root` | Route retrieval by corpus family |
+| `content_kind` | `canonical`, `raw-capture`, or `raw-full-capture` | Prefer canonical chunks in retrieval |
 | `level` | Extracted from `Level A/AA/AAA` text | Filter by conformance level |
+| `last_fetched` | Frontmatter `last_fetched` field when present | Freshness and provenance |
+| `last_verified` | Frontmatter `last_verified` field when present | Manual platform verification freshness |
+| `last_reviewed` | Frontmatter `last_reviewed` field when present | Legal/editorial freshness |
+| `stale` | Frontmatter `stale` field when present | Force caveats for aged content |
 
 ### Recommended Embedding Model
 
@@ -306,6 +393,12 @@ When the user's query includes:
 - "Google Docs" or "Google Slides" or "Google Sheets" → Prefer `/domains/documents/google-workspace/` chunks
 - "CMS" or "content model" → Prefer `/domains/web/cms-authoring-workflow.md`
 - "handoff" or "design system" → Prefer `/domains/web/design-to-development-handoff.md`
+- "accessible name" or "label in name" or "aria-label" → Prefer `standards/aria/accname-1.2.md` and `standards/aria/html-aam-1.0-accessible-name-and-description-computation.md`
+- "AAM" or "accessibility API mapping" or "AT exposure" → Prefer `standards/aria/core-aam-1.2-*.md` and `standards/aria/html-aam-1.0-*.md`
+- "non-web" or "software" or "closed functionality" or "kiosk" → Prefer `standards/other-standards/wcag2ict-22-*.md` plus `standards/en-301-549/`
+- "NVDA" or "JAWS" or "VoiceOver" or "TalkBack" → Prefer `/screen-readers/` canonical guides and `domains/web/testing/screen-reader-testing-matrix.md`
+- "mobile screen reader" or "iOS VoiceOver" or "Android TalkBack" → Prefer `screen-readers/mobile-screen-reader-testing.md` plus the relevant per-tool guide
+- "axe" or "pa11y" or "lighthouse" or "checker" or "browser extension" or "CLI" or "CI" or "lint" → Prefer `reference/accessibility-checkers-and-cli-tools.md`, `reference/accessibility-tools.md`, and `domains/web/testing/automated-testing.md`
 
 ---
 
@@ -336,6 +429,10 @@ See `/ai-prompts/` for ready-to-use prompt templates:
 - `ai-prompts/legal-and-compliance/check-accessibility-compliance.md` — issue-to-regulation mapping
 - `ai-prompts/voice/accessible-voice-ui.md` — voice UI design and review
 - `ai-prompts/physical-ict/accessible-kiosk-and-embedded.md` — kiosk and closed-functionality review
+- `ai-prompts/screen-readers/nvda-web-testing.md` — NVDA-based web testing plan
+- `ai-prompts/screen-readers/voiceover-safari-audit.md` — VoiceOver and Safari audit workflow
+- `ai-prompts/screen-readers/talkback-mobile-web-review.md` — TalkBack mobile/web review workflow
+- `ai-prompts/screen-readers/jaws-enterprise-testing.md` — JAWS testing for enterprise workflows
 
 ---
 
@@ -389,8 +486,10 @@ Use these scripts to keep AI ingestion and validation assets current:
 - `scripts/export-ai-context.py` — export chunked JSONL plus a summary manifest for RAG ingestion
 - `scripts/validate-frontmatter.py` — enforce path-specific frontmatter schemas
 - `scripts/validate-references.py` — detect broken internal file references
-- `scripts/validate-ai-suite.py` — run the fixture-based validation harness using `meta/ai-validation-fixtures.json`; add `--responses-dir` to validate saved model responses
+- `scripts/validate-ai-suite.py` — run the fixture-based validation harness using `meta/ai-validation-fixtures.json`; add `--responses-dir` to validate saved model responses against richer behavioral checks
 - `scripts/sync-freshness.py` — build a freshness manifest and sync registry freshness columns
+- `scripts/sync-release-metadata.py` — sync README and landing-page version/count metadata from `VERSION`
+- `scripts/refresh-repo.py` — run the recommended local refresh path for metadata, export, and validation artifacts
 
 ### Generated Artifacts
 
@@ -407,15 +506,11 @@ These files are produced or refreshed by the automation scripts and can be treat
 For a full repo refresh or release pass, run:
 
 1. `scripts/fetch-all.py`
-2. `scripts/export-ai-context.py`
-3. `scripts/sync-freshness.py`
-4. `scripts/validate-ai-suite.py`
+2. `scripts/refresh-repo.py`
 
 ```bash
 python3 scripts/fetch-all.py
-python3 scripts/export-ai-context.py
-python3 scripts/sync-freshness.py
-python3 scripts/validate-ai-suite.py
+python3 scripts/refresh-repo.py
 ```
 
 ---

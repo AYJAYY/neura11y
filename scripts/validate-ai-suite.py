@@ -2,12 +2,24 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import subprocess
 import sys
 from pathlib import Path
 
-from repo_utils import REPO_ROOT, repo_relative
+from repo_utils import REPO_ROOT, load_markdown, repo_relative
+
+DEFAULT_FRESHNESS_TERMS = [
+    "stale",
+    "outdated",
+    "verify",
+    "last reviewed",
+    "last verified",
+    "last fetched",
+]
+DEFAULT_NORMATIVE_TERMS = ["must", "required", "normative"]
+DEFAULT_PRESCRIPTIVE_TERMS = ["recommended", "best practice", "advisory", "prescriptive"]
 
 
 def run_subprocess(script_name: str) -> tuple[bool, str]:
@@ -26,17 +38,38 @@ def load_fixture(path: Path) -> list[dict]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def validate_pattern(pattern: dict, responses_dir: Path | None) -> tuple[bool, list[str]]:
+def _contains_term(text: str, term: str) -> bool:
+    return term.lower() in text.lower()
+
+
+def _contains_any_term(text: str, terms: list[str]) -> bool:
+    return any(_contains_term(text, term) for term in terms)
+
+
+def validate_pattern(pattern: dict, responses_dir: Path | None) -> dict:
     issues: list[str] = []
+    checks_total = 0
+    checks_passed = 0
+
+    def record(condition: bool, failure_message: str) -> None:
+        nonlocal checks_total, checks_passed
+        checks_total += 1
+        if condition:
+            checks_passed += 1
+        else:
+            issues.append(failure_message)
 
     prompt_file = REPO_ROOT / pattern["prompt_file"]
-    if not prompt_file.exists():
-        issues.append(f"missing prompt file `{pattern['prompt_file']}`")
+    record(prompt_file.exists(), f"missing prompt file `{pattern['prompt_file']}`")
 
     context_paths = [REPO_ROOT / rel_path for rel_path in pattern["context_files"]]
+    stale_context_files: list[str] = []
     for path, rel_path in zip(context_paths, pattern["context_files"]):
-        if not path.exists():
-            issues.append(f"missing context file `{rel_path}`")
+        record(path.exists(), f"missing context file `{rel_path}`")
+        if path.exists():
+            metadata, _ = load_markdown(path)
+            if metadata.get("stale") is True:
+                stale_context_files.append(rel_path)
 
     corpus = "\n".join(
         path.read_text(encoding="utf-8")
@@ -45,38 +78,93 @@ def validate_pattern(pattern: dict, responses_dir: Path | None) -> tuple[bool, l
     )
 
     for citation in pattern.get("expected_citations", []):
-        if citation not in corpus:
-            issues.append(f"expected citation `{citation}` not found in fixture context")
+        record(
+            citation in corpus,
+            f"expected citation `{citation}` not found in fixture context",
+        )
+
+    for phrase in pattern.get("required_context_terms", []):
+        record(
+            _contains_term(corpus, phrase),
+            f"required context term `{phrase}` not found in fixture context",
+        )
 
     if responses_dir:
         response_path = responses_dir / f"{pattern['id']}.md"
-        if not response_path.exists():
-            issues.append(f"missing response file `{repo_relative(response_path)}`")
-        else:
+        record(
+            response_path.exists(),
+            f"missing response file `{repo_relative(response_path)}`",
+        )
+        if response_path.exists():
             response_text = response_path.read_text(encoding="utf-8")
             for citation in pattern.get("expected_citations", []):
-                if citation not in response_text:
-                    issues.append(f"response missing expected citation `{citation}`")
+                record(
+                    citation in response_text,
+                    f"response missing expected citation `{citation}`",
+                )
             for citation in pattern.get("forbidden_citations", []):
-                if citation in response_text:
-                    issues.append(f"response includes forbidden citation `{citation}`")
+                record(
+                    citation not in response_text,
+                    f"response includes forbidden citation `{citation}`",
+                )
+            for phrase in pattern.get("required_response_terms", []):
+                record(
+                    _contains_term(response_text, phrase),
+                    f"response missing required term `{phrase}`",
+                )
+            for phrase in pattern.get("forbidden_response_terms", []):
+                record(
+                    not _contains_term(response_text, phrase),
+                    f"response includes forbidden term `{phrase}`",
+                )
+            if pattern.get("requires_freshness_caveat"):
+                if stale_context_files:
+                    freshness_terms = pattern.get("freshness_terms", DEFAULT_FRESHNESS_TERMS)
+                    record(
+                        _contains_any_term(response_text, freshness_terms),
+                        "response missing freshness caveat for stale context",
+                    )
+                else:
+                    record(
+                        False,
+                        "fixture requires freshness caveat but no stale context files were found",
+                    )
+            if pattern.get("requires_normative_prescriptive_distinction"):
+                normative_terms = pattern.get("normative_terms", DEFAULT_NORMATIVE_TERMS)
+                prescriptive_terms = pattern.get("prescriptive_terms", DEFAULT_PRESCRIPTIVE_TERMS)
+                record(
+                    _contains_any_term(response_text, normative_terms),
+                    "response missing normative/required language",
+                )
+                record(
+                    _contains_any_term(response_text, prescriptive_terms),
+                    "response missing prescriptive/best-practice language",
+                )
 
-    return not issues, issues
+    return {
+        "passed": not issues,
+        "issues": issues,
+        "checks_passed": checks_passed,
+        "checks_total": checks_total,
+        "stale_context_files": stale_context_files,
+        "response_evaluated": bool(responses_dir),
+    }
 
 
 def write_report(
     report_path: Path,
     fixtures: list[dict],
     checks: dict[str, tuple[bool, str]],
-    pattern_results: dict[str, tuple[bool, list[str]]],
+    pattern_results: dict[str, dict],
     responses_dir: Path | None,
 ) -> None:
+    today = dt.date.today().isoformat()
     lines = [
         "---",
         'title: "Latest AI Validation Report"',
         'type: "meta"',
         'status: "curated"',
-        'last_updated: "2026-03-14"',
+        f'last_updated: "{today}"',
         'ai_context: "Most recent AI validation run against repository fixtures and structural checks."',
         "---",
         "",
@@ -95,15 +183,25 @@ def write_report(
 
     lines.extend(["", "## Pattern Checks", ""])
     for fixture in fixtures:
-        passed, issues = pattern_results[fixture["id"]]
+        result = pattern_results[fixture["id"]]
+        passed = result["passed"]
+        issues = result["issues"]
         lines.append(f"### {fixture['pattern']}")
         lines.append("")
         lines.append(f"- Prompt file: `{fixture['prompt_file']}`")
         lines.append(f"- Result: {'PASS' if passed else 'FAIL'}")
+        lines.append(
+            f"- Checks: {result['checks_passed']}/{result['checks_total']} passed"
+        )
         if fixture.get("expected_citations"):
             lines.append(
                 "- Expected citations: "
                 + ", ".join(f"`{citation}`" for citation in fixture["expected_citations"])
+            )
+        if result["stale_context_files"]:
+            lines.append(
+                "- Stale context files: "
+                + ", ".join(f"`{path}`" for path in result["stale_context_files"])
             )
         if issues:
             lines.append("- Issues:")
@@ -152,14 +250,14 @@ def main() -> int:
     write_report(report_path, fixtures, checks, pattern_results, responses_dir)
 
     structural_failed = any(not passed for passed, _ in checks.values())
-    pattern_failed = any(not passed for passed, _ in pattern_results.values())
+    pattern_failed = any(not result["passed"] for result in pattern_results.values())
 
     print(f"Validation report written to {repo_relative(report_path)}")
     print(
         f"Structural checks: {sum(1 for passed, _ in checks.values() if passed)}/{len(checks)} passed"
     )
     print(
-        f"Pattern checks: {sum(1 for passed, _ in pattern_results.values() if passed)}/{len(pattern_results)} passed"
+        f"Pattern checks: {sum(1 for result in pattern_results.values() if result['passed'])}/{len(pattern_results)} passed"
     )
     return 1 if structural_failed or pattern_failed else 0
 

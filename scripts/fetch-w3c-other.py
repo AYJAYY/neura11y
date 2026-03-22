@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Fetch other W3C standards (ATAG 2.0, UAAG 2.0, EPUB Accessibility 1.1,
-WebVTT, COGA design guide, alt text decision tree, EPUB metadata).
+Fetch other W3C standards and tutorials (ATAG 2.0, UAAG 2.0, EPUB Accessibility 1.1,
+WebVTT, COGA design guide, WCAG2ICT, alt text decision tree, and WAI tutorials).
+
+Large sources such as WCAG2ICT generate split canonical files plus raw full captures.
 
 Delegates to fetch-standards.py --w3c-other. Additional flags are passed through.
 
@@ -23,7 +25,7 @@ FETCH_STANDARDS = Path(__file__).parent / "fetch-standards.py"
 
 def main():
     args = sys.argv[1:]
-    group_flags = {"--all", "--wcag", "--aria", "--us-gov"}
+    group_flags = {"--all", "--wcag", "--aria", "--screen-readers", "--us-gov"}
     has_group = any(a in group_flags for a in args) or any(a == "--source" for a in args)
 
     if not has_group:

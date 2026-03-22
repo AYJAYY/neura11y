@@ -40,6 +40,8 @@ def main() -> int:
     files_processed = 0
     status_counts: Counter[str] = Counter()
     top_level_counts: Counter[str] = Counter()
+    content_kind_counts: Counter[str] = Counter()
+    stale_files = 0
 
     for path in iter_markdown_files(include_fetched=args.include_fetched):
         rel_path = repo_relative(path)
@@ -56,6 +58,8 @@ def main() -> int:
         files_processed += 1
         top_level_counts[Path(rel_path).parts[0]] += 1
         status_counts[file_chunks[0]["status"] or "unknown"] += 1
+        content_kind_counts[file_chunks[0]["content_kind"]] += 1
+        stale_files += 1 if file_chunks[0]["stale"] else 0
         chunks.extend(file_chunks)
 
     with output_path.open("w", encoding="utf-8") as handle:
@@ -68,7 +72,10 @@ def main() -> int:
         "min_tokens": args.min_tokens,
         "max_tokens": args.max_tokens,
         "overlap": args.overlap,
+        "include_fetched": args.include_fetched,
         "status_counts": dict(sorted(status_counts.items())),
+        "content_kind_counts": dict(sorted(content_kind_counts.items())),
+        "stale_files": stale_files,
         "top_level_counts": dict(sorted(top_level_counts.items())),
     }
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8")

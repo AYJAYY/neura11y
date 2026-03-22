@@ -8,7 +8,7 @@ from pathlib import Path
 
 from repo_utils import REPO_ROOT, freshness_signal, iter_markdown_files, load_markdown, repo_relative
 
-TARGET_PATTERN = re.compile(r"`([^`\n]+\.(?:md|json|jsonl|py))`")
+TARGET_PATTERN = re.compile(r"`([^`\n]+\.(?:md|json|jsonl))`")
 
 
 def build_manifest() -> dict[str, dict]:

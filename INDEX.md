@@ -2,8 +2,8 @@
 title: "Repository Index"
 type: "index"
 status: "curated"
-last_updated: "2026-03-14"
-ai_context: "Machine-readable cross-reference map. Lists current canonical files by standard, domain, and topic. Prefer these files over raw *-fetched.md source captures."
+last_updated: "2026-03-21"
+ai_context: "Machine-readable cross-reference map. Lists current canonical files by standard, domain, and topic. Prefer these files over raw *-fetched.md and *-full-fetched.md source captures."
 ---
 
 # Repository Index
@@ -39,6 +39,15 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 |------|-------------|--------|
 | `standards/aria/wai-aria-1.2-roles.md` | ARIA roles with required and supported states/properties | normative |
 | `standards/aria/wai-aria-1.2-states-properties.md` | ARIA states and properties with allowed values | normative |
+| `standards/aria/accname-1.2.md` | Accessible name and description computation algorithm | normative |
+| `standards/aria/core-aam-1.2-overview.md` | Core-AAM scope, conformance, and algorithm overview | normative |
+| `standards/aria/core-aam-1.2-role-mappings.md` | Core-AAM rules and role mapping tables | normative |
+| `standards/aria/core-aam-1.2-state-property-and-event-mappings.md` | Core-AAM state, property, action, event, and notify mappings | normative |
+| `standards/aria/html-aam-1.0-overview.md` | HTML-AAM scope and general rules overview | normative |
+| `standards/aria/html-aam-1.0-element-role-mappings.md` | HTML element role mappings | normative |
+| `standards/aria/html-aam-1.0-attribute-state-property-mappings-a-to-m.md` | HTML attribute mappings A-M | normative |
+| `standards/aria/html-aam-1.0-attribute-state-property-mappings-n-to-z.md` | HTML attribute mappings N-Z | normative |
+| `standards/aria/html-aam-1.0-accessible-name-and-description-computation.md` | HTML accessible name and description computation rules | normative |
 | `standards/aria/aria-authoring-practices.md` | APG patterns for common UI components | prescriptive |
 | `standards/aria/aria-in-html.md` | ARIA in HTML rules for native semantics and overrides | normative |
 | `standards/aria/aria-common-mistakes.md` | Curated list of common ARIA implementation errors | curated |
@@ -78,6 +87,10 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 |------|-------------|--------|
 | `standards/other-standards/atag-2.0-overview.md` | ATAG 2.0 overview for authoring tools | prescriptive |
 | `standards/other-standards/uaag-2.0-overview.md` | UAAG 2.0 overview for browsers and user agents | prescriptive |
+| `standards/other-standards/wcag2ict-22-overview.md` | WCAG2ICT scope, terms, and conformance overview | prescriptive |
+| `standards/other-standards/wcag2ict-22-guideline-comments-perceivable-and-operable.md` | WCAG2ICT comments for Principles 1 and 2 | prescriptive |
+| `standards/other-standards/wcag2ict-22-guideline-comments-understandable-and-robust.md` | WCAG2ICT comments for Principles 3 and 4 | prescriptive |
+| `standards/other-standards/wcag2ict-22-glossary-and-appendices.md` | WCAG2ICT glossary interpretations and appendices | prescriptive |
 | `standards/other-standards/iso-9241-171.md` | ISO 9241-171 software accessibility overview | curated |
 | `media/video/webvtt-spec.md` | WebVTT 1.0 file-structure and cue-syntax overview | normative |
 
@@ -194,6 +207,9 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 | Media | `media/video/video-captions-guide.md` | Captions, transcripts, audio description, WebVTT, SRT |
 | Media | `media/video/webvtt-spec.md` | WebVTT 1.0 overview for timed text files |
 | Screen Readers | `screen-readers/screen-reader-overview.md` | Screen reader ecosystem overview |
+| Screen Readers | `screen-readers/screen-reader-testing-workflows.md` | Cross-tool screen reader testing workflow guide |
+| Screen Readers | `screen-readers/mobile-screen-reader-testing.md` | Mobile screen reader testing guide |
+| Screen Readers | `screen-readers/common-announcements-and-quirks.md` | Cross-tool announcement and quirk reference |
 | Screen Readers | `screen-readers/jaws-guide.md` | JAWS guide |
 | Screen Readers | `screen-readers/nvda-guide.md` | NVDA guide |
 | Screen Readers | `screen-readers/voiceover-guide.md` | VoiceOver guide |
@@ -213,7 +229,12 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 | Prompts | `ai-prompts/legal-and-compliance/check-accessibility-compliance.md` | Compliance review prompt template |
 | Prompts | `ai-prompts/voice/accessible-voice-ui.md` | Voice UI prompt template |
 | Prompts | `ai-prompts/physical-ict/accessible-kiosk-and-embedded.md` | Kiosk and embedded ICT prompt template |
+| Prompts | `ai-prompts/screen-readers/nvda-web-testing.md` | NVDA web testing prompt template |
+| Prompts | `ai-prompts/screen-readers/voiceover-safari-audit.md` | VoiceOver and Safari prompt template |
+| Prompts | `ai-prompts/screen-readers/talkback-mobile-web-review.md` | TalkBack mobile web review prompt template |
+| Prompts | `ai-prompts/screen-readers/jaws-enterprise-testing.md` | JAWS enterprise testing prompt template |
 | Reference | `GLOSSARY.md` | Canonical terminology |
+| Reference | `reference/accessibility-checkers-and-cli-tools.md` | AI-first routing guide for checkers, CLI tools, and CI usage |
 | Reference | `reference/accessibility-tools.md` | Tools and testing resources |
 | Reference | `reference/statistics.md` | Accessibility statistics and reference data |
 
@@ -251,6 +272,8 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 
 - `domains/web/forms-accessibility.md`
 - `domains/web/html-semantics-guide.md`
+- `standards/aria/accname-1.2.md`
+- `standards/aria/html-aam-1.0-accessible-name-and-description-computation.md`
 - `standards/wcag/wcag-2.2-quick-ref.md` (SC 1.3.5, 3.3.x, 4.1.2)
 
 ### keyboard-and-focus
@@ -267,6 +290,7 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 - `domains/web/pwa-accessibility.md`
 - `domains/web/spa-accessibility.md`
 - `domains/mobile/native-mobile-app-accessibility.md`
+- `screen-readers/mobile-screen-reader-testing.md`
 - `screen-readers/talkback-guide.md`
 - `screen-readers/voiceover-guide.md`
 
@@ -306,6 +330,9 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 ### screen-reader-support
 
 - `screen-readers/screen-reader-overview.md`
+- `screen-readers/screen-reader-testing-workflows.md`
+- `screen-readers/mobile-screen-reader-testing.md`
+- `screen-readers/common-announcements-and-quirks.md`
 - `screen-readers/screen-reader-html-support.md`
 - `screen-readers/screen-reader-aria-support.md`
 - `screen-readers/jaws-guide.md`
@@ -330,6 +357,29 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 ### physical-ict
 
 - `domains/physical-ict/kiosk-and-embedded-playbook.md`
+- `standards/en-301-549/en-301-549-requirements.md`
+- `standards/other-standards/iso-9241-171.md`
+- `standards/other-standards/wcag2ict-22-overview.md`
+- `standards/other-standards/wcag2ict-22-guideline-comments-perceivable-and-operable.md`
+
+### accessible-name-and-api-mappings
+
+- `standards/aria/accname-1.2.md`
+- `standards/aria/core-aam-1.2-overview.md`
+- `standards/aria/core-aam-1.2-role-mappings.md`
+- `standards/aria/core-aam-1.2-state-property-and-event-mappings.md`
+- `standards/aria/html-aam-1.0-overview.md`
+- `standards/aria/html-aam-1.0-element-role-mappings.md`
+- `standards/aria/html-aam-1.0-attribute-state-property-mappings-a-to-m.md`
+- `standards/aria/html-aam-1.0-attribute-state-property-mappings-n-to-z.md`
+- `standards/aria/html-aam-1.0-accessible-name-and-description-computation.md`
+
+### non-web-ict
+
+- `standards/other-standards/wcag2ict-22-overview.md`
+- `standards/other-standards/wcag2ict-22-guideline-comments-perceivable-and-operable.md`
+- `standards/other-standards/wcag2ict-22-guideline-comments-understandable-and-robust.md`
+- `standards/other-standards/wcag2ict-22-glossary-and-appendices.md`
 - `standards/en-301-549/en-301-549-requirements.md`
 - `standards/other-standards/iso-9241-171.md`
 
@@ -358,6 +408,7 @@ Machine-readable cross-reference map. This index lists the current canonical fil
 ## Coverage Notes
 
 - Canonical prompt templates now exist for every context-loading pattern documented in `AI-USAGE-GUIDE.md`.
-- AI operations now include schema validation, reference auditing, chunk export, freshness sync, and fixture-based validation scripts.
+- AI operations now include schema validation, reference auditing, richer chunk export metadata, freshness sync, release-metadata sync, and fixture-based validation scripts.
+- Screen reader coverage now includes cross-tool workflows plus fetched vendor provenance under `screen-readers/source/`.
 - Remaining optional content backlog is limited to video game accessibility.
-- Prefer canonical files listed here over raw `*-fetched.md` source captures.
+- Prefer canonical files listed here over raw `*-fetched.md` and `*-full-fetched.md` source captures.

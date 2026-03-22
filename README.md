@@ -1,8 +1,8 @@
 ---
 title: "neura11y — AI-Ready Accessibility Knowledge Repository"
 type: "root"
-status: "active"
-last_updated: "2026-03-14"
+status: "curated"
+last_updated: "2026-03-21"
 ai_context: "Entry point for neura11y. Read AI-USAGE-GUIDE.md before loading other files into AI context."
 ---
 
@@ -29,7 +29,7 @@ ai_context: "Entry point for neura11y. Read AI-USAGE-GUIDE.md before loading oth
 </p>
 
 <p align="center">
-  <code>v0.2.1</code> • standards • workflow guides • prompt packs • validation tooling
+  <code>v0.3.0</code> • standards • workflow guides • prompt packs • validation tooling
 </p>
 
 neura11y packages normative standards, applied workflow guidance, prompt templates, and validation tooling into a single repository so AI systems can produce accessibility guidance and accessible outputs with stronger traceability and less hallucination.
@@ -50,9 +50,9 @@ neura11y enables AI systems to:
 
 **Quick navigation:** Use `INDEX.md` to find files by standard, domain, or tag without loading the full repository.
 
-**For AI pipelines:** Chunk at `##` heading level. Preserve `source_file`, `heading_path`, `standard`, `sc_number`, `domain`, `platform`, `status`, and freshness fields as chunk metadata.
+**For AI pipelines:** Chunk at `##` heading level. Preserve `source_file`, `heading_path`, `standard`, `sc_number`, `domain`, `platform`, `status`, `level`, `last_fetched`, `last_verified`, `last_reviewed`, and `stale` as chunk metadata.
 
-**Canonical files:** Prefer the curated files referenced by `INDEX.md` and `AI-USAGE-GUIDE.md`. Treat `*-fetched.md` files as raw source captures and provenance, not the default context payload.
+**Canonical files:** Prefer the curated and split canonical files referenced by `INDEX.md` and `AI-USAGE-GUIDE.md`. Treat `*-fetched.md` and `*-full-fetched.md` files as raw source captures and provenance, not the default context payload.
 
 ## Repository Structure
 
@@ -96,7 +96,7 @@ claude-a11y-repo/
 ├── cognitive/                — COGA, cognitive accessibility patterns
 ├── color-and-visual/         — Contrast ratios, APCA, typography
 ├── media/                    — Images, video, audio accessibility
-├── screen-readers/           — AT support matrices (JAWS, NVDA, VoiceOver, TalkBack)
+├── screen-readers/           — AT guides, support matrices, and fetched vendor source docs
 ├── ai-prompts/               — Ready-to-use prompt templates (Layer 3)
 ├── legal-and-compliance/     — ADA, Section 508, EU EAA, UK, Canada, Australia
 ├── reference/                — Tools, statistics, citations
@@ -117,7 +117,11 @@ claude-a11y-repo/
 - **WCAG** (current stable W3C Recommendation: 2.2, October 2023) — 86 active success criteria in the current version (9 new; SC 4.1.1 obsolete)
 - **WCAG 3.0** (Working Draft) — Overview and emerging guidance
 - **WAI-ARIA 1.2** (W3C Recommendation, June 2023)
+- **Accessible Name and Description Computation 1.2** (W3C Working Draft, March 2026)
+- **Core Accessibility API Mappings 1.2** (W3C Candidate Recommendation Draft, March 2026)
+- **HTML Accessibility API Mappings 1.0** (W3C Working Draft, March 2026)
 - **ARIA Authoring Practices Guide (APG)**
+- **WCAG2ICT 2.2** (W3C Group Note, December 2025)
 - **Section 508** (US, 2017 refresh)
 - **PDF/UA** (ISO 14289-1:2014)
 - **EPUB Accessibility 1.1** (W3C Recommendation, May 2023)
@@ -138,14 +142,15 @@ claude-a11y-repo/
 
 ## Current Coverage Notes
 
-- **Release 0.2.1:** Refreshes standards accuracy, corrects WCAG 2.2 focus-criterion mapping, and tightens AI-usage and glossary guidance.
-- **AI operations:** The repository now includes schema validation, reference auditing, chunk export, freshness sync, and fixture-based AI validation scripts under `scripts/`.
+- **Release 0.3.0:** Adds fetchable AccName, Core-AAM, HTML-AAM, WCAG2ICT, WAI tutorial, and screen-reader vendor sources; expands screen-reader testing coverage; enriches AI chunk metadata; and adds release/refresh automation around the expanded source model.
+- **Tooling references:** The repo now includes an AI-first checker and CLI routing file at `reference/accessibility-checkers-and-cli-tools.md`, alongside the broader tools catalog and automated web testing guide.
+- **AI operations:** The repository now includes schema validation, reference auditing, enriched chunk export, freshness sync, release-metadata sync, and fixture-based AI validation scripts under `scripts/`.
 - **Prompt coverage:** Prompt packs now exist for all documented AI usage patterns in `AI-USAGE-GUIDE.md`.
 - **Remaining backlog:** The primary optional backlog item remains video game accessibility, which is still out of scope for v1.
 
 ## Maintenance
 
-Auto-fetchable standards are refreshed via scripts in `/scripts/`. Use `scripts/fetch-all.py` for managed runs, `scripts/export-ai-context.py` to regenerate AI-ingestion artifacts, `scripts/sync-freshness.py` to update registry freshness signals, and `scripts/validate-ai-suite.py` for structural plus fixture validation (or response validation with `--responses-dir`). See `meta/update-schedule.md` for cadence.
+Auto-fetchable standards and vendor source docs are refreshed via scripts in `/scripts/`. Use `scripts/fetch-all.py` for managed runs, `scripts/refresh-repo.py` to sync release metadata plus AI artifacts, `scripts/export-ai-context.py` for direct JSONL regeneration, `scripts/sync-freshness.py` to update registry freshness signals, and `scripts/validate-ai-suite.py` for structural plus fixture validation (or response validation with `--responses-dir`). See `meta/update-schedule.md` for cadence.
 
 ## Contributing
 

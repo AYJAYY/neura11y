@@ -4,7 +4,7 @@ domain:
 - web
 - documents
 - general
-last_fetched: '2026-03-13'
+last_fetched: '2026-03-21'
 source_url: https://www.w3.org/TR/coga-usable/
 standard: COGA
 status: normative

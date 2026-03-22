@@ -1,7 +1,7 @@
 ---
 title: "JAWS Screen Reader Guide"
 standard: "JAWS 2024 / 2025"
-source_url: "https://www.freedomscientific.com/products/software/jaws/"
+source_url: "https://support.freedomscientific.com/content/html/jawshq/JAWS-Keystrokes.html"
 domain: ["web", "documents", "general"]
 last_fetched: "2026-03-13"
 status: "curated"

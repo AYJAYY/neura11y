@@ -1,27 +1,27 @@
 {
   "AI-USAGE-GUIDE.md": {
     "freshness_field": "last_updated",
-    "freshness_value": "2026-03-14",
+    "freshness_value": "2026-03-21",
     "status": "curated",
     "title": "AI Usage Guide"
   },
   "GLOSSARY.md": {
     "freshness_field": "last_updated",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "curated",
     "title": "Accessibility Glossary"
   },
   "INDEX.md": {
     "freshness_field": "last_updated",
-    "freshness_value": "2026-03-14",
+    "freshness_value": "2026-03-21",
     "status": "curated",
     "title": "Repository Index"
   },
   "README.md": {
     "freshness_field": "last_updated",
-    "freshness_value": "2026-03-14",
-    "status": "active",
-    "title": "AI-Ready Accessibility Knowledge Repository"
+    "freshness_value": "2026-03-21",
+    "status": "curated",
+    "title": "neura11y \u2014 AI-Ready Accessibility Knowledge Repository"
   },
   "ai-prompts/documents/accessible-document.md": {
     "freshness_field": "last_fetched",
@@ -41,6 +41,30 @@
     "status": "template",
     "title": "Prompt Template: Accessible Kiosk and Embedded ICT Review"
   },
+  "ai-prompts/screen-readers/jaws-enterprise-testing.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "template",
+    "title": "Prompt Template: JAWS Enterprise Testing"
+  },
+  "ai-prompts/screen-readers/nvda-web-testing.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "template",
+    "title": "Prompt Template: NVDA Web Testing Workflow"
+  },
+  "ai-prompts/screen-readers/talkback-mobile-web-review.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "template",
+    "title": "Prompt Template: TalkBack Mobile Web Review"
+  },
+  "ai-prompts/screen-readers/voiceover-safari-audit.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "template",
+    "title": "Prompt Template: VoiceOver + Safari Audit"
+  },
   "ai-prompts/social-media/accessible-social-post.md": {
     "freshness_field": "last_fetched",
     "freshness_value": "2026-03-13",
@@ -57,7 +81,7 @@
     "freshness_field": "last_fetched",
     "freshness_value": "2026-03-13",
     "status": "template",
-    "title": "Prompt Template: Audit HTML Snippet for WCAG 2.2 AA"
+    "title": "Prompt Template: Audit HTML Snippet for WCAG AA"
   },
   "ai-prompts/web-content/full-site-accessibility-review.md": {
     "freshness_field": "last_fetched",
@@ -73,7 +97,7 @@
   },
   "cognitive/coga-design-guide-fetched.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-21",
     "status": "normative",
     "title": "Making Content Usable for People with Cognitive Disabilities (Fetched)"
   },
@@ -103,7 +127,7 @@
   },
   "color-and-visual/contrast-ratios.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "prescriptive",
     "title": "Contrast Ratios and Color Accessibility"
   },
@@ -229,7 +253,7 @@
   },
   "domains/documents/word-accessibility/word-guide.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "prescriptive",
     "title": "Microsoft Word Accessibility Guide"
   },
@@ -379,7 +403,7 @@
   },
   "domains/web/color-and-contrast.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "prescriptive",
     "title": "Color and Contrast Requirements"
   },
@@ -439,7 +463,7 @@
   },
   "domains/web/focus-management.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "prescriptive",
     "title": "Focus Management"
   },
@@ -451,7 +475,7 @@
   },
   "domains/web/html-semantics-guide.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "prescriptive",
     "title": "HTML Semantics for Accessibility"
   },
@@ -479,6 +503,30 @@
     "status": "prescriptive",
     "title": "PWA Accessibility Patterns"
   },
+  "domains/web/source/wai-tutorials/forms-tutorial-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WAI Forms Tutorial (Fetched)"
+  },
+  "domains/web/source/wai-tutorials/menus-tutorial-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WAI Menus Tutorial (Fetched)"
+  },
+  "domains/web/source/wai-tutorials/page-structure-tutorial-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WAI Page Structure Tutorial (Fetched)"
+  },
+  "domains/web/source/wai-tutorials/tables-tutorial-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WAI Tables Tutorial (Fetched)"
+  },
   "domains/web/spa-accessibility.md": {
     "freshness_field": "last_fetched",
     "freshness_value": "2026-03-13",
@@ -493,7 +541,7 @@
   },
   "domains/web/testing/manual-testing-checklist.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "prescriptive",
     "title": "Manual Accessibility Testing Checklist"
   },
@@ -505,9 +553,9 @@
   },
   "domains/web/web-accessibility-checklist.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "prescriptive",
-    "title": "Web Accessibility Checklist \u2014 WCAG 2.2 Level AA"
+    "title": "Web Accessibility Checklist \u2014 WCAG Level AA"
   },
   "legal-and-compliance/australia-accessibility.md": {
     "freshness_field": "last_reviewed",
@@ -541,9 +589,15 @@
   },
   "media/images/alt-text-decision-tree.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-21",
     "status": "prescriptive",
     "title": "Alt Text Decision Tree (Fetched)"
+  },
+  "media/images/images-tutorial-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WAI Images Tutorial (Fetched)"
   },
   "media/video/video-captions-guide.md": {
     "freshness_field": "last_fetched",
@@ -553,13 +607,13 @@
   },
   "media/video/webvtt-spec.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-14",
+    "freshness_value": "2026-03-21",
     "status": "normative",
-    "title": "WebVTT 1.0 Specification Overview"
+    "title": "WebVTT 1.0 Specification"
   },
   "meta/coverage-gaps.md": {
     "freshness_field": "last_updated",
-    "freshness_value": "2026-03-14",
+    "freshness_value": "2026-03-21",
     "status": "curated",
     "title": "Coverage Gaps"
   },
@@ -571,25 +625,31 @@
   },
   "meta/latest-ai-validation-report.md": {
     "freshness_field": "last_updated",
-    "freshness_value": "2026-03-14",
+    "freshness_value": "2026-03-21",
     "status": "curated",
     "title": "Latest AI Validation Report"
   },
   "meta/standards-registry.md": {
     "freshness_field": "last_updated",
-    "freshness_value": "2026-03-14",
+    "freshness_value": "2026-03-21",
     "status": "curated",
     "title": "Standards Registry"
   },
   "meta/update-schedule.md": {
     "freshness_field": "last_updated",
-    "freshness_value": "2026-03-14",
+    "freshness_value": "2026-03-21",
     "status": "curated",
     "title": "Update Schedule"
   },
+  "reference/accessibility-checkers-and-cli-tools.md": {
+    "freshness_field": "last_reviewed",
+    "freshness_value": "2026-03-21",
+    "status": "curated",
+    "title": "Accessibility Checkers and CLI Tools"
+  },
   "reference/accessibility-tools.md": {
-    "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_field": "last_reviewed",
+    "freshness_value": "2026-03-21",
     "status": "curated",
     "title": "Accessibility Testing Tools Reference"
   },
@@ -599,11 +659,23 @@
     "status": "curated",
     "title": "Disability and Accessibility Statistics"
   },
+  "screen-readers/common-announcements-and-quirks.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "curated",
+    "title": "Common Screen Reader Announcements and Quirks"
+  },
   "screen-readers/jaws-guide.md": {
     "freshness_field": "last_fetched",
     "freshness_value": "2026-03-13",
     "status": "curated",
     "title": "JAWS Screen Reader Guide"
+  },
+  "screen-readers/mobile-screen-reader-testing.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "Mobile Screen Reader Testing"
   },
   "screen-readers/nvda-guide.md": {
     "freshness_field": "last_fetched",
@@ -629,6 +701,36 @@
     "status": "curated",
     "title": "Screen Reader Overview"
   },
+  "screen-readers/screen-reader-testing-workflows.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "Screen Reader Testing Workflows"
+  },
+  "screen-readers/source/jaws-keystrokes-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "JAWS Keystrokes Guide (Fetched)"
+  },
+  "screen-readers/source/nvda-user-guide-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "NVDA User Guide (Fetched)"
+  },
+  "screen-readers/source/talkback-user-guide-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "TalkBack Guide for Android (Fetched)"
+  },
+  "screen-readers/source/voiceover-user-guide-mac-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "VoiceOver User Guide for Mac (Fetched)"
+  },
   "screen-readers/talkback-guide.md": {
     "freshness_field": "last_fetched",
     "freshness_value": "2026-03-13",
@@ -640,6 +742,12 @@
     "freshness_value": "2026-03-13",
     "status": "prescriptive",
     "title": "VoiceOver Screen Reader Guide for Testing"
+  },
+  "standards/aria/accname-1.2.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "Accessible Name and Description Computation 1.2"
   },
   "standards/aria/aria-authoring-practices.md": {
     "freshness_field": "last_fetched",
@@ -655,7 +763,7 @@
   },
   "standards/aria/aria-in-html-fetched.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-21",
     "status": "normative",
     "title": "ARIA in HTML (Fetched)"
   },
@@ -665,9 +773,69 @@
     "status": "normative",
     "title": "ARIA in HTML \u2014 Implicit Semantics and Allowed Overrides"
   },
+  "standards/aria/core-aam-1.2-full-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "Core Accessibility API Mappings 1.2 (Full Fetched)"
+  },
+  "standards/aria/core-aam-1.2-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "Core Accessibility API Mappings 1.2 Overview"
+  },
+  "standards/aria/core-aam-1.2-role-mappings.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "Core Accessibility API Mappings 1.2 Role Mappings"
+  },
+  "standards/aria/core-aam-1.2-state-property-and-event-mappings.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "Core Accessibility API Mappings 1.2 State, Property, and Event Mappings"
+  },
+  "standards/aria/html-aam-1.0-accessible-name-and-description-computation.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "HTML Accessibility API Mappings 1.0 Accessible Name and Description Computation"
+  },
+  "standards/aria/html-aam-1.0-attribute-state-property-mappings-a-to-m.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "HTML Accessibility API Mappings 1.0 Attribute State and Property Mappings A-M"
+  },
+  "standards/aria/html-aam-1.0-attribute-state-property-mappings-n-to-z.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "HTML Accessibility API Mappings 1.0 Attribute State and Property Mappings N-Z"
+  },
+  "standards/aria/html-aam-1.0-element-role-mappings.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "HTML Accessibility API Mappings 1.0 Element Role Mappings"
+  },
+  "standards/aria/html-aam-1.0-full-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "HTML Accessibility API Mappings 1.0 (Full Fetched)"
+  },
+  "standards/aria/html-aam-1.0-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "normative",
+    "title": "HTML Accessibility API Mappings 1.0 Overview"
+  },
   "standards/aria/wai-aria-1.2-full-fetched.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-21",
     "status": "normative",
     "title": "WAI-ARIA 1.2 Full Specification (Fetched)"
   },
@@ -697,7 +865,7 @@
   },
   "standards/epub/epub-accessibility-1.1-fetched.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-21",
     "status": "normative",
     "title": "EPUB Accessibility 1.1 (Fetched)"
   },
@@ -715,7 +883,7 @@
   },
   "standards/other-standards/atag-2.0-fetched.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-21",
     "status": "normative",
     "title": "ATAG 2.0 (Fetched)"
   },
@@ -733,7 +901,7 @@
   },
   "standards/other-standards/uaag-2.0-fetched.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-21",
     "status": "normative",
     "title": "UAAG 2.0 (Fetched)"
   },
@@ -742,6 +910,36 @@
     "freshness_value": "2026-03-13",
     "status": "prescriptive",
     "title": "UAAG 2.0 \u2014 User Agent Accessibility Guidelines Overview"
+  },
+  "standards/other-standards/wcag2ict-22-full-fetched.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WCAG2ICT 2.2 (Full Fetched)"
+  },
+  "standards/other-standards/wcag2ict-22-glossary-and-appendices.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WCAG2ICT 2.2 Glossary and Appendices"
+  },
+  "standards/other-standards/wcag2ict-22-guideline-comments-perceivable-and-operable.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WCAG2ICT 2.2 Guideline Comments: Perceivable and Operable"
+  },
+  "standards/other-standards/wcag2ict-22-guideline-comments-understandable-and-robust.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WCAG2ICT 2.2 Guideline Comments: Understandable and Robust"
+  },
+  "standards/other-standards/wcag2ict-22-overview.md": {
+    "freshness_field": "last_fetched",
+    "freshness_value": "2026-03-21",
+    "status": "prescriptive",
+    "title": "WCAG2ICT 2.2 Overview"
   },
   "standards/pdf-ua/matterhorn-protocol.md": {
     "freshness_field": "last_fetched",
@@ -799,7 +997,7 @@
   },
   "standards/wcag/wcag-2.2-new-criteria.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "normative",
     "title": "WCAG 2.2 New Success Criteria"
   },
@@ -811,7 +1009,7 @@
   },
   "standards/wcag/wcag-2.2-quick-ref.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "normative",
     "title": "WCAG 2.2 Quick Reference \u2014 All Success Criteria"
   },
@@ -823,7 +1021,7 @@
   },
   "standards/wcag/wcag-conformance-levels.md": {
     "freshness_field": "last_fetched",
-    "freshness_value": "2026-03-13",
+    "freshness_value": "2026-03-14",
     "status": "normative",
     "title": "WCAG Conformance Levels"
   },

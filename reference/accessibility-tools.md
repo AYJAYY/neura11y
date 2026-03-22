@@ -1,15 +1,20 @@
 ---
 title: "Accessibility Testing Tools Reference"
-standard: ""
-source_url: ""
+standard: "WCAG + Tooling"
+source_url: "https://www.w3.org/WAI/test-evaluate/tools/list/"
 domain: ["web", "documents", "general"]
-last_fetched: "2026-03-13"
+last_fetched: "2026-03-21"
+last_reviewed: "2026-03-21"
 status: "curated"
-tags: ["tools", "testing", "axe", "lighthouse", "wave", "screen-readers", "color-contrast"]
-ai_context: "Reference list of accessibility testing tools by category. Load when recommending tools for testing or when asked what tools to use."
+tags: ["tools", "testing", "axe", "lighthouse", "wave", "screen-readers", "color-contrast", "cli", "checkers"]
+ai_context: "Broad catalog of accessibility testing tools by category. For AI-first checker and CLI routing, prefer reference/accessibility-checkers-and-cli-tools.md."
 ---
 
 # Accessibility Testing Tools Reference
+
+---
+
+For AI-first tool selection and command routing, load `reference/accessibility-checkers-and-cli-tools.md` first. This file remains the broader catalog by category.
 
 ---
 

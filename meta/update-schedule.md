@@ -2,7 +2,7 @@
 title: "Update Schedule"
 type: "meta"
 status: "curated"
-last_updated: "2026-03-14"
+last_updated: "2026-03-21"
 ai_context: "Maintenance cadence for all repository content. Use to determine when content may be stale."
 ---
 
@@ -23,6 +23,9 @@ Maintenance cadence for all repository content. Distinguishes auto-fetchable fro
 | WCAG techniques | Living document | Quarterly | `fetch-wcag.py` | Auto |
 | WCAG understanding docs | Living document | Quarterly | `fetch-wcag.py` | Auto |
 | WAI-ARIA 1.2 | W3C publication | On new W3C publication | `fetch-aria.py` | Auto |
+| AccName 1.2 | W3C Working Draft update | Every 6 months | `fetch-aria.py` | Auto |
+| Core-AAM 1.2 | W3C Candidate Recommendation update | Every 6 months | `fetch-aria.py` | Auto |
+| HTML-AAM 1.0 | W3C Working Draft update | Every 6 months | `fetch-aria.py` | Auto |
 | ARIA APG patterns | Living document | Monthly | `fetch-aria.py` | Auto |
 | ARIA in HTML | W3C publication | On new W3C publication | `fetch-aria.py` | Auto |
 | ATAG 2.0 | Stable spec | Annually | `fetch-w3c-other.py` | Auto |
@@ -30,7 +33,13 @@ Maintenance cadence for all repository content. Distinguishes auto-fetchable fro
 | EPUB Accessibility 1.1 | W3C publication | On new W3C publication | `fetch-w3c-other.py` | Auto |
 | WebVTT | Stable spec | Annually | `fetch-w3c-other.py` | Auto |
 | COGA design guide | W3C update | Every 6 months | `fetch-w3c-other.py` | Auto |
+| WCAG2ICT 2.2 | W3C Group Note update | Every 6 months | `fetch-w3c-other.py` | Auto |
 | Alt text decision tree | W3C update | Quarterly | `fetch-w3c-other.py` | Auto |
+| WAI tutorials | W3C tutorial updates | Quarterly | `fetch-w3c-other.py` | Auto |
+| NVDA user guide | NVDA documentation update | Quarterly | `fetch-screen-readers.py` | Auto |
+| VoiceOver for Mac user guide | Apple support update | Quarterly | `fetch-screen-readers.py` | Auto |
+| TalkBack guide | Google support update | Quarterly | `fetch-screen-readers.py` | Auto |
+| JAWS keystrokes guide | Freedom Scientific support update | Quarterly | `fetch-screen-readers.py` | Auto |
 | Section 508 technical | Stable (2017) | On federal update | `fetch-us-gov.py` | Auto |
 | Plain Language guidelines | Living document | Quarterly | `fetch-us-gov.py` | Auto |
 | EN 301 549 | ETSI publication | On new ETSI publication | `fetch-en-301-549.py` | Auto |
@@ -53,10 +62,11 @@ Maintenance cadence for all repository content. Distinguishes auto-fetchable fro
 | ARIA common mistakes | Quarterly | Community audit reports | Synthesize from a11ysupport.io and audit findings |
 | Alt text examples | Quarterly | Community feedback | Add new before/after examples |
 | Screen reader support matrices | Quarterly | SR release notes | JAWS, NVDA, VoiceOver major releases |
-| JAWS guide | On JAWS major release | Freedom Scientific release | |
-| NVDA guide | On NVDA major release | NV Access release | |
-| VoiceOver guide | On macOS/iOS release | Apple release | |
-| TalkBack guide | On Android release | Google release | |
+| JAWS guide | On JAWS major release | Freedom Scientific release | Curated guide; refresh alongside fetched keystrokes source |
+| NVDA guide | On NVDA major release | NV Access release | Curated guide; refresh alongside fetched NVDA user guide |
+| VoiceOver guide | On macOS/iOS release | Apple release | Curated guide; refresh alongside fetched VoiceOver support docs |
+| TalkBack guide | On Android release | Google release | Curated guide; refresh alongside fetched TalkBack support docs |
+| Cross-screen-reader workflow guides | Quarterly | After vendor or browser changes | Refresh `screen-readers/` workflow files when testing guidance changes materially |
 | US legal landscape | Quarterly | Court decisions, DOJ guidance | ADA Title III web cases |
 | EU EAA compliance | Quarterly | EAA enforcement updates | Post-June 2025 enforcement period |
 | UK compliance | Quarterly | UK legislative changes | Post-Brexit |
@@ -69,7 +79,7 @@ Maintenance cadence for all repository content. Distinguishes auto-fetchable fro
 | Native mobile app guide | On iOS/Android major release | Apple or Google release | Re-check focus, gestures, scaling, and announcement APIs |
 | Email/newsletter guide | Quarterly | Major client rendering changes | Review Outlook, Gmail, Apple Mail behavior changes |
 | Google Workspace guides | Quarterly | Google Workspace UI/export changes | Re-check Docs, Slides, Sheets workflows |
-| Automated testing tools | Quarterly | Tool release notes | axe, WAVE, Lighthouse, ARC Toolkit |
+| Automated testing tools and checker references | Quarterly | Tool release notes | Refresh `domains/web/testing/automated-testing.md`, `reference/accessibility-checkers-and-cli-tools.md`, and `reference/accessibility-tools.md` for axe, WAVE, Lighthouse, Pa11y, linting, and related tooling |
 | Prompt templates | After each context-pattern change | Manual | Keep prompt packs aligned with AI-USAGE-GUIDE patterns |
 | AI validation fixtures | After each prompt or context change | Manual | Keep fixtures aligned with prompt/context expectations |
 | Coverage gaps | After each content update | Manual | Track known gaps for next iteration |
@@ -94,7 +104,8 @@ AI systems loading files should check `last_fetched`, `last_verified`, or `last_
 
 Create calendar reminders for:
 - **First Monday of each month** — Review all 7 platform guides for UI changes
-- **First Monday of each quarter** — Run `scripts/fetch-all.py`, `scripts/sync-freshness.py`, and `scripts/validate-ai-suite.py`; review legal and SR matrices
+- **First Monday of each quarter** — Run `scripts/fetch-all.py` followed by `scripts/refresh-repo.py`; review legal and SR matrices
+- **After vendor AT documentation changes** — Run `scripts/fetch-screen-readers.py` and refresh curated screen-reader workflow guides
 - **First Monday after major browser/SR release** — Update screen reader support matrices
 - **First Monday after major iOS/Android release** — Review native mobile and Google Workspace guidance
 - **On W3C publication** — Subscribe to https://www.w3.org/TR/ RSS feed for WCAG and ARIA publications

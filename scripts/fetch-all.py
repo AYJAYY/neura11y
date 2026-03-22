@@ -4,11 +4,12 @@ Run all fetch scripts in sequence to refresh the entire standards knowledge base
 
 Scripts run in order:
   1. fetch-wcag.py       — WCAG 2.1, 2.2, 3.0 overview, quick refs
-  2. fetch-aria.py       — WAI-ARIA 1.2, ARIA in HTML
-  3. fetch-w3c-other.py  — ATAG, UAAG, EPUB, COGA, alt text tree
-  4. fetch-us-gov.py     — Section 508, Plain Language
-  5. fetch-en-301-549.py — EN 301 549 PDF (requires pdfplumber)
-  6. fetch-iso.py        — PDF/UA summary, Matterhorn Protocol
+  2. fetch-aria.py       — WAI-ARIA 1.2, AccName, Core-AAM, HTML-AAM, ARIA in HTML
+  3. fetch-w3c-other.py  — ATAG, UAAG, EPUB, COGA, WCAG2ICT, tutorials
+  4. fetch-screen-readers.py — NVDA, VoiceOver, TalkBack, JAWS support docs
+  5. fetch-us-gov.py     — Section 508, Plain Language
+  6. fetch-en-301-549.py — EN 301 549 PDF (requires pdfplumber)
+  7. fetch-iso.py        — PDF/UA summary, Matterhorn Protocol
 
 Usage:
   python scripts/fetch-all.py
@@ -17,6 +18,7 @@ Usage:
   python scripts/fetch-all.py --only wcag aria    # Run specific scripts only
   python scripts/fetch-all.py --log meta/fetch-log.md  # Append results to fetch log
 
+Large sources such as Core-AAM, HTML-AAM, and WCAG2ICT generate split canonical files plus raw full captures.
 See meta/update-schedule.md for recommended cadence per script.
 """
 
@@ -35,6 +37,7 @@ ALL_SCRIPTS = [
     ("wcag",         "fetch-wcag.py"),
     ("aria",         "fetch-aria.py"),
     ("w3c-other",    "fetch-w3c-other.py"),
+    ("screen-readers", "fetch-screen-readers.py"),
     ("us-gov",       "fetch-us-gov.py"),
     ("en-301-549",   "fetch-en-301-549.py"),
     ("iso",          "fetch-iso.py"),
