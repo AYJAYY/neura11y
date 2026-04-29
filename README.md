@@ -55,6 +55,20 @@ neura11y enables AI systems to:
 
 **Canonical files:** Prefer the curated and split canonical files referenced by `INDEX.md` and `AI-USAGE-GUIDE.md`, especially for Core-AAM, HTML-AAM, and WCAG2ICT. Treat `*-fetched.md` files as raw captures and `*-full-fetched.md` files as raw full provenance, not the default context payload.
 
+## Claude Code Skill
+
+This repository includes a `/a11y` Claude Code slash command at `.claude/commands/a11y.md`. When Claude Code is open in this directory, type `/a11y` followed by your task and it will automatically load the right knowledge files and produce grounded guidance with proper SC citations.
+
+```
+/a11y audit this button: <button onclick="go()">Click</button>
+/a11y generate an accessible modal dialog in React
+/a11y check our Instagram post for accessibility issues
+/a11y does our procurement process need to comply with Section 508?
+/a11y test with JAWS on our checkout flow
+```
+
+The skill routes across 12 patterns (web audit, component generation, social media, documents, legal compliance, voice UI, kiosk/embedded ICT, and 4 screen-reader tools), reads only the files relevant to the matched pattern, and enforces output rules: SC citations in `SC X.X.X — [Title] (Level A|AA|AAA)` format, `[NORMATIVE]`/`[PRESCRIPTIVE]` prefixes, `[FAIL]`/`[WARN]`/`[BEST PRACTICE]` severity markers, and a manual testing checklist on every response.
+
 ## Repository Structure
 
 ```
@@ -66,6 +80,7 @@ claude-a11y-repo/
 ├── AI-USAGE-GUIDE.md         — Context-loading patterns for AI systems
 ├── index.html                — Project landing page
 ├── logos/                    — Branding assets
+├── .claude/commands/         — Claude Code slash commands (e.g. /a11y)
 │
 ├── meta/                     — Repository management metadata
 │   ├── standards-registry.md — Master list of all standards with source URLs
